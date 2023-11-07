@@ -14,7 +14,6 @@
 }
 .arimakinen .times .times-number {
   font-size: 39px;
-  font-family: "Aoboshi One", serif;
   font-family: "Kanit", sans-serif;
   padding: 0 5px;
   vertical-align: -2%;
@@ -66,10 +65,9 @@
   padding: 5px 5px;
 }
 .arimatable .waku {
-  background-color: rgb(235, 234, 232);
+  background-color: rgb(249, 242, 227);
 }
 .arimatable .rank {
-  font-family: "Aoboshi One", serif;
   font-family: "Kanit", sans-serif;
   color: #ab973a;
 }/*# sourceMappingURL=arima-style.css.map */

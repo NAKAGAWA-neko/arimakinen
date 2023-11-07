@@ -1,4 +1,5 @@
 @use "arima-color" as ari;
+@use "arima-grades";
 
 .arimakinen {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica Neue, HelveticaNeue,
@@ -17,7 +18,6 @@
 
     .times-number {
       font-size: 39px;
-      font-family: "Aoboshi One", serif;
       font-family: "Kanit", sans-serif;
       padding: 0 5px;
       vertical-align: -2%;
@@ -29,6 +29,11 @@
     font-weight: 500;
     padding-left: 10px;
   }
+}
+
+.arimatable {
+  margin: 0 0 30px 0;
+  width: auto;
 
   .diagonal-bar {
     background: repeating-linear-gradient(
@@ -45,11 +50,6 @@
 
     margin: -5px 0 10px 0;
   }
-}
-
-.arimatable {
-  margin: 0 0 30px 0;
-  width: auto;
 
   .horsename {
     font-weight: bold;
@@ -90,8 +90,28 @@
     background-color: ari.$c-waku-back;
   }
   .rank {
-    font-family: "Aoboshi One", serif;
     font-family: "Kanit", sans-serif;
     color: ari.$c-gold-1;
+  }
+
+  .changebtn,
+  #change-ty-btn {
+    z-index: 999; // ここに追加
+    border: none;
+    background-color: l.$main-y-c;
+    font-size: 16px;
+    color: l.$main-b-c;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 2px 4px;
+    text-align: right;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  #change-ty-btn {
+    top: 10px;
   }
 }
