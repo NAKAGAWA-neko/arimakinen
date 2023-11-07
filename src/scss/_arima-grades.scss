@@ -1,40 +1,40 @@
-/* アコーディオンの基本スタイル */
-.accordion {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
+@use "arima-color" as ari;
 
-  &-header {
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #ccc;
+/* アコーディオンのスタイル */
+.accordion {
+  margin-bottom: 10px;
+  .accordion-toggle {
+    padding: 0 10px;
+
     position: relative;
 
-    /* 三角形のボタン */
-    &:before {
-      content: "";
-      position: absolute;
-      left: 10px; /* タイトルの左側に配置 */
-      top: 50%;
-      transform: translateY(-50%) rotate(90deg); /* 三角形を右向きに */
-      border: 5px solid transparent; /* 三角形のサイズ */
-      border-left-color: #333; /* 三角形の色 */
-    }
+    .accordion-icon {
+      /* 三角形の矢印を作るためのコード */
+      position: relative;
+      cursor: pointer;
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-top: -6px;
+        margin-right: 5px;
+        border-style: solid;
+        border-width: 15px 12px 0 12px; // 三角形の大きさを増やす
+        border-color: ari.$c-gold-1 transparent transparent transparent;
+        vertical-align: middle;
+        transition: transform 0.3s ease; // アニメーションの追加
+      }
 
-    /* アコーディオンが開いた時の三角形のスタイル */
-    &[open]:before {
-      transform: translateY(-50%) rotate(-90deg); /* 三角形を左向きに */
+      &.active:before {
+        /* アクティブな状態のとき（下向き矢印） */
+        transform: rotate(180deg); // 180度回転
+      }
     }
   }
-
-  &-content {
-    padding: 20px;
-    display: none; /* アコーディオンが閉じている時はコンテンツを非表示に */
-
-    /* アコーディオンが開いた時のコンテンツのスタイル */
-    details[open] & {
-      display: block;
-    }
+  .accordion-content {
+    display: none;
+    padding: 16px 0;
+    border-top: none;
   }
 }

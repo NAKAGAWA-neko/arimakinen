@@ -6,24 +6,47 @@
     Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
   font-size: 16px;
   color: ari.$c-main-black;
+  background-color: white;
 
-  h2 {
-    margin: 0;
+  .arima-h1 {
+    margin: 0 0 20px 0;
+    color: white;
+    text-align: center;
+    font-size: 39px;
+    font-weight: 900;
+    background-color: green;
   }
 
-  .times {
+  .arima-h2 {
+    margin: 0 0 20px 0;
+    color: ari.$c-main-black;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+  }
+
+  .arima-h3 {
+    margin: 0 0 20px 0;
+    color: ari.$c-main-black;
+
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .arima-times {
     color: ari.$c-gold-1;
     font-size: 20px;
     font-weight: bolder;
+    cursor: pointer;
 
-    .times-number {
+    .arima-times-number {
       font-size: 39px;
       font-family: "Kanit", sans-serif;
       padding: 0 5px;
       vertical-align: -2%;
     }
   }
-  .times-date {
+  .arima-times-date {
     font-size: 16px;
     color: ari.$c-l-back-1;
     font-weight: 500;
@@ -32,10 +55,18 @@
 }
 
 .arimatable {
-  margin: 0 0 30px 0;
-  width: auto;
+  margin: 0;
+  width: 780px; // 親要素のパディングやボーダーを考慮した値に調整
+  position: relative;
+  box-sizing: border-box; // パディングとボーダーを幅に含める
 
   .diagonal-bar {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    box-sizing: border-box; // パディングとボーダーを高さに含める
     background: repeating-linear-gradient(
       -45deg,
       ari.$c-gold-1,
@@ -43,12 +74,6 @@
       white 3px,
       white 6px
     );
-
-    /* ボックスの大きさ */
-    width: auto;
-    height: 8px;
-
-    margin: -5px 0 10px 0;
   }
 
   .horsename {
@@ -92,26 +117,5 @@
   .rank {
     font-family: "Kanit", sans-serif;
     color: ari.$c-gold-1;
-  }
-
-  .changebtn,
-  #change-ty-btn {
-    z-index: 999; // ここに追加
-    border: none;
-    background-color: l.$main-y-c;
-    font-size: 16px;
-    color: l.$main-b-c;
-    font-weight: 600;
-    border-radius: 5px;
-    padding: 2px 4px;
-    text-align: right;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-  #change-ty-btn {
-    top: 10px;
   }
 }
