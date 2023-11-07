@@ -1,0 +1,46 @@
+body {
+  font-size: 16px;
+}
+
+.arimatable {
+  margin: 0 0 30px 0;
+  .bold {
+    font-weight: bold;
+  }
+
+  .center-text {
+    text-align: center;
+  }
+
+  th,
+  td {
+    white-space: nowrap;
+  }
+
+  th {
+    font-weight: 500;
+    font-size: 12px;
+  }
+  table,
+  td,
+  th {
+    border-bottom: 1px solid rgb(195, 195, 195);
+  }
+
+  table {
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  td {
+    padding: 5px 5px;
+  }
+  .waku {
+    background-color: rgb(235, 235, 235);
+  }
+  .rank {
+    font-family: "Aoboshi One", serif;
+    font-family: "Kanit", sans-serif;
+    color: rgb(142, 121, 1);
+  }
+}

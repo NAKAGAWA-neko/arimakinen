@@ -1,0 +1,41 @@
+body {
+  font-size: 16px;
+}
+
+.arimatable {
+  margin: 0 0 30px 0;
+}
+.arimatable .bold {
+  font-weight: bold;
+}
+.arimatable .center-text {
+  text-align: center;
+}
+.arimatable th,
+.arimatable td {
+  white-space: nowrap;
+}
+.arimatable th {
+  font-weight: 500;
+  font-size: 12px;
+}
+.arimatable table,
+.arimatable td,
+.arimatable th {
+  border-bottom: 1px solid rgb(195, 195, 195);
+}
+.arimatable table {
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.arimatable td {
+  padding: 5px 5px;
+}
+.arimatable .waku {
+  background-color: rgb(235, 235, 235);
+}
+.arimatable .rank {
+  font-family: "Aoboshi One", serif;
+  font-family: "Kanit", sans-serif;
+  color: rgb(142, 121, 1);
+}/*# sourceMappingURL=style.css.map */
