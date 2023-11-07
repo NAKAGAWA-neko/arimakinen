@@ -46,8 +46,8 @@ window.loadAndDisplayCSV = loadAndDisplayCSV;
 
 // CSVファイルをページロード時に自動的に読み込むための関数
 function init() {
-  loadAndDisplayCSV("/src/arima2022.csv", "dataTable2022");
-  loadAndDisplayCSV("/src/arima2021.csv", "dataTable2021");
+  loadAndDisplayCSV("/src/data/arima2022.csv", "dataTable2022");
+  loadAndDisplayCSV("/src/data/arima2021.csv", "dataTable2021");
 }
 
 // ページが完全にロードされたらinit関数を呼び出す
