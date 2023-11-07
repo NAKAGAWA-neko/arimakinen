@@ -1,18 +1,18 @@
 @charset "UTF-8";
 /* アコーディオンのスタイル */
-.accordion {
+.arima-accordion {
   margin-bottom: 10px;
 }
-.accordion .accordion-toggle {
+.arima-accordion .accordion-toggle {
   padding: 0 10px;
   position: relative;
 }
-.accordion .accordion-toggle .accordion-icon {
+.arima-accordion .accordion-toggle .accordion-icon {
   /* 三角形の矢印を作るためのコード */
   position: relative;
   cursor: pointer;
 }
-.accordion .accordion-toggle .accordion-icon:before {
+.arima-accordion .accordion-toggle .accordion-icon:before {
   content: "";
   display: inline-block;
   width: 0;
@@ -25,14 +25,20 @@
   vertical-align: middle;
   transition: transform 0.3s ease;
 }
-.accordion .accordion-toggle .accordion-icon.active:before {
+.arima-accordion .accordion-toggle .accordion-icon.active:before {
   /* アクティブな状態のとき（下向き矢印） */
   transform: rotate(180deg);
 }
-.accordion .accordion-content {
+
+.accordion-content {
   display: none;
   padding: 16px 0;
   border-top: none;
+}
+
+html,
+body {
+  margin: 0;
 }
 
 .arimakinen {
@@ -40,6 +46,7 @@
   font-size: 16px;
   color: rgb(32, 32, 31);
   background-color: white;
+  margin: 0 16px;
 }
 .arimakinen .arima-h1 {
   margin: 0 0 20px 0;
@@ -95,6 +102,9 @@
   height: 8px;
   box-sizing: border-box;
   background: repeating-linear-gradient(-45deg, #ab973a, #ab973a 3px, white 3px, white 6px);
+}
+.arimatable .arima-table-wrapper {
+  overflow-x: auto;
 }
 .arimatable .horsename {
   font-weight: bold;

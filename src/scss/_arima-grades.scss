@@ -1,7 +1,7 @@
 @use "arima-color" as ari;
 
 /* アコーディオンのスタイル */
-.accordion {
+.arima-accordion {
   margin-bottom: 10px;
   .accordion-toggle {
     padding: 0 10px;
@@ -32,9 +32,9 @@
       }
     }
   }
-  .accordion-content {
-    display: none;
-    padding: 16px 0;
-    border-top: none;
-  }
+}
+.accordion-content {
+  display: none;
+  padding: 16px 0;
+  border-top: none;
 }

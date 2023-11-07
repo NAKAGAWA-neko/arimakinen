@@ -1,12 +1,18 @@
 @use "arima-color" as ari;
 @use "arima-grades";
 
+html,
+body {
+  margin: 0;
+}
+
 .arimakinen {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica Neue, HelveticaNeue,
     Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
   font-size: 16px;
   color: ari.$c-main-black;
   background-color: white;
+  margin: 0 16px;
 
   .arima-h1 {
     margin: 0 0 20px 0;
@@ -76,6 +82,10 @@
     );
   }
 
+  .arima-table-wrapper {
+    // 新しいラッパー要素のスタイル
+    overflow-x: auto; // 横スクロールを有効にする
+  }
   .horsename {
     font-weight: bold;
   }
