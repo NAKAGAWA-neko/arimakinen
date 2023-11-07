@@ -1,11 +1,43 @@
-body {
+@charset "UTF-8";
+.arimakinen {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica Neue, HelveticaNeue, Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
   font-size: 16px;
+  color: rgb(32, 32, 31);
+}
+.arimakinen h2 {
+  margin: 0;
+}
+.arimakinen .times {
+  color: #ab973a;
+  font-size: 20px;
+  font-weight: bolder;
+}
+.arimakinen .times .times-number {
+  font-size: 39px;
+  font-family: "Aoboshi One", serif;
+  font-family: "Kanit", sans-serif;
+  padding: 0 5px;
+  vertical-align: -2%;
+}
+.arimakinen .times-date {
+  font-size: 16px;
+  color: #5f5f55;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.arimakinen .diagonal-bar {
+  background: repeating-linear-gradient(-45deg, #ab973a, #ab973a 3px, white 3px, white 6px);
+  /* ボックスの大きさ */
+  width: auto;
+  height: 8px;
+  margin: -5px 0 10px 0;
 }
 
 .arimatable {
   margin: 0 0 30px 0;
+  width: auto;
 }
-.arimatable .bold {
+.arimatable .horsename {
   font-weight: bold;
 }
 .arimatable .center-text {
@@ -19,10 +51,12 @@ body {
   font-weight: 500;
   font-size: 12px;
 }
-.arimatable table,
-.arimatable td,
-.arimatable th {
-  border-bottom: 1px solid rgb(195, 195, 195);
+.arimatable th,
+.arimatable table {
+  border-bottom: 2px solid #d3d2c4;
+}
+.arimatable td {
+  border-bottom: 1px dashed #d3d2c4;
 }
 .arimatable table {
   border-collapse: collapse;
@@ -32,10 +66,10 @@ body {
   padding: 5px 5px;
 }
 .arimatable .waku {
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(235, 234, 232);
 }
 .arimatable .rank {
   font-family: "Aoboshi One", serif;
   font-family: "Kanit", sans-serif;
-  color: rgb(142, 121, 1);
+  color: #ab973a;
 }/*# sourceMappingURL=arima-style.css.map */

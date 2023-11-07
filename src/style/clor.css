@@ -1,0 +1,53 @@
+@charset "UTF-8";
+body {
+  font-size: 16px;
+}
+
+.arimatable {
+  margin: 0 0 30px 0;
+  width: auto;
+}
+.arimatable .bold {
+  font-weight: bold;
+}
+.arimatable .center-text {
+  text-align: center;
+}
+.arimatable th,
+.arimatable td {
+  white-space: nowrap;
+}
+.arimatable th {
+  font-weight: 500;
+  font-size: 12px;
+}
+.arimatable table,
+.arimatable td,
+.arimatable th {
+  border-bottom: 1px solid rgb(195, 195, 195);
+}
+.arimatable table {
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.arimatable td {
+  padding: 5px 5px;
+}
+.arimatable .waku {
+  background-color: rgb(235, 235, 235);
+}
+.arimatable .rank {
+  font-family: "Aoboshi One", serif;
+  font-family: "Kanit", sans-serif;
+  color: rgb(142, 121, 1);
+}
+.arimatable .box {
+  /* 背景に線形グラデーションを設定します。 */
+  background-image: linear-gradient(45deg, gold 25%, transparent 25%, transparent 50%, gold 50%, gold 75%, transparent 75%);
+  /* グラデーションのサイズを設定します。これにより斜線の幅と間隔が決まります。 */
+  background-size: 10px 10px;
+  /* ボックスの大きさを設定します。 */
+  width: auto; /* 幅を200ピクセルに設定します。 */
+  height: 10px; /* 高さを200ピクセルに設定します。 */
+  /* 枠線のスタイルを設定します（オプション）。 */
+}/*# sourceMappingURL=clor.css.map */

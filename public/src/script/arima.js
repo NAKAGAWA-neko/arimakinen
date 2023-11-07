@@ -21,7 +21,7 @@ function loadAndDisplayCSV(csvFilePath, containerId) {
         let columnIndex = 0;
         for (let cell in data[i]) {
           let classes = [];
-          if (columnIndex === 3) classes.push("bold");
+          if (columnIndex === 3) classes.push("horsename");
           if (columnIndex === 1) classes.push("waku");
           if (columnIndex === 0) classes.push("rank");
           if ([0, 1, 2, 4, 5, 8, 10, 11, 13].includes(columnIndex)) classes.push("center-text");
