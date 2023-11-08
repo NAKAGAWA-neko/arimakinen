@@ -4,6 +4,11 @@
   margin-bottom: 10px;
   margin-right: -16px;
 }
+@media screen and (min-width: 599px) {
+  .arimakinen-accordion {
+    margin-right: 0;
+  }
+}
 .arimakinen-accordion-toggle {
   padding: 0 10px;
   position: relative;
