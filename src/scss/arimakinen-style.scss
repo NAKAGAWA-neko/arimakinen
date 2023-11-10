@@ -4,6 +4,7 @@
 html,
 body {
   margin: 0;
+  max-width: 724px;
 }
 
 .arimakinen {
@@ -34,9 +35,49 @@ body {
   &-h3 {
     margin: 0 0 20px 0;
     color: ari.$c-main-black;
-
+    text-align: justify;
     font-size: 16px;
     font-weight: 500;
+  }
+
+  /* アコーディオンのスタイル */
+  &-accordion {
+    margin-bottom: 10px;
+    margin-right: -16px;
+    @media screen and (min-width: 599px) {
+      margin-right: 0;
+    }
+
+    &-toggle {
+      padding: 0 10px;
+      position: relative;
+      display: flex;
+      align-items: baseline;
+    }
+
+    &-icon {
+      /* 三角形の矢印を作るためのコード */
+      position: relative;
+      cursor: pointer;
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-top: -6px;
+        margin-right: 5px;
+        border-style: solid;
+        border-width: 15px 12px 0 12px; // 三角形の大きさを増やす
+        border-color: ari.$c-gold-1 transparent transparent transparent;
+        vertical-align: middle;
+        transition: transform 0.3s ease; // アニメーションの追加
+      }
+
+      &.active:before {
+        /* アクティブな状態のとき（下向き矢印） */
+        transform: rotate(180deg); // 180度回転
+      }
+    }
   }
 
   &-times {
@@ -44,12 +85,13 @@ body {
     font-size: 20px;
     font-weight: bolder;
     cursor: pointer;
+    width: 100px;
 
     &-number {
       font-size: 39px;
       font-family: "Kanit", sans-serif;
       padding: 0 5px;
-      vertical-align: -2%;
+      vertical-align: -4%;
     }
   }
   &-times-date {
