@@ -6,7 +6,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: "./index.html",
-        // kantoquake: "./great_kanto_earthquake.html",
+        data: "./data.html",
         // quaketunami: "./earthquake_tsunami.html",
         // scenario: "./bousai_scenario.html",
         // typhoonrain: "./typhoon_heavyrain.html",
