@@ -1,7 +1,7 @@
 @charset "UTF-8";
 html,
 body {
-  margin: 0;
+  margin: 0 auto;
   max-width: 724px;
 }
 
@@ -13,13 +13,25 @@ body {
   margin: 0 16px;
   /* アコーディオンのスタイル */
 }
+@media screen and (min-width: 599px) {
+  .arimakinen {
+    margin: 0 auto;
+  }
+}
 .arimakinen-h1 {
-  margin: 0 0 20px 0;
-  color: white;
-  text-align: center;
-  font-size: 39px;
-  font-weight: 900;
-  background-color: green;
+  margin: 20px auto;
+  max-width: 599px;
+}
+@media screen and (min-width: 599px) {
+  .arimakinen-h1 {
+    max-width: 724px;
+    width: 724px;
+  }
+}
+.arimakinen-h1 img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 .arimakinen-h2 {
   margin: 0 0 20px 0;
