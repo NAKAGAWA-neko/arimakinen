@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="/src/style/arimakinen-data-style.css" />
+    <link rel="stylesheet" href="/src/style/arimakinen-uma-style.css" />
 
     <!-- googlefont -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,16 +24,33 @@
     <div class="arimakinen">
       <header class="arimakinen-header">
         <h1 class="arimakinen-h1">
-          <img src="/images/arimakinen-logo-pc.jpg" alt="有馬記念" />
+          <img src="/images/arimakinen-logo.jpg" alt="有馬記念" />
         </h1>
-        <h2 class="arimakinen-h2">有馬記念 歴代成績</h2>
+        <h2 class="arimakinen-h2">出走馬ランキング</h2>
         <h3 class="arimakinen-h3">
           1956年に前身である「中山グランプリ」を当時の理事長の有馬頼寧氏が提案し行った。しかし翌年急逝、同氏の功績を称え「有馬記念」と改称。当時はファン投票による出走馬の選定方法も前例のないものだった。
         </h3>
       </header>
+
       <main class="arimakinen-main">
-        <a href="data.html">全データ</a>
-        <a href="uma.html">うま</a>
+        <div class="arimakinen-content-group-pc-flex">
+          <div class="arimakinen-content">
+            <h4 class="arimakinen-h4">出走回数</h4>
+            <div class="arimakinen-content-container">
+              <img src="/images/arimakinen-uma-numberofraces.jpg" alt="" />
+            </div>
+          </div>
+
+          <div class="arimakinen-content">
+            <h4 class="arimakinen-h4">馬体重</h4>
+            <div class="arimakinen-content-container">
+              <img src="/images/arimakinen-uma-weight-1.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <p class="arimakinen-credit">
+          ※JRAのデータから。データは第67回まで。集計のないデータも含める
+        </p>
       </main>
     </div>
   </body>

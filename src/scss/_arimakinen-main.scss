@@ -1,0 +1,108 @@
+@use "arimakinen-color" as ari;
+
+html,
+body {
+  margin: 0 auto;
+  max-width: 724px;
+}
+
+.arimakinen {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica Neue, HelveticaNeue,
+    Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
+  font-size: 16px;
+  color: ari.$c-main-black;
+  background-color: white;
+  margin: 0 16px;
+  @media screen and (min-width: 599px) {
+    margin: 0 auto;
+  }
+
+  // ヘッダーロゴ
+  &-h1 {
+    margin: 20px auto;
+    max-width: 599px;
+    @media screen and (min-width: 599px) {
+      // display: none;
+      max-width: 724px;
+      width: 724px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  // ページタイトル
+  &-h2 {
+    margin: 0 0 20px 0;
+    color: ari.$c-main-black;
+    text-align: left;
+    font-size: 25px;
+    font-weight: 900;
+  }
+
+  // リード
+  &-h3 {
+    margin: 0 0 20px 0;
+    color: ari.$c-main-black;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  &-credit {
+    font-size: 14px;
+    text-align: right;
+    margin: 5px 0 0 0;
+    line-height: 1.5;
+  }
+
+  // コンテンツタイトル
+  &-h4 {
+    font-size: 24px;
+    font-weight: 800;
+    color: ari.$c-gold-1;
+    text-align: center;
+    margin: 0 auto 10px auto;
+
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+      background-image: url("/images/arimakinen-teitetsu-gold.png");
+      height: 36px;
+      width: 36px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      vertical-align: middle;
+      margin: 0 7px 7px 5px;
+    }
+  }
+
+  &-content-group-pc-flex {
+    @media screen and (min-width: 599px) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+
+  &-content {
+    width: 100%;
+    margin: 0 0 50px 0;
+    img {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 599px) {
+      flex-basis: calc(50% - 20px);
+    }
+  }
+
+  &-header {
+    margin: 0 auto 30px auto;
+  }
+}

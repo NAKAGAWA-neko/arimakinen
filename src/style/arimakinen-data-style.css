@@ -11,7 +11,6 @@ body {
   color: rgb(32, 32, 31);
   background-color: white;
   margin: 0 16px;
-  /* アコーディオンのスタイル */
 }
 @media screen and (min-width: 599px) {
   .arimakinen {
@@ -36,7 +35,7 @@ body {
 .arimakinen-h2 {
   margin: 0 0 20px 0;
   color: rgb(32, 32, 31);
-  text-align: center;
+  text-align: left;
   font-size: 25px;
   font-weight: 900;
 }
@@ -46,6 +45,57 @@ body {
   text-align: justify;
   font-size: 16px;
   font-weight: 500;
+  margin-bottom: 0;
+}
+.arimakinen-credit {
+  font-size: 14px;
+  text-align: right;
+  margin: 5px 0 0 0;
+  line-height: 1.5;
+}
+.arimakinen-h4 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ab973a;
+  text-align: center;
+  margin: 0 auto 10px auto;
+}
+.arimakinen-h4::before, .arimakinen-h4::after {
+  content: "";
+  display: inline-block;
+  background-image: url("/images/arimakinen-teitetsu-gold.png");
+  height: 36px;
+  width: 36px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin: 0 7px 7px 5px;
+}
+@media screen and (min-width: 599px) {
+  .arimakinen-content-group-pc-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+.arimakinen-content {
+  width: 100%;
+  margin: 0 0 50px 0;
+}
+.arimakinen-content img {
+  width: 100%;
+}
+@media screen and (min-width: 599px) {
+  .arimakinen-content {
+    flex-basis: calc(50% - 20px);
+  }
+}
+.arimakinen-header {
+  margin: 0 auto 30px auto;
+}
+
+.arimakinen {
+  /* アコーディオンのスタイル */
 }
 .arimakinen-accordion {
   margin-bottom: 10px;
@@ -97,7 +147,7 @@ body {
   padding: 0 5px;
   vertical-align: -4%;
 }
-.arimakinen-times-date {
+.arimakinen-date {
   font-size: 16px;
   color: #5f5f55;
   font-weight: 500;
@@ -162,4 +212,4 @@ body {
   display: none;
   padding: 16px 0;
   border-top: none;
-}/*# sourceMappingURL=arimakinen-style.css.map */
+}/*# sourceMappingURL=arimakinen-data-style.css.map */
