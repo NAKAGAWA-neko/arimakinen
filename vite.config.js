@@ -7,7 +7,7 @@ export default defineConfig({
       input: {
         main: "./index.html",
         data: "./data.html",
-        // quaketunami: "./earthquake_tsunami.html",
+        uma: "./uma.html",
         // scenario: "./bousai_scenario.html",
         // typhoonrain: "./typhoon_heavyrain.html",
         // volcanic: "./volcanic_eruption.html",
