@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body {
   margin: 0 auto;
@@ -7,7 +8,7 @@ body {
 .arimakinen {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica Neue, HelveticaNeue, Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
   font-size: 16px;
-  color: rgb(32, 32, 31);
+  color: #1e2428;
   background-color: white;
   margin: 0 16px;
 }
@@ -33,14 +34,14 @@ body {
 }
 .arimakinen-h2 {
   margin: 0 0 20px 0;
-  color: rgb(32, 32, 31);
+  color: #1e2428;
   text-align: left;
   font-size: 25px;
   font-weight: 900;
 }
 .arimakinen-h3 {
   margin: 0 0 20px 0;
-  color: rgb(32, 32, 31);
+  color: #1e2428;
   text-align: justify;
   font-size: 16px;
   font-weight: 500;
@@ -55,7 +56,7 @@ body {
 .arimakinen-h4 {
   font-size: 24px;
   font-weight: 800;
-  color: #ab973a;
+  color: #1e2428;
   text-align: center;
   margin: 0 auto 10px auto;
 }
@@ -89,6 +90,418 @@ body {
     flex-basis: calc(50% - 20px);
   }
 }
+.arimakinen .changebtn-po {
+  position: relative;
+}
+.arimakinen .lhr-c-btn {
+  z-index: 999;
+  border: none;
+  background-color: rgb(151, 126, 15);
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 4px 10px;
+  text-align: right;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .arimakinen-header {
   margin: 0 auto 30px auto;
+}
+
+.bousai-logo {
+  margin-top: -43px;
+}
+.bousai-logo img {
+  height: 100%;
+  width: auto;
+  max-width: 145px;
+}
+
+.page-headline {
+  margin-top: 6px;
+  max-width: 180px;
+}
+.page-headline img {
+  height: 100%;
+  width: 100%;
+  max-height: 55px;
+}
+
+@media screen and (max-width: 350px) {
+  .bousai-logo {
+    margin-top: -55px;
+  }
+  .bousai-logo img {
+    max-width: 120px;
+  }
+  .page-headline {
+    margin-left: 110px;
+  }
+  .page-headline img {
+    max-height: 33px;
+  }
+  .bousai-logo_headline-main {
+    margin-bottom: -10px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .bousai-logo img {
+    max-width: 170px;
+  }
+  .page-headline {
+    top: 10px;
+    max-width: 210px;
+  }
+}
+@media screen and (min-width: 599px) {
+  .bousai-logo img {
+    max-width: 185px;
+  }
+  .page-headline {
+    top: 15px;
+    max-width: 230px;
+  }
+}
+#content-page {
+  margin: 0 16px;
+  position: relative;
+}
+@media screen and (min-width: 599px) {
+  #content-page {
+    margin: 0 auto;
+    max-width: 714px;
+  }
+}
+
+.content-main {
+  display: block;
+}
+
+@media screen and (min-width: 599px) {
+  #content-group-pc-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 599px) {
+  #content-group-pc-flex-low {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+}
+
+.content-group {
+  display: block;
+  margin-top: 30px;
+}
+
+.content-group-title-separate {
+  margin-bottom: -30px;
+}
+
+.content-g_img {
+  margin-top: 16px;
+}
+.content-g_img img {
+  width: 100%;
+}
+@media screen and (max-width: 600px) {
+  .content-g_img {
+    pointer-events: none;
+  }
+}
+
+.img-pconly {
+  text-align: center;
+}
+.img-pconly img {
+  width: 80%;
+}
+@media screen and (max-width: 600px) {
+  .img-pconly {
+    display: none;
+  }
+}
+
+.content-group-scroll {
+  display: block;
+  margin-top: 30px;
+}
+
+.content-g_img_scroll {
+  margin-top: 10px;
+  margin-right: -16px;
+  overflow-x: scroll;
+}
+@media screen and (min-width: 599px) {
+  .content-g_img_scroll {
+    margin-right: 0;
+  }
+}
+
+.cg_img_scroll-800 {
+  height: 800px;
+}
+
+.cg_img_scroll-1100 {
+  height: 1100px;
+}
+
+.content-chart {
+  margin-top: 10px;
+}
+
+.chartsize350 {
+  height: 350px;
+}
+@media (min-width: 599px) {
+  .chartsize350 {
+    height: 400px;
+  }
+}
+
+.justincase_border {
+  width: 100%;
+  background-color: red;
+  height: 5px;
+  margin: 50px 0 0 0;
+  border-radius: 3px;
+}
+
+.justincase {
+  background-color: red;
+  border-radius: 8px 8px 0 0;
+  padding: 8px 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 30px;
+}
+.justincase h6 {
+  color: white;
+  line-height: 1.3;
+  text-align: center;
+  margin: 0;
+}
+
+.justincase-ul p span {
+  font-weight: 700;
+  margin: 0;
+  background-color: gray;
+  padding: 5px 8px;
+  border-radius: 5px 5px 0 0;
+  font-size: 17px;
+  display: inline-block;
+}
+.justincase-ul ul {
+  margin-top: 5px;
+}
+.justincase-ul li {
+  margin-left: -1rem;
+  text-align: justify;
+  margin-bottom: 3px;
+  font-weight: 500;
+}
+.justincase-ul a {
+  color: darkblue;
+  font-weight: 600;
+}
+
+.li-bold ul {
+  list-style: none;
+  margin-left: -1.5rem;
+}
+.li-bold li {
+  font-weight: 600;
+}
+
+.ul-cap {
+  margin-top: -10px;
+}
+.ul-cap ul {
+  list-style: none;
+  margin-left: -1.5rem;
+}
+
+.justincase-lead {
+  text-align: justify;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.justincase_subtitle {
+  color: red;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.justincase-cap {
+  text-align: justify;
+  margin-top: -10px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  color: rgb(50, 50, 50);
+  line-height: 1.5;
+}
+
+.img-size-50 {
+  margin-top: 16px;
+  text-align: center;
+}
+.img-size-50 img {
+  width: 50%;
+}
+@media screen and (max-width: 600px) {
+  .img-size-50 {
+    pointer-events: none;
+  }
+  .img-size-50 img {
+    width: 100%;
+  }
+}
+
+.yomiurimember {
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.lockicon {
+  height: 20px;
+  margin: -2px 0 0 0;
+}
+
+.linklist-photo {
+  display: block;
+  position: relative;
+}
+
+.linklist-menu-t {
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  padding: 4px 8px;
+  border-radius: 5px;
+  margin: 0 0 10px 0;
+}
+
+.linklist-photo-i {
+  margin-bottom: 20px;
+}
+
+.linklist-photo-img {
+  width: 100%;
+  height: 180px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+.linklist-photo-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 100%;
+     object-position: 50% 100%;
+}
+
+.linklist-menu-item span {
+  font-weight: 600;
+}
+.linklist-menu-item ul {
+  margin: 5px 0 0 0;
+}
+.linklist-menu-item li {
+  margin: 0 0 5px -15px;
+}
+
+.lockicon-list img {
+  height: 15px;
+}
+.lockicon-list p {
+  margin: 0;
+}
+
+.linklist-menu-item-head {
+  display: flex;
+  align-items: center;
+}
+
+.lockicon-list {
+  height: 20px;
+  margin: -3px 0 0 -3px;
+}
+
+.link-next {
+  margin-top: 20px;
+}
+
+.nextpage {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.nextbtn {
+  /*テキストの基点とするためrelativeを指定*/
+  position: relative;
+  /*ボタンの形状*/
+  border: 1px solid red;
+  border-radius: 5px;
+  min-width: 210px;
+  padding: 20px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  color: red;
+  outline: none;
+  /*アニメーションの指定*/
+  transition: all 0s;
+  /*hoverした際の変化*/
+  /*hoverするとテキストが入れ替わる設定*/
+}
+.nextbtn:hover {
+  background: red;
+  color: white;
+}
+.nextbtn span {
+  /*絶対配置でテキストの位置を決める*/
+  position: absolute;
+  font-weight: 600;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /*アニメーションの指定*/
+  transition: all 0.1s;
+  /*ブロック要素にしてテキスト折り返しなし*/
+  display: block;
+  white-space: nowrap;
+  /*差し替わるテキストの設定*/
+}
+.nextbtn span:nth-child(2) {
+  opacity: 0; /*透過0に*/
+}
+.nextbtn:hover span:nth-child(1) {
+  opacity: 0; /*透過0に*/
+}
+.nextbtn:hover span:nth-child(2) {
+  opacity: 1; /*不透明に*/
 }/*# sourceMappingURL=arimakinen-uma-style.css.map */

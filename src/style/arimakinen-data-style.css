@@ -8,7 +8,7 @@ body {
 .arimakinen {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica Neue, HelveticaNeue, Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
   font-size: 16px;
-  color: rgb(32, 32, 31);
+  color: #1e2428;
   background-color: white;
   margin: 0 16px;
 }
@@ -34,14 +34,14 @@ body {
 }
 .arimakinen-h2 {
   margin: 0 0 20px 0;
-  color: rgb(32, 32, 31);
+  color: #1e2428;
   text-align: left;
   font-size: 25px;
   font-weight: 900;
 }
 .arimakinen-h3 {
   margin: 0 0 20px 0;
-  color: rgb(32, 32, 31);
+  color: #1e2428;
   text-align: justify;
   font-size: 16px;
   font-weight: 500;
@@ -56,7 +56,7 @@ body {
 .arimakinen-h4 {
   font-size: 24px;
   font-weight: 800;
-  color: #ab973a;
+  color: #1e2428;
   text-align: center;
   margin: 0 auto 10px auto;
 }
@@ -90,8 +90,23 @@ body {
     flex-basis: calc(50% - 20px);
   }
 }
-.arimakinen-header {
-  margin: 0 auto 30px auto;
+.arimakinen .changebtn-po {
+  position: relative;
+}
+.arimakinen .lhr-c-btn {
+  z-index: 999;
+  border: none;
+  background-color: rgb(151, 126, 15);
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 4px 10px;
+  text-align: right;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .arimakinen {
