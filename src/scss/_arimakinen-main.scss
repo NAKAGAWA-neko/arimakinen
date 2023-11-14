@@ -144,22 +144,26 @@ body {
         right: 0;
       }
     }
+
+    // チャート
+    &-chart {
+      height: 500px;
+      margin: 0 0 50px 0;
+    }
+
+    &-chart-size350 {
+      height: 350px;
+      @media (min-width: 599px) {
+        height: 400px;
+      }
+    }
   }
 
-  &-chart90 {
+  &-chart-marginb90 {
     margin: 0 0 90px 0;
   }
 
   &-margin-t35 {
     margin: 35px 0 0 0;
   }
-
-  &-content-chart-size350 {
-    height: 350px;
-    @media (min-width: 599px) {
-      height: 400px;
-    }
-  }
 }
-
-// チャート

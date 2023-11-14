@@ -233,7 +233,187 @@ var arimaChartCyakujyun3Config = {
 };
 
 // 騎手優勝ランキング
-var arimaChartJockeyConfig = {
+var arimaChartJockey1Config = {
+  type: "bar",
+  data: {
+    labels: [
+      "池添謙一",
+      "武豊",
+      "田原成貴",
+      "O.ペリエ",
+      "岡部幸雄",
+      "C.ルメール",
+      "野平祐二",
+      "的場均",
+      "大崎昭一",
+      "加賀武見",
+      "保田隆芳",
+      "高松三太",
+      "蛯名正義",
+      "増沢末夫",
+    ],
+    datasets: [
+      {
+        label: "",
+        data: [4, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2],
+        backgroundColor: [
+          "rgba(171,151,58, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+        ],
+        // borderColor: ["rgba(171,151,58, 1)"],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    indexAxis: "y",
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        bodyFont: {
+          weight: "bold", // テキストを太字に設定
+        },
+        callbacks: {
+          title: function (tooltipItems) {
+            // X軸のラベルに「番人気」を追加してタイトルとして設定
+            return tooltipItems[0].label + "騎手";
+          },
+          label: function (context) {
+            // データの値に「頭」を追加してラベルとして設定
+            return context.raw + "回";
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          stepSize: 1, // X軸の目盛りを整数のみにする
+        },
+      },
+      y: {
+        grid: {
+          display: false, // 横軸のグリッド（縦線たち）を非表示
+        },
+        ticks: {
+          color: "#1e2428",
+          font: {
+            size: 14, // フォントサイズを14に設定
+            weight: "bold", // フォントを太字に設定
+          },
+        },
+      },
+    },
+  },
+};
+
+var arimaChartJockey2Config = {
+  type: "bar",
+  data: {
+    labels: [
+      "池添謙一",
+      "武豊",
+      "田原成貴",
+      "O.ペリエ",
+      "岡部幸雄",
+      "C.ルメール",
+      "野平祐二",
+      "的場均",
+      "大崎昭一",
+      "加賀武見",
+      "保田隆芳",
+      "高松三太",
+      "蛯名正義",
+      "増沢末夫",
+    ],
+    datasets: [
+      {
+        label: "",
+        data: [4, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2],
+        backgroundColor: [
+          "rgba(171,151,58, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+        ],
+        // borderColor: ["rgba(171,151,58, 1)"],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    indexAxis: "y",
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        bodyFont: {
+          weight: "bold", // テキストを太字に設定
+        },
+        callbacks: {
+          title: function (tooltipItems) {
+            // X軸のラベルに「番人気」を追加してタイトルとして設定
+            return tooltipItems[0].label + "騎手";
+          },
+          label: function (context) {
+            // データの値に「頭」を追加してラベルとして設定
+            return context.raw + "回";
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          stepSize: 1, // X軸の目盛りを整数のみにする
+        },
+      },
+      y: {
+        grid: {
+          display: false, // 横軸のグリッド（縦線たち）を非表示
+        },
+        ticks: {
+          color: "#1e2428",
+          font: {
+            size: 14, // フォントサイズを14に設定
+            weight: "bold", // フォントを太字に設定
+          },
+        },
+      },
+    },
+  },
+};
+
+var arimaChartJockey3Config = {
   type: "bar",
   data: {
     labels: [
@@ -326,7 +506,9 @@ var arimaChartJockeyConfig = {
 let arimaChartCyakujyun1 = null;
 let arimaChartCyakujyun2 = null;
 let arimaChartCyakujyun3 = null;
-let arimaChartJockey = null;
+let arimaChartJockey1 = null;
+let arimaChartJockey2 = null;
+let arimaChartJockey3 = null;
 
 // チャートを生成するための関数
 function generateChart(config, canvasId) {
@@ -342,8 +524,9 @@ function generateChart(config, canvasId) {
 arimaChartCyakujyun1 = generateChart(arimaChartCyakujyun1Config, "arimaChartCyakujyun1");
 arimaChartCyakujyun2 = generateChart(arimaChartCyakujyun2Config, "arimaChartCyakujyun2");
 arimaChartCyakujyun3 = generateChart(arimaChartCyakujyun3Config, "arimaChartCyakujyun3");
-arimaChartJockey = generateChart(arimaChartJockeyConfig, "arimaChartJockey");
-
+arimaChartJockey1 = generateChart(arimaChartJockey1Config, "arimaChartJockey1");
+arimaChartJockey2 = generateChart(arimaChartJockey2Config, "arimaChartJockey2");
+arimaChartJockey3 = generateChart(arimaChartJockey3Config, "arimaChartJockey3");
 // ウィンドウサイズの変更時にチャートを再描画
 window.addEventListener("resize", function () {
   if (arimaChartCyakujyun1) {
@@ -358,8 +541,16 @@ window.addEventListener("resize", function () {
     arimaChartCyakujyun3.destroy();
     arimaChartCyakujyun3 = generateChart(arimaChartCyakujyun3Config, "arimaChartCyakujyun3");
   }
-  if (arimaChartJockey) {
-    arimaChartJockey.destroy();
-    arimaChartJockey = generateChart(arimaChartJockeyConfig, "arimaChartJockey");
+  if (arimaChartJockey1) {
+    arimaChartJockey1.destroy();
+    arimaChartJockey1 = generateChart(arimaChartJockey1Config, "arimaChartJockey1");
+  }
+  if (arimaChartJockey2) {
+    arimaChartJockey2.destroy();
+    arimaChartJockey2 = generateChart(arimaChartJockey2Config, "arimaChartJockey2");
+  }
+  if (arimaChartJockey1) {
+    arimaChartJockey3.destroy();
+    arimaChartJockey3 = generateChart(arimaChartJockey3Config, "arimaChartJockey3");
   }
 });

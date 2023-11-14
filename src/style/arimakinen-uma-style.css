@@ -130,11 +130,9 @@ body {
   top: 50px;
   right: 0;
 }
-.arimakinen-chart90 {
-  margin: 0 0 90px 0;
-}
-.arimakinen-margin-t35 {
-  margin: 35px 0 0 0;
+.arimakinen-content-chart {
+  height: 500px;
+  margin: 0 0 50px 0;
 }
 .arimakinen-content-chart-size350 {
   height: 350px;
@@ -143,6 +141,12 @@ body {
   .arimakinen-content-chart-size350 {
     height: 400px;
   }
+}
+.arimakinen-chart-marginb90 {
+  margin: 0 0 90px 0;
+}
+.arimakinen-margin-t35 {
+  margin: 35px 0 0 0;
 }
 
 .arimakinen-header {
