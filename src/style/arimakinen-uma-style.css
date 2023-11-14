@@ -90,10 +90,10 @@ body {
     flex-basis: calc(50% - 20px);
   }
 }
-.arimakinen .changebtn-po {
+.arimakinen-content-change {
   position: relative;
 }
-.arimakinen .lhr-c-btn {
+.arimakinen-content-change-btn {
   z-index: 999;
   border: none;
   background-color: rgb(151, 126, 15);
@@ -105,8 +105,44 @@ body {
   text-align: right;
   cursor: pointer;
   position: absolute;
-  top: 0;
+  top: 50px;
   right: 0;
+}
+@media screen and (min-width: 599px) {
+  .arimakinen-content-change-btn {
+    top: 0;
+  }
+}
+.arimakinen-content-changenewline {
+  position: relative;
+}
+.arimakinen-content-changenewline-btn {
+  z-index: 999;
+  border: none;
+  background-color: rgb(151, 126, 15);
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 4px 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+.arimakinen-chart90 {
+  margin: 0 0 90px 0;
+}
+.arimakinen-margin-t35 {
+  margin: 35px 0 0 0;
+}
+.arimakinen-content-chart-size350 {
+  height: 350px;
+}
+@media (min-width: 599px) {
+  .arimakinen-content-chart-size350 {
+    height: 400px;
+  }
 }
 
 .arimakinen-header {
@@ -249,19 +285,6 @@ body {
 
 .cg_img_scroll-1100 {
   height: 1100px;
-}
-
-.content-chart {
-  margin-top: 10px;
-}
-
-.chartsize350 {
-  height: 350px;
-}
-@media (min-width: 599px) {
-  .chartsize350 {
-    height: 400px;
-  }
 }
 
 .justincase_border {

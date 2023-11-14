@@ -100,26 +100,66 @@ body {
     @media screen and (min-width: 599px) {
       flex-basis: calc(50% - 20px);
     }
+
+    // 切り替えボタン
+    &-change {
+      position: relative;
+
+      &-btn {
+        z-index: 999; // ここに追加
+        border: none;
+        background-color: ari.$c-gold-2;
+        font-size: 16px;
+        color: white;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 4px 10px;
+        text-align: right;
+        cursor: pointer;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        @media screen and (min-width: 599px) {
+          top: 0;
+        }
+      }
+    }
+
+    &-changenewline {
+      position: relative;
+
+      &-btn {
+        z-index: 999; // ここに追加
+        border: none;
+        background-color: ari.$c-gold-2;
+        font-size: 16px;
+        color: white;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 4px 10px;
+        // text-align: center;
+        cursor: pointer;
+        position: absolute;
+        top: 50px;
+        right: 0;
+      }
+    }
   }
 
-  // 切り替えボタン
-  .changebtn-po {
-    position: relative;
+  &-chart90 {
+    margin: 0 0 90px 0;
   }
 
-  .lhr-c-btn {
-    z-index: 999; // ここに追加
-    border: none;
-    background-color: ari.$c-gold-2;
-    font-size: 16px;
-    color: white;
-    font-weight: 600;
-    border-radius: 5px;
-    padding: 4px 10px;
-    text-align: right;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    right: 0;
+  &-margin-t35 {
+    margin: 35px 0 0 0;
+  }
+
+  &-content-chart-size350 {
+    height: 350px;
+    @media (min-width: 599px) {
+      height: 400px;
+    }
   }
 }
+
+// チャート
