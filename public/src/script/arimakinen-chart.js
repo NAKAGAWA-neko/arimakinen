@@ -25,7 +25,7 @@ var arimaChartCyakujyun1Config = {
           "rgba(0,136,71, 0.7)",
           "rgba(0,136,71, 0.7)",
         ],
-        hoverOffset: 5,
+        hoverOffset: 1,
       },
     ],
   },
@@ -103,7 +103,7 @@ var arimaChartCyakujyun2Config = {
           "rgba(0,136,71, 0.7)",
           "rgba(0,136,71, 0.7)",
         ],
-        hoverOffset: 5,
+        hoverOffset: 1,
       },
     ],
   },
@@ -232,7 +232,7 @@ var arimaChartCyakujyun3Config = {
   },
 };
 
-// 騎手優勝ランキング
+// 騎手優勝ランキング1
 var arimaChartJockey1Config = {
   type: "bar",
   data: {
@@ -322,30 +322,28 @@ var arimaChartJockey1Config = {
     },
   },
 };
-
+// 騎手優勝ランキング2
 var arimaChartJockey2Config = {
   type: "bar",
   data: {
     labels: [
-      "池添謙一",
       "武豊",
-      "田原成貴",
-      "O.ペリエ",
-      "岡部幸雄",
       "C.ルメール",
-      "野平祐二",
-      "的場均",
-      "大崎昭一",
-      "加賀武見",
-      "保田隆芳",
-      "高松三太",
-      "蛯名正義",
+      "野平好男",
+      "丸目敏栄",
+      "河内洋",
+      "横山典弘",
+      "佐藤哲三",
+      "横山富雄",
       "増沢末夫",
+      "加賀武見",
+      "加藤和宏",
+      "野平祐二",
     ],
     datasets: [
       {
         label: "",
-        data: [4, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2],
+        data: [8, 4, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2],
         backgroundColor: [
           "rgba(171,151,58, 0.7)",
           "rgba(0,136,71, 0.7)",
@@ -412,30 +410,15 @@ var arimaChartJockey2Config = {
     },
   },
 };
-
+// 騎手優勝ランキング3
 var arimaChartJockey3Config = {
   type: "bar",
   data: {
-    labels: [
-      "池添謙一",
-      "武豊",
-      "田原成貴",
-      "O.ペリエ",
-      "岡部幸雄",
-      "C.ルメール",
-      "野平祐二",
-      "的場均",
-      "大崎昭一",
-      "加賀武見",
-      "保田隆芳",
-      "高松三太",
-      "蛯名正義",
-      "増沢末夫",
-    ],
+    labels: ["松永昌博", "柴田政人", "大崎昭一", "加賀武見", "古山良司"],
     datasets: [
       {
         label: "",
-        data: [4, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2],
+        data: [3, 3, 3, 3, 3],
         backgroundColor: [
           "rgba(171,151,58, 0.7)",
           "rgba(0,136,71, 0.7)",

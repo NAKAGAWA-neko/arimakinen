@@ -26,6 +26,31 @@
         <h1 class="arimakinen-h1">
           <img src="/images/arimakinen-logo.jpg" alt="有馬記念" />
         </h1>
+        <div class="arimakinen-linkmenu">
+          <ul>
+            <li>
+              <a href="index.html"><img src="/images/arimakinen-h-menu-10dai.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="data.html"
+                ><img src="/public/images/arimakinen-h-menu-results.png" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="uma.html"><img src="/public/images/arimakinen-h-menu-uma.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="uma.html"
+                ><img src="/public/images/arimakinen-h-menu-jockey.png" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="uma.html"
+                ><img src="/public/images/arimakinen-h-menu-stallion.png" alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
         <h2 class="arimakinen-h2">出走馬ランキング</h2>
         <h3 class="arimakinen-h3">
           1956年に前身である「中山グランプリ」を当時の理事長の有馬頼寧氏が提案し行った。しかし翌年急逝、同氏の功績を称え「有馬記念」と改称。当時はファン投票による出走馬の選定方法も前例のないものだった。
@@ -44,32 +69,45 @@
 
           <!--馬体重 -->
           <div class="arimakinen-content">
-            <h4 class="arimakinen-h4">馬体重</h4>
-            <div class="arimakinen-content-container">
-              <img src="/images/arimakinen-uma-weight-1.png" alt="" />
+            <div class="arimakinen-content-changenewline">
+              <button class="arimakinen-content-changenewline-btn btnBataijyu">小さいのは？</button>
+            </div>
+
+            <div class="bataijyu-1">
+              <h4 class="arimakinen-h4">馬体重</h4>
+              <div class="arimakinen-content-container">
+                <img src="/images/arimakinen-uma-weight-1.png" alt="" />
+              </div>
+            </div>
+
+            <div class="bataijyu-2">
+              <h4 class="arimakinen-h4">馬体重</h4>
+              <div class="arimakinen-content-container">
+                <img src="/images/arimakinen-uma-weight-2.png" alt="" />
+              </div>
             </div>
           </div>
         </div>
 
         <!--1着馬は何番人気？ -->
-        <div class="arimakinen-content arimakinen-chart-marginb90">
+        <div class="arimakinen-content arimakinen-marginb90">
           <div class="arimakinen-content-change">
             <button class="arimakinen-content-change-btn btnCyakujyun">2着の人気は?</button>
           </div>
 
-          <div class="arimakinen-content-chart-size350 localheavyr-1">
+          <div class="arimakinen-content-chart-size350 cyakujyun-1">
             <h4 class="arimakinen-h4">1着は何番人気？</h4>
             <canvas id="arimaChartCyakujyun1"></canvas>
           </div>
 
           <!--2着馬は何番人気？ -->
-          <div class="arimakinen-content-chart-size350 localheavyr-2">
+          <div class="arimakinen-content-chart-size350 cyakujyun-2">
             <h4 class="arimakinen-h4">2着は何番人気？</h4>
             <canvas id="arimaChartCyakujyun2"></canvas>
           </div>
 
           <!--3着馬は何番人気？ -->
-          <div class="arimakinen-content-chart-size350 localheavyr-3">
+          <div class="arimakinen-content-chart-size350 cyakujyun-3">
             <h4 class="arimakinen-h4">3着は何番人気？</h4>
             <canvas id="arimaChartCyakujyun3"></canvas>
           </div>
@@ -82,29 +120,57 @@
               <button class="arimakinen-content-changenewline-btn btnJockey">2着の騎手は?</button>
             </div>
 
-            <div class="arimakinen-content-chart localheavyr-4">
+            <div class="arimakinen-content-chart JockeyR-1">
               <h4 class="arimakinen-h4">1着の騎手</h4>
-              <div class="arimakinen-margin-t35"></div>
+              <div class="arimakinen-margint35"></div>
               <canvas id="arimaChartJockey1"></canvas>
             </div>
 
-            <div class="arimakinen-content-chart localheavyr-5">
+            <div class="arimakinen-content-chart JockeyR-2">
               <h4 class="arimakinen-h4">2着の騎手</h4>
-              <div class="arimakinen-margin-t35"></div>
+              <div class="arimakinen-margint35"></div>
               <canvas id="arimaChartJockey2" height="500"></canvas>
             </div>
 
-            <div class="arimakinen-content-chart localheavyr-6">
+            <div class="arimakinen-content-chart JockeyR-3">
               <h4 class="arimakinen-h4">3着の騎手</h4>
-              <div class="arimakinen-margin-t35"></div>
+              <div class="arimakinen-margint35"></div>
               <canvas id="arimaChartJockey3" height="500"></canvas>
             </div>
           </div>
         </div>
+        <div class="arimakinen-marginb100 arimakinen-pcdisp-none"></div>
         <p class="arimakinen-credit">
           ※JRAのデータから。データは第67回まで。集計のないデータも含める
         </p>
       </main>
+      <footer>
+        <div class="arimakinen-linkmenu">
+          <ul>
+            <li>
+              <a href="index.html"><img src="/images/arimakinen-h-menu-10dai.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="data.html"
+                ><img src="/public/images/arimakinen-h-menu-results.png" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="uma.html"><img src="/public/images/arimakinen-h-menu-uma.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="uma.html"
+                ><img src="/public/images/arimakinen-h-menu-jockey.png" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="uma.html"
+                ><img src="/public/images/arimakinen-h-menu-stallion.png" alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </footer>
     </div>
 
     <script src="/src/script/arimakinen-chart.js"></script>

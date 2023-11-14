@@ -33,7 +33,7 @@ body {
   height: auto;
 }
 .arimakinen-h2 {
-  margin: 0 0 20px 0;
+  margin: 0 0 4px 0;
   color: #1e2428;
   text-align: left;
   font-size: 25px;
@@ -50,7 +50,7 @@ body {
 .arimakinen-credit {
   font-size: 14px;
   text-align: right;
-  margin: 5px 0 0 0;
+  margin: 5px 0 30px 0;
   line-height: 1.5;
 }
 .arimakinen-h4 {
@@ -70,6 +70,23 @@ body {
   background-repeat: no-repeat;
   vertical-align: middle;
   margin: 0 7px 7px 5px;
+}
+.arimakinen-linkmenu {
+  position: relative;
+  margin: 0 0 30px 0;
+}
+.arimakinen-linkmenu ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.arimakinen-linkmenu ul li {
+  width: 55px;
+}
+.arimakinen-linkmenu ul li img {
+  width: 100%;
 }
 @media screen and (min-width: 599px) {
   .arimakinen-content-group-pc-flex {
@@ -142,11 +159,22 @@ body {
     height: 400px;
   }
 }
-.arimakinen-chart-marginb90 {
+.arimakinen-marginb90 {
   margin: 0 0 90px 0;
 }
-.arimakinen-margin-t35 {
+.arimakinen-marginb100 {
+  margin: 0 0 100px 0;
+}
+.arimakinen-margint35 {
   margin: 35px 0 0 0;
+}
+.arimakinen-pcdisp-none {
+  display: block;
+}
+@media (min-width: 599px) {
+  .arimakinen-pcdisp-none {
+    display: none;
+  }
 }
 
 .arimakinen-header {
