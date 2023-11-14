@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html,
 body {
   margin: 0 auto;
@@ -183,122 +182,30 @@ body {
   }
 }
 
-.arimakinen {
-  /* アコーディオンのスタイル */
+.arimakinen-content-10dainews {
+  margin: 30px 0 0 0;
 }
-.arimakinen-accordion {
-  margin-bottom: 10px;
-  margin-right: -16px;
-}
-@media screen and (min-width: 599px) {
-  .arimakinen-accordion {
-    margin-right: 0;
-  }
-}
-.arimakinen-accordion-toggle {
-  padding: 0 10px;
-  position: relative;
-  display: flex;
-  align-items: baseline;
-}
-.arimakinen-accordion-icon {
-  /* 三角形の矢印を作るためのコード */
-  position: relative;
-  cursor: pointer;
-}
-.arimakinen-accordion-icon:before {
-  content: "";
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-top: -6px;
-  margin-right: 5px;
-  border-style: solid;
-  border-width: 15px 12px 0 12px;
-  border-color: #ab973a transparent transparent transparent;
-  vertical-align: middle;
-  transition: transform 0.3s ease;
-}
-.arimakinen-accordion-icon.active:before {
-  /* アクティブな状態のとき（下向き矢印） */
-  transform: rotate(180deg);
-}
-.arimakinen-times {
-  color: #ab973a;
-  font-size: 20px;
-  font-weight: bolder;
-  cursor: pointer;
-  width: 100px;
-}
-.arimakinen-times-number {
-  font-size: 39px;
+.arimakinen-content-10dainews-title {
+  margin: -10px 0 0 0;
   font-family: "Kanit", sans-serif;
-  padding: 0 5px;
-  vertical-align: -4%;
+  font-weight: 800;
+  color: #ab973a;
+  font-size: 50px;
+  text-align: center;
 }
-.arimakinen-date {
-  font-size: 16px;
-  color: #5f5f55;
-  font-weight: 500;
-  padding-left: 10px;
+.arimakinen-content-10dainews-title span {
+  font-size: 14px;
 }
-.arimakinen-table {
-  width: 100%;
-  position: relative;
-  box-sizing: border-box;
-}
-.arimakinen-table-bar {
-  position: absolute;
-  overflow-x: auto;
-  top: -5px;
-  left: 0;
+.arimakinen-content-10dainews-bar {
+  margin: -10px 0 0 0;
   width: 100%;
   height: 8px;
   box-sizing: border-box;
-  background: repeating-linear-gradient(-45deg, #ab973a, #ab973a 3px, white 3px, white 6px);
+  background: repeating-linear-gradient(-45deg, #008847, #008847 2px, white 3px, white 6px);
 }
-.arimakinen-table-scrollcontainer {
+.arimakinen-content-10dainews-box {
   width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.arimakinen-table-scrollcontainer .horsename {
-  font-weight: bold;
-}
-.arimakinen-table-scrollcontainer .center-text {
-  text-align: center;
-}
-.arimakinen-table-scrollcontainer th,
-.arimakinen-table-scrollcontainer td {
-  white-space: nowrap;
-}
-.arimakinen-table-scrollcontainer th {
-  font-weight: 500;
-  font-size: 12px;
-}
-.arimakinen-table-scrollcontainer th,
-.arimakinen-table-scrollcontainer table {
-  border-bottom: 2px solid #d3d2c4;
-}
-.arimakinen-table-scrollcontainer td {
-  border-bottom: 1px dashed #d3d2c4;
-}
-.arimakinen-table-scrollcontainer table {
-  border-collapse: collapse;
-  font-size: 14px;
-}
-.arimakinen-table-scrollcontainer td {
-  padding: 5px 5px;
-}
-.arimakinen-table-scrollcontainer .waku {
-  background-color: rgb(249, 242, 227);
-}
-.arimakinen-table-scrollcontainer .rank {
-  font-family: "Kanit", sans-serif;
-  color: #ab973a;
-}
-.arimakinen-table-scrollcontainer .arimakinen-accordion-content {
-  display: none;
-  padding: 16px 0;
-  border-top: none;
-}/*# sourceMappingURL=arimakinen-data-style.css.map */
+  height: 300px;
+  background-color: #008847;
+  border-radius: 0 0 5px 5px;
+}/*# sourceMappingURL=arimakinen-10dainews.css.map */

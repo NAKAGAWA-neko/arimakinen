@@ -55,9 +55,10 @@ body {
 
   &-credit {
     font-size: 14px;
-    text-align: right;
+    text-align: left;
     margin: 5px 0 30px 0;
     line-height: 1.5;
+    font-style: italic;
   }
 
   // コンテンツタイトル
@@ -92,6 +93,9 @@ body {
       list-style: none;
       display: flex;
       justify-content: space-between;
+      @media screen and (min-width: 599px) {
+        margin: 0 150px;
+      }
       li {
         width: 55px;
         img {
@@ -101,7 +105,7 @@ body {
     }
   }
 
-  &-content-group-pc-flex {
+  &-group-pcflex {
     @media screen and (min-width: 599px) {
       display: flex;
       justify-content: space-between;
