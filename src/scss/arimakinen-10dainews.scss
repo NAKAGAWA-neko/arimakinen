@@ -33,13 +33,108 @@
           white 6px
         );
       }
-      &-box {
-        width: 100%;
-        height: 300px;
+
+      &-head {
+        position: relative;
+        margin: 0 0;
         background-color: ari.$c-green-1;
 
-        border-radius: 0 0 5px 5px;
+        &-btn {
+          z-index: 999; // ここに追加
+          border: none;
+          background-color: white;
+          font-size: 16px;
+          color: ari.$c-main-black;
+          font-weight: 600;
+          border-radius: 5px;
+          padding: 0 8px;
+          text-align: right;
+          cursor: pointer;
+          position: absolute;
+          right: 16px;
+          top: 18px;
+        }
+      }
+      &-news {
+        display: block;
+        background-color: ari.$c-green-1;
+        border-radius: 0 0 10px 10px;
+
+        &-title {
+          font-size: 26px;
+          font-weight: bolder;
+          color: white;
+
+          padding: 10px 0 0 16px;
+        }
       }
     }
   }
+
+  &-10dainews-table {
+    width: 100%; // 親要素のパディングやボーダーを考慮した値に調整
+    position: relative;
+    box-sizing: border-box; // パディングとボーダーを幅に含める
+
+    &-scrollcontainer {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; // iOSデバイスのスムーズなスクロールのための設定
+      padding: 0 0 10px 0;
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 16px;
+        color: white;
+        font-weight: 700;
+        margin: 3px 16px 0 16px;
+      }
+
+      th {
+        display: none;
+      }
+
+      tr {
+        border-bottom: 1px solid #caeca6;
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      td {
+        padding: 5px 2px;
+      }
+
+      .arimakinen-accordion-content {
+        display: none;
+        padding: 16px 0;
+        border-top: none;
+      }
+    }
+    &-link {
+      color: white;
+      font-size: 16px;
+
+      text-align: right;
+      padding: 0 16px 8px 0;
+
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+.arimakinen-circle-number {
+  display: inline-block;
+  width: 24px; /* 丸の大きさを調整 */
+  height: 24px;
+  line-height: 23px; /* テキストを垂直中央に配置 */
+  text-align: center;
+  border-radius: 50%; /* 丸形状 */
+  background-color: #82bf40; /* 背景色 */
+  color: white; /* テキスト色 */
+  font-family: "Kanit", sans-serif;
+  margin-left: 3px;
 }

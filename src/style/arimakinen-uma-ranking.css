@@ -180,113 +180,144 @@ body {
   }
 }
 
-.arimakinen-content-10dainews {
-  margin: 30px 0 0 0;
+.arimakinen-header {
+  margin: 0 auto 30px auto;
 }
-.arimakinen-content-10dainews-title {
-  margin: -10px 0 0 0;
-  font-family: "Kanit", sans-serif;
-  font-weight: 800;
-  color: #ab973a;
-  font-size: 50px;
-  text-align: center;
-}
-.arimakinen-content-10dainews-title span {
-  font-size: 14px;
-}
-.arimakinen-content-10dainews-bar {
-  margin: -10px 0 0 0;
-  width: 100%;
-  height: 8px;
-  box-sizing: border-box;
-  background: repeating-linear-gradient(-45deg, #008847, #008847 2px, white 3px, white 6px);
-}
-.arimakinen-content-10dainews-head {
+
+.changebtn-po {
   position: relative;
-  margin: 0 0;
-  background-color: #008847;
 }
-.arimakinen-content-10dainews-head-btn {
+
+.changebtn,
+#change-ty-btn,
+.lhr-c-btn {
   z-index: 999;
   border: none;
-  background-color: white;
+  background-color: red;
   font-size: 16px;
-  color: #1e2428;
+  color: black;
   font-weight: 600;
   border-radius: 5px;
-  padding: 0 8px;
+  padding: 2px 4px;
   text-align: right;
   cursor: pointer;
   position: absolute;
-  right: 16px;
-  top: 18px;
-}
-.arimakinen-content-10dainews-news {
-  display: block;
-  background-color: #008847;
-  border-radius: 0 0 10px 10px;
-}
-.arimakinen-content-10dainews-news-title {
-  font-size: 26px;
-  font-weight: bolder;
-  color: white;
-  padding: 10px 0 0 16px;
-}
-.arimakinen-10dainews-table {
-  width: 100%;
-  position: relative;
-  box-sizing: border-box;
-}
-.arimakinen-10dainews-table-scrollcontainer {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 0 10px 0;
-}
-.arimakinen-10dainews-table-scrollcontainer table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 16px;
-  color: white;
-  font-weight: 700;
-  margin: 3px 16px 0 16px;
-}
-.arimakinen-10dainews-table-scrollcontainer th {
-  display: none;
-}
-.arimakinen-10dainews-table-scrollcontainer tr {
-  border-bottom: 1px solid #caeca6;
-}
-.arimakinen-10dainews-table-scrollcontainer tr:last-child {
-  border-bottom: none;
-}
-.arimakinen-10dainews-table-scrollcontainer td {
-  padding: 5px 2px;
-}
-.arimakinen-10dainews-table-scrollcontainer .arimakinen-accordion-content {
-  display: none;
-  padding: 16px 0;
-  border-top: none;
-}
-.arimakinen-10dainews-table-link {
-  color: white;
-  font-size: 16px;
-  text-align: right;
-  padding: 0 16px 8px 0;
-}
-.arimakinen-10dainews-table-link a {
-  color: white;
+  top: 0;
+  right: 0;
 }
 
-.arimakinen-circle-number {
-  display: inline-block;
-  width: 24px; /* 丸の大きさを調整 */
-  height: 24px;
-  line-height: 23px; /* テキストを垂直中央に配置 */
-  text-align: center;
-  border-radius: 50%; /* 丸形状 */
-  background-color: #82bf40; /* 背景色 */
-  color: white; /* テキスト色 */
-  font-family: "Kanit", sans-serif;
-  margin-left: 3px;
-}/*# sourceMappingURL=arimakinen-10dainews.css.map */
+#change-ty-btn {
+  top: 10px;
+}
+
+@media screen and (min-width: 599px) {
+  .typhoon-item-main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+table.typhoon-table {
+  margin: 0 auto;
+  width: 100%;
+  border: none;
+  text-align: left;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+table.typhoon-table th {
+  background-color: gray;
+  border-radius: 3px 0 0 3px;
+  padding: 4px 10px;
+  width: 0;
+  white-space: nowrap;
+  color: white;
+  line-height: 1.3;
+}
+table.typhoon-table td {
+  line-height: 1.3;
+}
+table.typhoon-table td span {
+  padding: 4px 10px;
+  background-color: white;
+}
+
+/*アコーディオン全体*/
+.typhoon-item {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+}
+@media screen and (min-width: 599px) {
+  .typhoon-item {
+    flex-basis: calc(50% - 10px);
+  }
+}
+.typhoon-item img {
+  width: 100%;
+}
+
+/*アコーディオンタイトル*/
+.typhoon-item-title {
+  background-color: black;
+  margin-top: 16px;
+  border-radius: 10px 0 0 0;
+  position: relative; /*+マークの位置基準とするためrelative指定*/
+  cursor: pointer;
+  transition: all 0.5s ease;
+  /*アイコンの＋と×*/
+  /*　closeというクラスがついたら形状変化　*/
+}
+.typhoon-item-title P {
+  color: white;
+  padding: 4px 8px 4px 14px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.typhoon-item-title::before, .typhoon-item-title::after {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 3px;
+  background-color: red;
+}
+.typhoon-item-title::before {
+  top: 48%;
+  right: 15px;
+  transform: rotate(0deg);
+}
+.typhoon-item-title::after {
+  top: 48%;
+  right: 15px;
+  transform: rotate(90deg);
+}
+.typhoon-item-title.close::before {
+  transform: rotate(45deg);
+}
+.typhoon-item-title.close::after {
+  transform: rotate(-45deg);
+}
+
+/*アコーディオンで現れるエリア*/
+.typhoon-item-box {
+  background: white;
+}
+
+.ty-hr-adjustment-1 {
+  margin-bottom: 50px;
+}
+
+.ty-hr-adjustment-2 {
+  margin-bottom: 80px;
+}
+@media screen and (max-width: 550px) {
+  .ty-hr-adjustment-2 {
+    margin-bottom: 120px;
+  }
+}
+@media screen and (max-width: 365px) {
+  .ty-hr-adjustment-2 {
+    margin-bottom: 140px;
+  }
+}/*# sourceMappingURL=arimakinen-uma-ranking.css.map */

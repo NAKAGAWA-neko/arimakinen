@@ -146,12 +146,8 @@ body {
           top: 0;
         }
       }
-    }
 
-    &-changenewline {
-      position: relative;
-
-      &-btn {
+      &-newlinebtn {
         z-index: 999; // ここに追加
         border: none;
         background-color: ari.$c-gold-2;

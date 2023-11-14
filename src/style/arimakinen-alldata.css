@@ -136,10 +136,7 @@ body {
     top: 0;
   }
 }
-.arimakinen-content-changenewline {
-  position: relative;
-}
-.arimakinen-content-changenewline-btn {
+.arimakinen-content-change-newlinebtn {
   z-index: 999;
   border: none;
   background-color: rgb(151, 126, 15);
@@ -223,6 +220,11 @@ body {
   /* アクティブな状態のとき（下向き矢印） */
   transform: rotate(180deg);
 }
+.arimakinen-accordion-content {
+  display: none;
+  padding: 16px 0;
+  border-top: none;
+}
 .arimakinen-times {
   color: #ab973a;
   font-size: 20px;
@@ -296,9 +298,4 @@ body {
 .arimakinen-table-scrollcontainer .rank {
   font-family: "Kanit", sans-serif;
   color: #ab973a;
-}
-.arimakinen-table-scrollcontainer .arimakinen-accordion-content {
-  display: none;
-  padding: 16px 0;
-  border-top: none;
-}/*# sourceMappingURL=arimakinen-data-style.css.map */
+}/*# sourceMappingURL=arimakinen-alldata.css.map */

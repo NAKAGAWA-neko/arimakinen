@@ -40,6 +40,11 @@
         transform: rotate(180deg); // 180度回転
       }
     }
+    &-content {
+      display: none;
+      padding: 16px 0;
+      border-top: none;
+    }
   }
 
   &-times {
@@ -132,11 +137,6 @@
       .rank {
         font-family: "Kanit", sans-serif;
         color: ari.$c-gold-1;
-      }
-      .arimakinen-accordion-content {
-        display: none;
-        padding: 16px 0;
-        border-top: none;
       }
     }
   }
