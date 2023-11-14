@@ -47,7 +47,7 @@
           color: ari.$c-main-black;
           font-weight: 600;
           border-radius: 5px;
-          padding: 0 8px;
+          padding: 2px 10px;
           text-align: right;
           cursor: pointer;
           position: absolute;
@@ -83,12 +83,13 @@
       padding: 0 0 10px 0;
 
       table {
-        width: 100%;
+        width: 95%;
         border-collapse: collapse;
         font-size: 16px;
         color: white;
         font-weight: 700;
-        margin: 3px 16px 0 16px;
+        margin: 3px 10px 0 10px;
+        margin-right: 20px;
       }
 
       th {
