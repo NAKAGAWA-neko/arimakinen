@@ -8,10 +8,7 @@ export default defineConfig({
         main: "./index.html",
         data: "./data.html",
         uma: "./uma.html",
-        // scenario: "./bousai_scenario.html",
-        // typhoonrain: "./typhoon_heavyrain.html",
-        // volcanic: "./volcanic_eruption.html",
-        // evacuation: "./bousai_evacuation.html",
+        jockey: "./jockey.html",
       },
       output: {
         dir: "dist",

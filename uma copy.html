@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="/src/style/arimakinen-uma.css" />
+    <link rel="stylesheet" href="/src/style/arimakinen-uma-ranking.css" />
 
     <!-- googlefont -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,9 +57,8 @@
         </h3>
       </header>
 
-      <!-- mainコンテンツ -->
+      <!-- 出走回数 -->
       <main class="arimakinen-main">
-        <!-- 出走回数 -->
         <div class="arimakinen-group-pcflex">
           <div class="arimakinen-content">
             <h4 class="arimakinen-h4">出走回数</h4>
@@ -67,11 +66,25 @@
               <img src="/images/arimakinen-uma-numberofraces.png" alt="" />
             </div>
           </div>
-          <!-- 出走馬別、性別・年齢 -->
+
+          <!--馬体重 -->
           <div class="arimakinen-content">
-            <h4 class="arimakinen-h4">性別と年齢</h4>
-            <div class="flourish-embed flourish-hierarchy" data-src="visualisation/15753794">
-              <script src="https://public.flourish.studio/resources/embed.js"></script>
+            <div class="arimakinen-content-changenewline">
+              <button class="arimakinen-content-changenewline-btn btnBataijyu">小さいのは？</button>
+            </div>
+
+            <div class="bataijyu-1">
+              <h4 class="arimakinen-h4">馬体重</h4>
+              <div class="arimakinen-content-container">
+                <img src="/images/arimakinen-uma-weight-1.png" alt="" />
+              </div>
+            </div>
+
+            <div class="bataijyu-2">
+              <h4 class="arimakinen-h4">馬体重</h4>
+              <div class="arimakinen-content-container">
+                <img src="/images/arimakinen-uma-weight-2.png" alt="" />
+              </div>
             </div>
           </div>
         </div>
@@ -100,31 +113,35 @@
           </div>
         </div>
 
+        <!--騎手 -->
         <div class="arimakinen-group-pcflex">
-          <!--馬体重 -->
           <div class="arimakinen-content">
             <div class="arimakinen-content-change">
-              <button class="arimakinen-content-change-newlinebtn btnBataijyu">小さいのは？</button>
+              <button class="arimakinen-content-change-newlinebtn btnJockey">2着の騎手は?</button>
             </div>
 
-            <div class="bataijyu-1">
-              <h4 class="arimakinen-h4">馬体重</h4>
-              <div class="arimakinen-content-container">
-                <img src="/images/arimakinen-uma-weight-1.png" alt="" />
-              </div>
+            <div class="arimakinen-content-chart JockeyR-1">
+              <h4 class="arimakinen-h4">1着の騎手</h4>
+              <div class="arimakinen-margint35"></div>
+              <canvas id="arimaChartJockey1"></canvas>
             </div>
 
-            <div class="bataijyu-2">
-              <h4 class="arimakinen-h4">馬体重</h4>
-              <div class="arimakinen-content-container">
-                <img src="/images/arimakinen-uma-weight-2.png" alt="" />
-              </div>
+            <div class="arimakinen-content-chart JockeyR-2">
+              <h4 class="arimakinen-h4">2着の騎手</h4>
+              <div class="arimakinen-margint35"></div>
+              <canvas id="arimaChartJockey2" height="500"></canvas>
+            </div>
+
+            <div class="arimakinen-content-chart JockeyR-3">
+              <h4 class="arimakinen-h4">3着の騎手</h4>
+              <div class="arimakinen-margint35"></div>
+              <canvas id="arimaChartJockey3" height="500"></canvas>
             </div>
           </div>
         </div>
         <div class="arimakinen-marginb100 arimakinen-pcdisp-none"></div>
         <p class="arimakinen-credit">
-          ※JRAのデータから。データは第67回まで。一部のデータがない年（回）もある。馬の年齢は2001年度に数え年から満年齢に変更。
+          ※JRAのデータから。データは第67回まで。一部のデータがない年（回）もある。馬の年齢は2001年度から数え年から満年齢に変更。
         </p>
       </main>
       <footer>
@@ -150,7 +167,7 @@
       </footer>
     </div>
 
-    <script src="/src/script/arimakinen-chart-uma.js"></script>
-    <script src="/src/script/arimakinen-switching-uma.js"></script>
+    <script src="/src/script/arimakinen-chart.js"></script>
+    <script src="/src/script/arimakinen-switching.js"></script>
   </body>
 </html>
