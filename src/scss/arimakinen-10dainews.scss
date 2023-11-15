@@ -34,6 +34,12 @@
         );
       }
 
+      &-back {
+        background-color: ari.$c-green-1;
+        border-radius: 0 0 10px 10px;
+        padding-bottom: 10px;
+      }
+
       &-head {
         position: relative;
         margin: 0 0;
@@ -68,60 +74,84 @@
           padding: 10px 0 0 16px;
         }
       }
+
+      // 有馬データ
+      &-arimadata {
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+
+        &-title {
+          font-size: 20px;
+          font-weight: bold;
+          color: ari.$c-gold-1;
+          text-align: center;
+          line-height: 20px;
+
+          span {
+            font-size: 14px;
+            color: ari.$c-main-black;
+            line-height: 14px;
+            font-weight: normal;
+          }
+        }
+      }
     }
-  }
 
-  &-10dainews-table {
-    width: 100%; // 親要素のパディングやボーダーを考慮した値に調整
-    position: relative;
-    box-sizing: border-box; // パディングとボーダーを幅に含める
+    &-10dainewstable {
+      width: 100%; // 親要素のパディングやボーダーを考慮した値に調整
+      position: relative;
+      box-sizing: border-box; // パディングとボーダーを幅に含める
 
-    &-scrollcontainer {
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch; // iOSデバイスのスムーズなスクロールのための設定
-      // padding: 0 0 10px 0;
+      &-scrollcontainer {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; // iOSデバイスのスムーズなスクロールのための設定
+        // padding: 0 0 10px 0;
 
-      table {
-        width: 95%;
-        margin: 10px auto 0;
-        border-collapse: collapse;
-        font-size: 16px;
-        color: white;
-        font-weight: 700;
-        // margin: 3px 10px 0 10px;
-      }
+        table {
+          width: 95%;
+          margin: 10px auto 0;
+          border-collapse: collapse;
+          font-size: 16px;
+          color: white;
+          font-weight: 700;
+          // margin: 3px 10px 0 10px;
+        }
 
-      th {
-        display: none;
-      }
+        th {
+          display: none;
+        }
 
-      tr {
-        border-bottom: 1px solid #caeca6;
-        &:last-child {
-          border-bottom: none;
+        tr {
+          border-bottom: 1px solid #caeca6;
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+
+        td {
+          padding: 5px 2px;
+        }
+
+        .arimakinen-accordion-content {
+          display: none;
+          padding: 16px 0;
+          border-top: none;
         }
       }
 
-      td {
-        padding: 5px 2px;
-      }
-
-      .arimakinen-accordion-content {
-        display: none;
-        padding: 16px 0;
-        border-top: none;
-      }
-    }
-    &-link {
-      color: white;
-      font-size: 16px;
-
-      text-align: right;
-      padding: 0 16px 8px 0;
-
-      a {
+      &-link {
         color: white;
+        font-size: 16px;
+
+        text-align: right;
+        padding: 0 16px 8px 0;
+
+        a {
+          color: white;
+        }
       }
     }
   }

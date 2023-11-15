@@ -66,42 +66,57 @@
             <div class="arimakinen-content-10dainews">
               <div class="arimakinen-content-10dainews-title">2022<span>年</span></div>
               <div class="arimakinen-content-10dainews-bar"></div>
-
-              <div class="arimakinen-content-10dainews-head">
-                <button class="arimakinen-content-10dainews-head-btn changeBtn10dainews">
-                  海外
-                </button>
-              </div>
-
-              <div class="arimakinen-content-10dainews-news">
-                <div class="arimakinen-content-10dainews-1-1">
-                  <div class="arimakinen-content-10dainews-news-title">日本の10大ニュース</div>
-                  <div class="arimakinen-10dainews-table">
-                    <div class="arimakinen-10dainews-table-scrollcontainer">
-                      <table id="kokunai-2022"></table>
+              <!-- ボタン -->
+              <div class="arimakinen-content-10dainews-back">
+                <div class="arimakinen-content-10dainews-head">
+                  <button class="arimakinen-content-10dainews-head-btn changeBtn10dainews">
+                    海外
+                  </button>
+                </div>
+                <!-- ニュース内容 -->
+                <div class="arimakinen-content-10dainews-news">
+                  <!-- 日本 -->
+                  <div class="arimakinen-content-10dainews-1-1">
+                    <div class="arimakinen-content-10dainews-news-title">日本の10大ニュース</div>
+                    <div class="arimakinen-content-10dainewstable">
+                      <div class="arimakinen-content-10dainewstable-scrollcontainer">
+                        <table id="kokunai-2022"></table>
+                      </div>
+                      <div class="arimakinen-content-10dainewstable-link">
+                        <a
+                          href="https://www.yomiuri.co.jp/feature/top10news/20221223-OYT8T50087/"
+                          target="_blank"
+                          >詳しくはこちらから</a
+                        >
+                      </div>
                     </div>
-                    <div class="arimakinen-10dainews-table-link">
-                      <a
-                        href="https://www.yomiuri.co.jp/feature/top10news/20221223-OYT8T50087/"
-                        target="_blank"
-                        >詳しくはこちらから</a
-                      >
+                  </div>
+                  <!-- 海外 -->
+                  <div class="arimakinen-content-10dainews-1-2">
+                    <div class="arimakinen-content-10dainews-news-title">海外の10大ニュース</div>
+                    <div class="arimakinen-content-10dainewstable">
+                      <div class="arimakinen-content-10dainewstable-scrollcontainer">
+                        <table id="kaigai-2022"></table>
+                      </div>
+                      <div class="arimakinen-content-10dainewstable-link">
+                        <a href="https://www.yomiuri.co.jp/feature/top10news/20221223-OYT8T50087/"
+                          >詳しくはこちらから</a
+                        >
+                      </div>
                     </div>
                   </div>
                 </div>
-
-                <div class="arimakinen-content-10dainews-1-2">
-                  <div class="arimakinen-content-10dainews-news-title">海外の10大ニュース</div>
-                  <div class="arimakinen-10dainews-table">
-                    <div class="arimakinen-10dainews-table-scrollcontainer">
-                      <table id="kaigai-2022"></table>
+                <div class="arimakinen-content-10dainews-arimadata">
+                  <div class="arimakinen-content-10dainews-arimadata-title">
+                    第67回有馬記念 結果<br /><span>2022年12月00日</span>
+                  </div>
+                  <!-- <div class="arimakinen-table">
+                    <div class="arimakinen-table-bar"></div>
+                    <div class="arimakinen-table-scrollcontainer">
+                      <div class="arimakinen-accordion-content">
+                        <table id="arimakinen-2022"></table> -->
+                      </div>
                     </div>
-                    <div class="arimakinen-10dainews-table-link">
-                      <a href="https://www.yomiuri.co.jp/feature/top10news/20221223-OYT8T50087/"
-                        >詳しくはこちらから</a
-                      >
-                    </div>
-                    <div class="arimakinen-10dainews-table-arimadata"></div>
                   </div>
                 </div>
               </div>
@@ -117,5 +132,6 @@
     </div>
     <script src="/src/script/arimakinen-10dainews.js"></script>
     <script src="/src/script/arimakinen-data-10dainews.js"></script>
+    <script src="/src/script/arimakinen-data.js"></script>
   </body>
 </html>

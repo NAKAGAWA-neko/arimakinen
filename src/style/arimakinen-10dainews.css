@@ -201,6 +201,11 @@ body {
   box-sizing: border-box;
   background: repeating-linear-gradient(-45deg, #008847, #008847 2px, white 3px, white 6px);
 }
+.arimakinen-content-10dainews-back {
+  background-color: #008847;
+  border-radius: 0 0 10px 10px;
+  padding-bottom: 10px;
+}
 .arimakinen-content-10dainews-head {
   position: relative;
   margin: 0 0;
@@ -232,17 +237,36 @@ body {
   color: white;
   padding: 10px 0 0 16px;
 }
-.arimakinen-10dainews-table {
+.arimakinen-content-10dainews-arimadata {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+.arimakinen-content-10dainews-arimadata-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ab973a;
+  text-align: center;
+  line-height: 20px;
+}
+.arimakinen-content-10dainews-arimadata-title span {
+  font-size: 14px;
+  color: #1e2428;
+  line-height: 14px;
+  font-weight: normal;
+}
+.arimakinen-content-10dainewstable {
   width: 100%;
   position: relative;
   box-sizing: border-box;
 }
-.arimakinen-10dainews-table-scrollcontainer {
+.arimakinen-content-10dainewstable-scrollcontainer {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
-.arimakinen-10dainews-table-scrollcontainer table {
+.arimakinen-content-10dainewstable-scrollcontainer table {
   width: 95%;
   margin: 10px auto 0;
   border-collapse: collapse;
@@ -250,30 +274,30 @@ body {
   color: white;
   font-weight: 700;
 }
-.arimakinen-10dainews-table-scrollcontainer th {
+.arimakinen-content-10dainewstable-scrollcontainer th {
   display: none;
 }
-.arimakinen-10dainews-table-scrollcontainer tr {
+.arimakinen-content-10dainewstable-scrollcontainer tr {
   border-bottom: 1px solid #caeca6;
 }
-.arimakinen-10dainews-table-scrollcontainer tr:last-child {
+.arimakinen-content-10dainewstable-scrollcontainer tr:last-child {
   border-bottom: none;
 }
-.arimakinen-10dainews-table-scrollcontainer td {
+.arimakinen-content-10dainewstable-scrollcontainer td {
   padding: 5px 2px;
 }
-.arimakinen-10dainews-table-scrollcontainer .arimakinen-accordion-content {
+.arimakinen-content-10dainewstable-scrollcontainer .arimakinen-accordion-content {
   display: none;
   padding: 16px 0;
   border-top: none;
 }
-.arimakinen-10dainews-table-link {
+.arimakinen-content-10dainewstable-link {
   color: white;
   font-size: 16px;
   text-align: right;
   padding: 0 16px 8px 0;
 }
-.arimakinen-10dainews-table-link a {
+.arimakinen-content-10dainewstable-link a {
   color: white;
 }
 
