@@ -80,16 +80,16 @@
       width: 100%;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch; // iOSデバイスのスムーズなスクロールのための設定
-      padding: 0 0 10px 0;
+      // padding: 0 0 10px 0;
 
       table {
         width: 95%;
+        margin: 10px auto 0;
         border-collapse: collapse;
         font-size: 16px;
         color: white;
         font-weight: 700;
-        margin: 3px 10px 0 10px;
-        margin-right: 20px;
+        // margin: 3px 10px 0 10px;
       }
 
       th {

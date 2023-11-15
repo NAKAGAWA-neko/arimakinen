@@ -241,16 +241,14 @@ body {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 0 0 10px 0;
 }
 .arimakinen-10dainews-table-scrollcontainer table {
   width: 95%;
+  margin: 10px auto 0;
   border-collapse: collapse;
   font-size: 16px;
   color: white;
   font-weight: 700;
-  margin: 3px 10px 0 10px;
-  margin-right: 20px;
 }
 .arimakinen-10dainews-table-scrollcontainer th {
   display: none;
