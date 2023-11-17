@@ -22,10 +22,24 @@
   </head>
   <body>
     <div class="arimakinen">
+      <!-- header -->
       <header class="arimakinen-header">
-        <h1 class="arimakinen-h1">
-          <img src="/images/arimakinen-logo-pc.jpg" alt="有馬記念" />
-        </h1>
+        <div class="arimakinen-header-wrapper">
+          <div class="hamburger"><span></span> <span></span> <span></span></div>
+          <h1>
+            <a href=""><img src="/images/arima-header-title.png" alt="第68回有馬記念" /></a>
+          </h1>
+          <img
+            class="arimakinen-header-wrapper-illust"
+            src="/images/arima-header-illust.png"
+            alt=""
+          />
+        </div>
+        <div class="arimakinen-header-shiba"></div>
+        <div class="arimakinen-header-green">
+          <h2><img src="/images/arima-header-h2.png" alt="夕刊WeeklyKeiba スペシャル特集" /></h2>
+        </div>
+
         <div class="arimakinen-linkmenu">
           <ul>
             <li>
@@ -40,7 +54,7 @@
               <a href="uma.html"><img src="/public/images/arimakinen-h-menu-uma.png" alt="" /></a>
             </li>
             <li>
-              <a href="uma.html"
+              <a href="jockey.html"
                 ><img src="/public/images/arimakinen-h-menu-jockey.png" alt=""
               /></a>
             </li>
@@ -51,10 +65,10 @@
             </li>
           </ul>
         </div>
-        <h2 class="arimakinen-h2">有馬記念 歴代成績</h2>
-        <h3 class="arimakinen-h3">
+        <h3>有馬記念 歴代成績</h3>
+        <h4>
           1956年に「中山グランプリ」を当時の理事長の有馬頼寧氏が提案し行った。しかし翌年急逝、同氏の功績を称え第2回からは「有馬記念」と改称。当時はファン投票による出走馬の選定方法も前例のないものだった。
-        </h3>
+        </h4>
       </header>
       <main class="arimakinen-main">
         <!-- データ -->
@@ -1316,6 +1330,8 @@
         </div>
       </main>
     </div>
+
+    <script src="/src/script/arimakinen-header.js"></script>
     <script src="/src/script/arimakinen-data.js"></script>
     <script src="/src/script/arimakinen-accordion.js"></script>
   </body>

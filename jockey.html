@@ -22,10 +22,24 @@
   </head>
   <body>
     <div class="arimakinen">
+      <!-- header -->
       <header class="arimakinen-header">
-        <h1 class="arimakinen-h1">
-          <img src="/images/arimakinen-logo.jpg" alt="有馬記念" />
-        </h1>
+        <div class="arimakinen-header-wrapper">
+          <div class="hamburger"><span></span> <span></span> <span></span></div>
+          <h1>
+            <a href=""><img src="/images/arima-header-title.png" alt="第68回有馬記念" /></a>
+          </h1>
+          <img
+            class="arimakinen-header-wrapper-illust"
+            src="/images/arima-header-illust.png"
+            alt=""
+          />
+        </div>
+        <div class="arimakinen-header-shiba"></div>
+        <div class="arimakinen-header-green">
+          <h2><img src="/images/arima-header-h2.png" alt="夕刊WeeklyKeiba スペシャル特集" /></h2>
+        </div>
+
         <div class="arimakinen-linkmenu">
           <ul>
             <li>
@@ -51,10 +65,10 @@
             </li>
           </ul>
         </div>
-        <h2 class="arimakinen-h2">騎手ランキング</h2>
-        <h3 class="arimakinen-h3">
+        <h3>騎手ランキング</h3>
+        <h4>
           1956年に「中山グランプリ」を当時の理事長の有馬頼寧氏が提案し行った。しかし翌年急逝、同氏の功績を称え第2回からは「有馬記念」と改称。当時はファン投票による出走馬の選定方法も前例のないものだった。
-        </h3>
+        </h4>
       </header>
       <!-- mainコンテンツ -->
       <main class="arimakinen-main">
@@ -66,19 +80,19 @@
             </div>
 
             <div class="arimakinen-content-chart JockeyR-1">
-              <h4 class="arimakinen-h4">1着の騎手</h4>
+              <h5>1着の騎手</h5>
               <div class="arimakinen-margint35"></div>
               <canvas id="arimaChartJockey1"></canvas>
             </div>
 
             <div class="arimakinen-content-chart JockeyR-2">
-              <h4 class="arimakinen-h4">2着の騎手</h4>
+              <h5>2着の騎手</h5>
               <div class="arimakinen-margint35"></div>
               <canvas id="arimaChartJockey2" height="500"></canvas>
             </div>
 
             <div class="arimakinen-content-chart JockeyR-3">
-              <h4 class="arimakinen-h4">3着の騎手</h4>
+              <h5>3着の騎手</h5>
               <div class="arimakinen-margint35"></div>
               <canvas id="arimaChartJockey3" height="500"></canvas>
             </div>
@@ -86,12 +100,12 @@
         </div>
         <!-- credit -->
         <div class="arimakinen-marginb100 arimakinen-pcdisp-none"></div>
-        <p class="arimakinen-credit">
-          ※JRAのデータから。データは第67回まで。一部のデータがない年（回）もある。馬の年齢は2001年度に数え年から満年齢に変更。
-        </p>
       </main>
       <!-- footer -->
       <footer>
+        <p class="arimakinen-footer-credit">
+          ※JRAのデータから。データは第67回まで。一部のデータがない年（回）もある。馬の年齢は2001年度に数え年から満年齢に変更。
+        </p>
         <div class="arimakinen-linkmenu">
           <ul>
             <li>
@@ -113,7 +127,9 @@
         </div>
       </footer>
     </div>
+    <!-- arimakinen終了 -->
 
+    <script src="/src/script/arimakinen-header.js"></script>
     <script src="/src/script/arimakinen-chart-jockey.js"></script>
     <script src="/src/script/arimakinen-switching-jockey.js"></script>
   </body>

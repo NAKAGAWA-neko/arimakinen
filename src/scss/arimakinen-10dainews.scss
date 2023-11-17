@@ -1,171 +1,265 @@
-@use "arimakinen-color" as ari;
-@use "arimakinen-main";
+@use "color" as ari;
+@use "main";
+@use "header";
+@use "footer";
 
-.arimakinen {
-  &-content {
-    &-10dainews {
-      margin: 30px 0 0 0;
+.arimakinen-content {
+  &-10dainews {
+    margin: -20px 0 0 0;
+
+    &-title {
+      margin: -10px 0 0 0;
+      font-family: "Kanit", sans-serif;
+      font-weight: 800;
+      color: ari.$c-gold-1;
+      font-size: 50px;
+
+      text-align: center;
+
+      span {
+        font-size: 14px;
+      }
+    }
+
+    &-bar {
+      margin: -10px 0 0 0;
+      width: 100%;
+      height: 8px;
+      box-sizing: border-box; // パディングとボーダーを高さに含める
+      background: repeating-linear-gradient(
+        -45deg,
+        ari.$c-green-1,
+        ari.$c-green-1 2px,
+        white 3px,
+        white 6px
+      );
+    }
+
+    &-main {
+      background-color: ari.$c-green-1;
+      border-radius: 0 0 10px 10px;
+      padding-bottom: 10px;
+    }
+
+    &-head {
+      position: relative;
+      margin: 0 0;
+      background-color: ari.$c-green-1;
+
+      &-btn {
+        z-index: 999; // ここに追加
+        border: none;
+        background-color: white;
+        font-size: 16px;
+        color: ari.$c-main-black;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 2px 10px;
+        text-align: right;
+        cursor: pointer;
+        position: absolute;
+        right: 16px;
+        top: 18px;
+      }
+    }
+    &-news {
+      display: block;
+      background-color: ari.$c-green-1;
+      border-radius: 0 0 10px 10px;
 
       &-title {
-        margin: -10px 0 0 0;
-        font-family: "Kanit", sans-serif;
-        font-weight: 800;
-        color: ari.$c-gold-1;
-        font-size: 50px;
+        font-size: 26px;
+        font-weight: bolder;
+        color: white;
 
+        padding: 10px 0 0 16px;
+      }
+      &-table {
+        width: 100%; // 親要素のパディングやボーダーを考慮した値に調整
+        position: relative;
+        box-sizing: border-box; // パディングとボーダーを幅に含める
+
+        &-scrollcontainer {
+          width: 100%;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch; // iOSデバイスのスムーズなスクロールのための設定
+          // padding: 0 0 10px 0;
+
+          table {
+            width: 95%;
+            margin: 10px auto 0;
+            border-collapse: collapse;
+            font-size: 16px;
+            color: white;
+            font-weight: 700;
+            // margin: 3px 10px 0 10px;
+          }
+
+          th {
+            display: none;
+          }
+
+          tr {
+            border-bottom: 1px solid #caeca6;
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+
+          td {
+            padding: 5px 2px;
+          }
+
+          .arimakinen-accordion-content {
+            display: none;
+            padding: 16px 0;
+            border-top: none;
+          }
+        }
+
+        &-link {
+          color: white;
+          font-size: 16px;
+
+          text-align: right;
+          padding: 0 16px 8px 0;
+
+          a {
+            color: white;
+          }
+        }
+
+        &-circle-number {
+          display: inline-block;
+          width: 24px; /* 丸の大きさを調整 */
+          height: 24px;
+          line-height: 23px; /* テキストを垂直中央に配置 */
+          text-align: center;
+          border-radius: 50%; /* 丸形状 */
+          background-color: #82bf40; /* 背景色 */
+          color: white; /* テキスト色 */
+          font-family: "Kanit", sans-serif;
+          margin-left: 3px;
+        }
+      }
+    }
+
+    // 有馬データ
+    &-arimadata {
+      background-color: white;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px;
+
+      &-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: ari.$c-gold-1;
         text-align: center;
+        line-height: 21px;
+        margin-bottom: 10px;
 
         span {
           font-size: 14px;
-        }
-      }
-
-      &-bar {
-        margin: -10px 0 0 0;
-        width: 100%;
-        height: 8px;
-        box-sizing: border-box; // パディングとボーダーを高さに含める
-        background: repeating-linear-gradient(
-          -45deg,
-          ari.$c-green-1,
-          ari.$c-green-1 2px,
-          white 3px,
-          white 6px
-        );
-      }
-
-      &-back {
-        background-color: ari.$c-green-1;
-        border-radius: 0 0 10px 10px;
-        padding-bottom: 10px;
-      }
-
-      &-head {
-        position: relative;
-        margin: 0 0;
-        background-color: ari.$c-green-1;
-
-        &-btn {
-          z-index: 999; // ここに追加
-          border: none;
-          background-color: white;
-          font-size: 16px;
           color: ari.$c-main-black;
-          font-weight: 600;
-          border-radius: 5px;
-          padding: 2px 10px;
-          text-align: right;
-          cursor: pointer;
-          position: absolute;
-          right: 16px;
-          top: 18px;
+          font-weight: normal;
         }
       }
-      &-news {
-        display: block;
-        background-color: ari.$c-green-1;
-        border-radius: 0 0 10px 10px;
+      &-table {
+        width: 100%; // 親要素のパディングやボーダーを考慮した値に調整
+        position: relative;
+        box-sizing: border-box; // パディングとボーダーを幅に含める
 
-        &-title {
-          font-size: 26px;
-          font-weight: bolder;
-          color: white;
+        &-scrollcontainer {
+          width: 100%;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch; // iOSデバイスのスムーズなスクロールのための設定
 
-          padding: 10px 0 0 16px;
-        }
-      }
-
-      // 有馬データ
-      &-arimadata {
-        background-color: white;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 10px;
-
-        &-title {
-          font-size: 20px;
-          font-weight: bold;
-          color: ari.$c-gold-1;
-          text-align: center;
-          line-height: 20px;
-
-          span {
+          table {
+            border-collapse: collapse;
             font-size: 14px;
-            color: ari.$c-main-black;
-            line-height: 14px;
-            font-weight: normal;
+            width: 100%;
+            margin: 0 auto;
+          }
+
+          th,
+          td {
+            white-space: nowrap;
+          }
+
+          th {
+            font-weight: 500;
+            font-size: 11px;
+          }
+
+          th,
+          table {
+            border-bottom: 2px solid ari.$c-l-gray-1;
+          }
+
+          td {
+            border-bottom: 1px dashed ari.$c-l-gray-1;
+          }
+
+          td {
+            padding: 5px 5px;
+          }
+          .column-1,
+          column-2,
+          column-3,
+          column-5 {
+            text-align: center;
+          }
+
+          .column-1 {
+            font-family: "Kanit", sans-serif;
+            color: ari.$c-gold-1;
+            font-weight: bold;
+            font-size: 16px;
+          }
+          .column-4 {
+            font-weight: bold;
           }
         }
       }
     }
 
-    &-10dainewstable {
-      width: 100%; // 親要素のパディングやボーダーを考慮した値に調整
-      position: relative;
-      box-sizing: border-box; // パディングとボーダーを幅に含める
+    &-others {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 10px;
 
-      &-scrollcontainer {
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch; // iOSデバイスのスムーズなスクロールのための設定
-        // padding: 0 0 10px 0;
-
-        table {
-          width: 95%;
-          margin: 10px auto 0;
-          border-collapse: collapse;
-          font-size: 16px;
-          color: white;
-          font-weight: 700;
-          // margin: 3px 10px 0 10px;
-        }
-
-        th {
-          display: none;
-        }
-
-        tr {
-          border-bottom: 1px solid #caeca6;
-          &:last-child {
-            border-bottom: none;
-          }
-        }
-
-        td {
-          padding: 5px 2px;
-        }
-
-        .arimakinen-accordion-content {
-          display: none;
-          padding: 16px 0;
-          border-top: none;
-        }
+      &-kanji,
+      &-buzzword {
+        background-color: ari.$c-cream;
+        border-radius: 5px;
+        // flex-basis: calc(50% - 6px);
       }
 
-      &-link {
-        color: white;
-        font-size: 16px;
+      &-kanji {
+        width: 30%;
+        margin-right: 10px;
+      }
 
-        text-align: right;
-        padding: 0 16px 8px 0;
+      &-buzzword {
+        width: 70%;
+      }
+      .others-title {
+        font-size: 14px;
+        text-align: center;
+        font-weight: bold;
+        color: ari.$c-gold-2;
+        padding: 6px 0;
+        margin: 0 6px;
+        border-bottom: 1px solid ari.$c-gold-2;
+      }
+      .others-answer {
+        font-size: 18px;
+        text-align: center;
+        font-weight: bolder;
 
-        a {
-          color: white;
-        }
+        padding: 6px;
       }
     }
   }
-}
-
-.arimakinen-circle-number {
-  display: inline-block;
-  width: 24px; /* 丸の大きさを調整 */
-  height: 24px;
-  line-height: 23px; /* テキストを垂直中央に配置 */
-  text-align: center;
-  border-radius: 50%; /* 丸形状 */
-  background-color: #82bf40; /* 背景色 */
-  color: white; /* テキスト色 */
-  font-family: "Kanit", sans-serif;
-  margin-left: 3px;
 }

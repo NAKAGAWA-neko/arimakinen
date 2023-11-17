@@ -22,54 +22,68 @@
   </head>
   <body>
     <div class="arimakinen">
-      <header class="arimakinen-header">
-        <h1 class="arimakinen-h1">
-          <img src="/images/arimakinen-logo.jpg" alt="有馬記念" />
+     <!-- header -->
+     <header class="arimakinen-header">
+      <div class="arimakinen-header-wrapper">
+        <div class="hamburger"><span></span> <span></span> <span></span></div>
+        <h1>
+          <a href=""><img src="/images/arima-header-title.png" alt="第68回有馬記念" /></a>
         </h1>
-        <div class="arimakinen-linkmenu">
-          <ul>
-            <li>
-              <a href="index.html"><img src="/images/arimakinen-h-menu-10dai.png" alt="" /></a>
-            </li>
-            <li>
-              <a href="data.html"
-                ><img src="/public/images/arimakinen-h-menu-results.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="uma.html"><img src="/public/images/arimakinen-h-menu-uma.png" alt="" /></a>
-            </li>
-            <li>
-              <a href="jockey.html"
-                ><img src="/public/images/arimakinen-h-menu-jockey.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="uma.html"
-                ><img src="/public/images/arimakinen-h-menu-stallion.png" alt=""
-              /></a>
-            </li>
-          </ul>
-        </div>
-        <h2 class="arimakinen-h2">出走馬ランキング</h2>
-        <h3 class="arimakinen-h3">
-          1956年に「中山グランプリ」を当時の理事長の有馬頼寧氏が提案し行った。しかし翌年急逝、同氏の功績を称え第2回からは「有馬記念」と改称。当時はファン投票による出走馬の選定方法も前例のないものだった。
-        </h3>
-      </header>
+        <img
+          class="arimakinen-header-wrapper-illust"
+          src="/images/arima-header-illust.png"
+          alt=""
+        />
+      </div>
+      <div class="arimakinen-header-shiba"></div>
+      <div class="arimakinen-header-green">
+        <h2><img src="/images/arima-header-h2.png" alt="夕刊WeeklyKeiba スペシャル特集" /></h2>
+      </div>
+
+      <div class="arimakinen-linkmenu">
+        <ul>
+          <li>
+            <a href="index.html"><img src="/images/arimakinen-h-menu-10dai.png" alt="" /></a>
+          </li>
+          <li>
+            <a href="data.html"
+              ><img src="/public/images/arimakinen-h-menu-results.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href="uma.html"><img src="/public/images/arimakinen-h-menu-uma.png" alt="" /></a>
+          </li>
+          <li>
+            <a href="jockey.html"
+              ><img src="/public/images/arimakinen-h-menu-jockey.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href="uma.html"
+              ><img src="/public/images/arimakinen-h-menu-stallion.png" alt=""
+            /></a>
+          </li>
+        </ul>
+      </div>
+      <h3>有馬記念 歴代成績</h3>
+      <h4>
+        1956年に「中山グランプリ」を当時の理事長の有馬頼寧氏が提案し行った。しかし翌年急逝、同氏の功績を称え第2回からは「有馬記念」と改称。当時はファン投票による出走馬の選定方法も前例のないものだった。
+      </h4>
+    </header>
 
       <!-- mainコンテンツ -->
-      <main class="arimakinen-main">
+       <main class="arimakinen-main">
         <!-- 出走回数 -->
         <div class="arimakinen-group-pcflex">
           <div class="arimakinen-content">
-            <h4 class="arimakinen-h4">出走回数</h4>
+            <h5>出走回数</h4>
             <div class="arimakinen-content-container">
               <img src="/images/arimakinen-uma-numberofraces.png" alt="" />
             </div>
           </div>
           <!-- 出走馬別、性別・年齢 -->
           <div class="arimakinen-content">
-            <h4 class="arimakinen-h4">性別と年齢</h4>
+            <h5>性別と年齢</h4>
             <div class="flourish-embed flourish-hierarchy" data-src="visualisation/15753794">
               <script src="https://public.flourish.studio/resources/embed.js"></script>
             </div>
@@ -83,19 +97,19 @@
           </div>
 
           <div class="arimakinen-content-chart-size350 cyakujyun-1">
-            <h4 class="arimakinen-h4">1着は何番人気？</h4>
+            <h5>1着は何番人気？</h4>
             <canvas id="arimaChartCyakujyun1"></canvas>
           </div>
 
           <!--2着馬は何番人気？ -->
           <div class="arimakinen-content-chart-size350 cyakujyun-2">
-            <h4 class="arimakinen-h4">2着は何番人気？</h4>
+            <h5>2着は何番人気？</h4>
             <canvas id="arimaChartCyakujyun2"></canvas>
           </div>
 
           <!--3着馬は何番人気？ -->
           <div class="arimakinen-content-chart-size350 cyakujyun-3">
-            <h4 class="arimakinen-h4">3着は何番人気？</h4>
+            <h5>3着は何番人気？</h4>
             <canvas id="arimaChartCyakujyun3"></canvas>
           </div>
         </div>
@@ -108,14 +122,14 @@
             </div>
 
             <div class="bataijyu-1">
-              <h4 class="arimakinen-h4">馬体重</h4>
+              <h5>馬体重</h4>
               <div class="arimakinen-content-container">
                 <img src="/images/arimakinen-uma-weight-1.png" alt="" />
               </div>
             </div>
 
             <div class="bataijyu-2">
-              <h4 class="arimakinen-h4">馬体重</h4>
+              <h5>馬体重</h4>
               <div class="arimakinen-content-container">
                 <img src="/images/arimakinen-uma-weight-2.png" alt="" />
               </div>
@@ -123,7 +137,7 @@
           </div>
         </div>
         <div class="arimakinen-marginb100 arimakinen-pcdisp-none"></div>
-        <p class="arimakinen-credit">
+        <p class="arimakinen-footer-credit">
           ※JRAのデータから。データは第67回まで。一部のデータがない年（回）もある。馬の年齢は2001年度に数え年から満年齢に変更。
         </p>
       </main>
@@ -150,6 +164,7 @@
       </footer>
     </div>
 
+    <script src="/src/script/arimakinen-header.js"></script>
     <script src="/src/script/arimakinen-chart-uma.js"></script>
     <script src="/src/script/arimakinen-switching-uma.js"></script>
   </body>

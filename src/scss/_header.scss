@@ -1,0 +1,181 @@
+@use "color" as ari;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.arimakinen-header {
+  width: 100%;
+  max-width: 724px;
+  margin: 20px auto 40px auto;
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 72px;
+    margin-bottom: 6px;
+
+    @media (max-width: 599px) {
+      height: 50px;
+      margin-bottom: 2px;
+    }
+
+    .hamburger {
+      display: inline-block;
+      cursor: pointer;
+      padding: 22px 30px;
+      width: 168px;
+
+      @media (max-width: 599px) {
+        padding: 15px 20px;
+        width: 80px;
+      }
+
+      span {
+        display: block;
+        width: 49px;
+        height: 4px;
+        margin-bottom: 8px;
+        position: relative;
+        background: #000;
+        border-radius: 3px;
+        z-index: 1;
+        transition: all 0.3s ease-in-out;
+
+        @media (max-width: 599px) {
+          width: 30px;
+          height: 3px;
+          margin-bottom: 5px;
+        }
+
+        &:first-child {
+          transform-origin: 0% 0%;
+          background-color: ari.$c-green-h;
+        }
+
+        &:last-child {
+          transform-origin: 0% 100%;
+          background-color: ari.$c-green-h;
+        }
+
+        &:nth-child(2) {
+          background-color: ari.$c-gold-h;
+        }
+      }
+
+      &.is-active {
+        span {
+          &:first-child {
+            transform: rotate(45deg) translateY(-10px) translateX(7px) scaleX(0.86);
+
+            @media (max-width: 599px) {
+              transform: rotate(45deg) translateY(-3px);
+            }
+          }
+
+          &:last-child {
+            transform: rotate(-45deg) translateY(10px) translateX(7px) scaleX(0.86);
+
+            @media (max-width: 599px) {
+              transform: rotate(-45deg) translateY(3px);
+            }
+          }
+
+          &:nth-child(2) {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    h1 img {
+      width: 300px;
+
+      @media (max-width: 599px) {
+        width: 200px;
+      }
+    }
+
+    &-illust {
+      width: 168px;
+      height: 80px;
+      position: relative;
+      bottom: -6px;
+      // z-index: -9;
+      margin-left: 10px;
+
+      @media (max-width: 599px) {
+        width: 80px;
+        height: 38px;
+        bottom: -19px;
+      }
+    }
+  }
+
+  &-shiba {
+    width: 100%;
+    height: 10px;
+    background-image: url("/images/shiba.png");
+    background-size: auto 10px;
+    background-position: bottom;
+    background-repeat: repeat-x;
+
+    @media (max-width: 599px) {
+      height: 6px;
+      background-size: auto 6px;
+    }
+  }
+
+  &-green {
+    width: 100%;
+    height: 60px;
+    background-color: ari.$c-green-h;
+    border-radius: 0 0 30px 30px;
+    position: relative;
+
+    @media (max-width: 599px) {
+      height: 44px;
+      border-radius: 0 0 22px 22px;
+    }
+
+    h2 {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      img {
+        height: 32px;
+
+        @media (max-width: 599px) {
+          width: 320px;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  //ページタイトル
+  h3 {
+    margin: 0 0 4px 0;
+    color: ari.$c-main-black;
+    text-align: left;
+    font-size: 30px;
+    font-weight: bolder;
+  }
+
+  // リード
+  h4 {
+    margin: 0 0 20px 0;
+    color: ari.$c-main-black;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+}

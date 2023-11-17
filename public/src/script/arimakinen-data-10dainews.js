@@ -1,10 +1,4 @@
-// /**
-//  * CSVファイルをロードして指定されたHTML要素にテーブルとして表示する関数です。
-//  * @param {string} csvFilePath - ロードするCSVファイルのパス
-//  * @param {string} containerId - テーブルを挿入するHTML要素のID
-//  */
-
-function loadAndDisplayCSV(csvFilePath, containerId) {
+function loadAndDisplay10daiCSV(csvFilePath, containerId) {
   // CSVファイルをフェッチしてテキストとして取得します。
   fetch(csvFilePath)
     .then((response) => response.text())
@@ -32,7 +26,7 @@ function loadAndDisplayCSV(csvFilePath, containerId) {
             // '位'という文字を取り除きます。
             cellContent = cellContent.replace(/位/, "");
             // 数字を丸で囲むためのspan要素を追加します。
-            cellContent = `<span class="arimakinen-circle-number">${cellContent}</span>`;
+            cellContent = `<span class="arimakinen-content-10dainews-news-table-circle-number">${cellContent}</span>`;
           }
 
           rowHTML += `<td>${cellContent}</td>`;
@@ -55,68 +49,95 @@ function loadAndDisplayCSV(csvFilePath, containerId) {
 }
 
 // この関数をグローバルスコープに公開し、HTMLからアクセス可能にします。
-window.loadAndDisplayCSV = loadAndDisplayCSV;
+window.loadAndDisplay10daiCSV = loadAndDisplay10daiCSV;
+
+function loadAndDisplay10daiArimaCSV(csvFilePath, containerId) {
+  fetch(csvFilePath)
+    .then((response) => response.text())
+    .then((csvString) => {
+      const data = Papa.parse(csvString, { header: true, skipEmptyLines: true }).data;
+
+      // 指定された列のヘッダー名を取得します。
+      const headers = Object.keys(data[0]);
+      const selectedColumns = [0, 1, 2, 3, 4, 6]; // 列のインデックス（0始まり）
+      let tableHTML = "<thead><tr>";
+
+      // 選択されたヘッダーのみを表示します。
+      selectedColumns.forEach((index) => {
+        tableHTML += `<th>${headers[index]}</th>`;
+      });
+      tableHTML += "</tr></thead><tbody>";
+
+      // 指定された行のみを処理します（最初の4行）。
+      for (let i = 0; i < Math.min(data.length, 3); i++) {
+        let row = data[i];
+        let rowHTML = "<tr>";
+        selectedColumns.forEach((index, colNumber) => {
+          let cellContent = row[headers[index]];
+          // 2列目のセルに特別なクラスを適用します。
+          let cellClass = colNumber === 1 ? `column-2 cell-${i + 1}` : `column-${colNumber + 1}`;
+          rowHTML += `<td class="${cellClass}">${cellContent}</td>`;
+        });
+        rowHTML += "</tr>";
+        tableHTML += rowHTML;
+      }
+
+      tableHTML += "</tbody>";
+      document.getElementById(containerId).innerHTML = tableHTML;
+    })
+    .catch((error) => {
+      console.error("Error loading or parsing CSV: ", error);
+      document.getElementById(containerId).innerHTML = "<p>Error loading data.</p>";
+    });
+}
+
+window.loadAndDisplay10daiArimaCSV = loadAndDisplay10daiArimaCSV;
 
 // CSVファイルをページロード時に自動的に読み込むための関数
 function init() {
-  loadAndDisplayCSV("/src/data/kokunai-2022.csv", "kokunai-2022");
-  // loadAndDisplayCSV("/src/data/kokunai-2021.csv", "kokunai-2021");
-  // loadAndDisplayCSV("/src/data/kokunai-2020.csv", "kokunai-2020");
-  // loadAndDisplayCSV("/src/data/kokunai-2019.csv", "kokunai-2019");
-  // loadAndDisplayCSV("/src/data/kokunai-2018.csv", "kokunai-2018");
-  // loadAndDisplayCSV("/src/data/kokunai-2017.csv", "kokunai-2017");
-  // loadAndDisplayCSV("/src/data/kokunai-2016.csv", "kokunai-2016");
-  // loadAndDisplayCSV("/src/data/kokunai-2015.csv", "kokunai-2015");
-  // loadAndDisplayCSV("/src/data/kokunai-2014.csv", "kokunai-2014");
-  // loadAndDisplayCSV("/src/data/kokunai-2013.csv", "kokunai-2013");
-  // loadAndDisplayCSV("/src/data/kokunai-2012.csv", "kokunai-2012");
-  // loadAndDisplayCSV("/src/data/kokunai-2011.csv", "kokunai-2011");
-  // loadAndDisplayCSV("/src/data/kokunai-2010.csv", "kokunai-2010");
-  // loadAndDisplayCSV("/src/data/kokunai-2009.csv", "kokunai-2009");
-  // loadAndDisplayCSV("/src/data/kokunai-2008.csv", "kokunai-2008");
-  // loadAndDisplayCSV("/src/data/kokunai-2007.csv", "kokunai-2007");
-  // loadAndDisplayCSV("/src/data/kokunai-2006.csv", "kokunai-2006");
-  // loadAndDisplayCSV("/src/data/kokunai-2005.csv", "kokunai-2005");
-  // loadAndDisplayCSV("/src/data/kokunai-2004.csv", "kokunai-2004");
-  // loadAndDisplayCSV("/src/data/kokunai-2003.csv", "kokunai-2003");
-  // loadAndDisplayCSV("/src/data/kokunai-2002.csv", "kokunai-2002");
-  // loadAndDisplayCSV("/src/data/kokunai-2001.csv", "kokunai-2001");
-  // loadAndDisplayCSV("/src/data/kokunai-2000.csv", "kokunai-2000");
-  // loadAndDisplayCSV("/src/data/kokunai-1999.csv", "kokunai-1999");
-  // loadAndDisplayCSV("/src/data/kokunai-1998.csv", "kokunai-1998");
-  // loadAndDisplayCSV("/src/data/kokunai-1997.csv", "kokunai-1997");
-  // loadAndDisplayCSV("/src/data/kokunai-1996.csv", "kokunai-1996");
-  // loadAndDisplayCSV("/src/data/kokunai-1995.csv", "kokunai-1995");
+  // 国内
+  for (let year = 2022; year >= 1996; year--) {
+    let csvFilePath = `/src/data/kokunai-${year}.csv`;
+    let containerId = `kokunai-${year}`;
+    loadAndDisplay10daiCSV(csvFilePath, containerId);
+  }
 
   //海外
-  loadAndDisplayCSV("/src/data/kaigai-2022.csv", "kaigai-2022");
-  // loadAndDisplayCSV("/src/data/kaigai-2021.csv", "kaigai-2021");
-  // loadAndDisplayCSV("/src/data/kaigai-2020.csv", "kaigai-2020");
-  // loadAndDisplayCSV("/src/data/kaigai-2019.csv", "kaigai-2019");
-  // loadAndDisplayCSV("/src/data/kaigai-2018.csv", "kaigai-2018");
-  // loadAndDisplayCSV("/src/data/kaigai-2017.csv", "kaigai-2017");
-  // loadAndDisplayCSV("/src/data/kaigai-2016.csv", "kaigai-2016");
-  // loadAndDisplayCSV("/src/data/kaigai-2015.csv", "kaigai-2015");
-  // loadAndDisplayCSV("/src/data/kaigai-2014.csv", "kaigai-2014");
-  // loadAndDisplayCSV("/src/data/kaigai-2013.csv", "kaigai-2013");
-  // loadAndDisplayCSV("/src/data/kaigai-2012.csv", "kaigai-2012");
-  // loadAndDisplayCSV("/src/data/kaigai-2011.csv", "kaigai-2011");
-  // loadAndDisplayCSV("/src/data/kaigai-2010.csv", "kaigai-2010");
-  // loadAndDisplayCSV("/src/data/kaigai-2009.csv", "kaigai-2009");
-  // loadAndDisplayCSV("/src/data/kaigai-2008.csv", "kaigai-2008");
-  // loadAndDisplayCSV("/src/data/kaigai-2007.csv", "kaigai-2007");
-  // loadAndDisplayCSV("/src/data/kaigai-2006.csv", "kaigai-2006");
-  // loadAndDisplayCSV("/src/data/kaigai-2005.csv", "kaigai-2005");
-  // loadAndDisplayCSV("/src/data/kaigai-2004.csv", "kaigai-2004");
-  // loadAndDisplayCSV("/src/data/kaigai-2003.csv", "kaigai-2003");
-  // loadAndDisplayCSV("/src/data/kaigai-2002.csv", "kaigai-2002");
-  // loadAndDisplayCSV("/src/data/kaigai-2001.csv", "kaigai-2001");
-  // loadAndDisplayCSV("/src/data/kaigai-2000.csv", "kaigai-2000");
-  // loadAndDisplayCSV("/src/data/kaigai-1999.csv", "kaigai-1999");
-  // loadAndDisplayCSV("/src/data/kaigai-1998.csv", "kaigai-1998");
-  // loadAndDisplayCSV("/src/data/kaigai-1997.csv", "kaigai-1997");
-  // loadAndDisplayCSV("/src/data/kaigai-1996.csv", "kaigai-1996");
-  // loadAndDisplayCSV("/src/data/kaigai-1995.csv", "kaigai-1995");
+  for (let year = 2022; year >= 1996; year--) {
+    let csvFilePath = `/src/data/kaigai-${year}.csv`;
+    let containerId = `kaigai-${year}`;
+    loadAndDisplay10daiCSV(csvFilePath, containerId);
+  }
+
+  // 有馬記念結果
+  // 1997年から2022年までの各年についてループを実行
+  for (let year = 2022; year >= 1997; year--) {
+    let csvFilePath = `/src/data/arimakinen-${year}.csv`;
+    let containerId = `arimakinen-10dai-${year}`;
+    loadAndDisplay10daiArimaCSV(csvFilePath, containerId);
+  }
+
+  // 漢字と流行語
+  fetch("/src/data/kanji-buzz.csv")
+    .then((response) => response.text())
+    .then((text) => {
+      Papa.parse(text, {
+        complete: function (results) {
+          // 最初の年から最後の年までループ
+          for (let year = 2022; year >= 2001; year--) {
+            // CSVデータの各行に対してループ
+            for (let col = 1; col <= 2; col++) {
+              let row = 2022 - year; // 行インデックスの計算
+              let elementId = `${year}-${col}`; // 要素のIDを生成
+              let cellData = results.data[row][col]; // CSVデータからセルの値を取得
+
+              // HTML要素にデータを設定
+              document.getElementById(elementId).textContent = cellData;
+            }
+          }
+        },
+      });
+    });
 }
 // ページが完全にロードされたらinit関数を呼び出す
 document.addEventListener("DOMContentLoaded", init);

@@ -1,7 +1,12 @@
-@use "arimakinen-color" as ari;
-@use "arimakinen-main";
+@use "color" as ari;
+@use "main";
+@use "header";
+@use "footer";
 
 .arimakinen {
+  &-alldata {
+    margin: -20px 0 0 0;
+  }
   /* アコーディオンのスタイル */
   &-accordion {
     margin-bottom: 10px;
