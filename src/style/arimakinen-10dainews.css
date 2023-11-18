@@ -77,18 +77,22 @@ body {
   width: 100%;
   margin: 0 0 50px 0;
 }
-.arimakinen-content img {
-  width: 100%;
-}
 @media screen and (min-width: 599px) {
   .arimakinen-content {
     flex-basis: calc(50% - 20px);
   }
 }
+.arimakinen-content img {
+  width: 100%;
+}
+.arimakinen-content-container {
+  margin: 0 auto;
+  max-width: 400px;
+}
 .arimakinen-content-change {
   position: relative;
 }
-.arimakinen-content-change-btn {
+.arimakinen-content-change-btn, .arimakinen-content-change-newlinebtn {
   z-index: 999;
   border: none;
   background-color: rgb(151, 126, 15);
@@ -97,11 +101,13 @@ body {
   font-weight: 600;
   border-radius: 5px;
   padding: 4px 10px;
-  text-align: right;
   cursor: pointer;
   position: absolute;
+}
+.arimakinen-content-change-btn {
   top: 50px;
   right: 0;
+  text-align: right;
 }
 @media screen and (min-width: 599px) {
   .arimakinen-content-change-btn {
@@ -109,22 +115,15 @@ body {
   }
 }
 .arimakinen-content-change-newlinebtn {
-  z-index: 999;
-  border: none;
-  background-color: rgb(151, 126, 15);
-  font-size: 16px;
-  color: white;
-  font-weight: 600;
-  border-radius: 5px;
-  padding: 4px 10px;
-  cursor: pointer;
-  position: absolute;
   top: 50px;
   right: 0;
 }
 .arimakinen-content-chart {
   height: 500px;
   margin: 0 0 50px 0;
+}
+.arimakinen-content-chart-size380 {
+  height: 380px;
 }
 .arimakinen-content-chart-size350 {
   height: 350px;
@@ -506,6 +505,15 @@ body {
 }
 .arimakinen-content-10dainews-arimadata-table-scrollcontainer .column-4 {
   font-weight: bold;
+}
+.arimakinen-content-10dainews-arimadata-table-link {
+  color: #1e2428;
+  font-size: 14px;
+  text-align: right;
+  padding: 10px 0 0 0;
+}
+.arimakinen-content-10dainews-arimadata-table-link a {
+  color: #1e2428;
 }
 .arimakinen-content-10dainews-others {
   display: flex;

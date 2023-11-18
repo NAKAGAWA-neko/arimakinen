@@ -6,8 +6,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="/src/style/arimakinen-uma.css" />
+
+    <link rel="stylesheet" href="/src/style/arimakinen-alldata.css" />
 
     <!-- googlefont -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,54 +61,19 @@
             </li>
           </ul>
         </div>
-        <h3>騎手・種牡馬（父馬）ランキング</h3>
+        <h3>有馬記念 歴代成績aaaaa</h3>
         <h4>
           1956年に「中山グランプリ」を当時の理事長の有馬頼寧氏が提案し行った。しかし翌年急逝、同氏の功績を称え第2回からは「有馬記念」と改称。当時はファン投票による出走馬の選定方法も前例のないものだった。
         </h4>
       </header>
-      <!-- mainコンテンツ -->
       <main class="arimakinen-main">
-        <!--騎手の着順 -->
-        <div class="arimakinen-group-pcflex">
-          <div class="arimakinen-content">
-            <div class="arimakinen-content-change">
-              <button class="arimakinen-content-change-newlinebtn btnJockey">2着の騎手は?</button>
-            </div>
-
-            <div class="arimakinen-content-chart JockeyR-1">
-              <h5>1着の騎手</h5>
-              <div class="arimakinen-margint35"></div>
-              <canvas id="arimaChartJockey1"></canvas>
-            </div>
-
-            <div class="arimakinen-content-chart JockeyR-2">
-              <h5>2着の騎手</h5>
-              <div class="arimakinen-margint35"></div>
-              <canvas id="arimaChartJockey2" height="500"></canvas>
-            </div>
-
-            <div class="arimakinen-content-chart JockeyR-3">
-              <h5>3着の騎手</h5>
-              <div class="arimakinen-margint35"></div>
-              <canvas id="arimaChartJockey3" height="500"></canvas>
-            </div>
-          </div>
-
-          <div class="arimakinen-content">
-            <h5>出走回数</h5>
-            <div class="arimakinen-content-container">
-              <img src="/images/arimakinen-uma-numberofraces.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <!-- credit -->
-        <div class="arimakinen-marginb100 arimakinen-pcdisp-none"></div>
-      </main>
-      <!-- footer -->
-      <footer>
+        <!-- データ -->
+        <div id="arimakinen-alldata"></div>
         <p class="arimakinen-footer-credit">
           ※JRAのデータから。データは第67回まで。一部のデータがない年（回）もある。馬の年齢は2001年度に数え年から満年齢に変更。
         </p>
+      </main>
+      <footer>
         <div class="arimakinen-linkmenu">
           <ul>
             <li>
@@ -132,10 +97,10 @@
         </div>
       </footer>
     </div>
-    <!-- arimakinen終了 -->
+    <!-- <script src="/src/script/arimakinen-accordion.js"></script> -->
 
-    <script src="/src/script/arimakinen-header.js"></script>
-    <script src="/src/script/arimakinen-chart-jockey.js"></script>
-    <script src="/src/script/arimakinen-switching-jockey.js"></script>
+    <!-- <script src="/src/script/arimakinen-data.js"></script> -->
+    <script src="/src/script/datajtm.js"></script>
+    <!-- <script src="/src/script/arimakinen-header.js"></script> -->
   </body>
 </html>

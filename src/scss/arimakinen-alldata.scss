@@ -3,10 +3,10 @@
 @use "header";
 @use "footer";
 
+#arimakinen-alldata {
+  margin: -20px 0 0 0;
+}
 .arimakinen {
-  &-alldata {
-    margin: -20px 0 0 0;
-  }
   /* アコーディオンのスタイル */
   &-accordion {
     margin-bottom: 10px;

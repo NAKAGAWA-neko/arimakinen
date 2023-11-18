@@ -9,6 +9,7 @@ export default defineConfig({
         data: "./data.html",
         uma: "./uma.html",
         jockey: "./jockey.html",
+        baken: "./baken.html",
       },
       output: {
         dir: "dist",

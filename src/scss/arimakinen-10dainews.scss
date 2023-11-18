@@ -221,6 +221,16 @@
             font-weight: bold;
           }
         }
+        &-link {
+          color: ari.$c-main-black;
+          font-size: 14px;
+          text-align: right;
+          padding: 10px 0 0 0;
+
+          a {
+            color: ari.$c-main-black;
+          }
+        }
       }
     }
 

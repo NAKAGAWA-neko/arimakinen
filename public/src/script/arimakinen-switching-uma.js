@@ -53,38 +53,38 @@ function setupCyakujyun() {
   }
 }
 
-function setupJockey() {
-  let contentLHRChangeJockey1 = document.querySelector(".JockeyR-1");
-  let contentLHRChangeJockey2 = document.querySelector(".JockeyR-2");
-  let contentLHRChangeJockey3 = document.querySelector(".JockeyR-3");
-  let changeLHRButtonJockey = document.querySelector(".btnJockey");
+function setupTaijyuZougen() {
+  let contentLHRChangeTaijyuZougen1 = document.querySelector(".TaijyuZougen-1");
+  let contentLHRChangeTaijyuZougen2 = document.querySelector(".TaijyuZougen-2");
+  let contentLHRChangeTaijyuZougen3 = document.querySelector(".TaijyuZougen-3");
+  let changeLHRButtonTaijyuZougen = document.querySelector(".btnTaijyuZougen");
 
   if (
-    contentLHRChangeJockey1 &&
-    contentLHRChangeJockey2 &&
-    contentLHRChangeJockey3 &&
-    changeLHRButtonJockey
+    contentLHRChangeTaijyuZougen1 &&
+    contentLHRChangeTaijyuZougen2 &&
+    contentLHRChangeTaijyuZougen3 &&
+    changeLHRButtonTaijyuZougen
   ) {
-    contentLHRChangeJockey1.style.display = "block";
-    contentLHRChangeJockey2.style.display = "none";
-    contentLHRChangeJockey3.style.display = "none";
+    contentLHRChangeTaijyuZougen1.style.display = "block";
+    contentLHRChangeTaijyuZougen2.style.display = "none";
+    contentLHRChangeTaijyuZougen3.style.display = "none";
 
-    changeLHRButtonJockey.addEventListener("click", function () {
-      if (contentLHRChangeJockey1.style.display === "block") {
-        contentLHRChangeJockey1.style.display = "none";
-        contentLHRChangeJockey2.style.display = "block";
-        contentLHRChangeJockey3.style.display = "none";
-        changeLHRButtonJockey.textContent = "3着の騎手は？";
-      } else if (contentLHRChangeJockey2.style.display === "block") {
-        contentLHRChangeJockey1.style.display = "none";
-        contentLHRChangeJockey2.style.display = "none";
-        contentLHRChangeJockey3.style.display = "block";
-        changeLHRButtonJockey.textContent = "1着の騎手は？";
+    changeLHRButtonTaijyuZougen.addEventListener("click", function () {
+      if (contentLHRChangeTaijyuZougen1.style.display === "block") {
+        contentLHRChangeTaijyuZougen1.style.display = "none";
+        contentLHRChangeTaijyuZougen2.style.display = "block";
+        contentLHRChangeTaijyuZougen3.style.display = "none";
+        changeLHRButtonTaijyuZougen.textContent = "3着馬は？";
+      } else if (contentLHRChangeTaijyuZougen2.style.display === "block") {
+        contentLHRChangeTaijyuZougen1.style.display = "none";
+        contentLHRChangeTaijyuZougen2.style.display = "none";
+        contentLHRChangeTaijyuZougen3.style.display = "block";
+        changeLHRButtonTaijyuZougen.textContent = "1着馬は？";
       } else {
-        contentLHRChangeJockey1.style.display = "block";
-        contentLHRChangeJockey2.style.display = "none";
-        contentLHRChangeJockey3.style.display = "none";
-        changeLHRButtonJockey.textContent = "2着の騎手は？";
+        contentLHRChangeTaijyuZougen1.style.display = "block";
+        contentLHRChangeTaijyuZougen2.style.display = "none";
+        contentLHRChangeTaijyuZougen3.style.display = "none";
+        changeLHRButtonTaijyuZougen.textContent = "2着馬は？";
       }
     });
   }
@@ -93,5 +93,5 @@ function setupJockey() {
 window.onload = function () {
   setupBataijyu();
   setupCyakujyun();
-  setupJockey();
+  setupTaijyuZougen();
 };

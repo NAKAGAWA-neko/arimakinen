@@ -1,6 +1,6 @@
 $(document).ready(function () {
-  // アコーディオンの三角形とタイトルをクリックした時の動作
-  $(".arimakinen-accordion-icon, .arimakinen-times").click(function () {
+  // 既存のアコーディオンの動作設定
+  $(".arimakinen-accordion-icon, .arimakinen-times").click(function (event) {
     // このアコーディオンのコンテンツをトグル表示
     $(this).closest(".arimakinen-accordion").find(".arimakinen-accordion-content").slideToggle(200);
 
@@ -14,5 +14,7 @@ $(document).ready(function () {
     event.stopPropagation();
   });
 
-  // .arimakinen-accordion-toggle自体にクリックイベントを割り当てず、.arimakinen-accordion-iconと.arima-timesのみにイベントを設定
+  // 最初のアコーディオン要素を開く
+  $(".arimakinen-accordion:first .arimakinen-accordion-content").show();
+  $(".arimakinen-accordion:first .arimakinen-accordion-icon").addClass("active");
 });

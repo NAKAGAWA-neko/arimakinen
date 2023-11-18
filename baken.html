@@ -61,46 +61,37 @@
             </li>
           </ul>
         </div>
-        <h3>騎手・種牡馬（父馬）ランキング</h3>
+        <h3>馬券ランキング</h3>
         <h4>
           1956年に「中山グランプリ」を当時の理事長の有馬頼寧氏が提案し行った。しかし翌年急逝、同氏の功績を称え第2回からは「有馬記念」と改称。当時はファン投票による出走馬の選定方法も前例のないものだった。
         </h4>
       </header>
       <!-- mainコンテンツ -->
       <main class="arimakinen-main">
-        <!--騎手の着順 -->
-        <div class="arimakinen-group-pcflex">
-          <div class="arimakinen-content">
-            <div class="arimakinen-content-change">
-              <button class="arimakinen-content-change-newlinebtn btnJockey">2着の騎手は?</button>
-            </div>
-
-            <div class="arimakinen-content-chart JockeyR-1">
-              <h5>1着の騎手</h5>
-              <div class="arimakinen-margint35"></div>
-              <canvas id="arimaChartJockey1"></canvas>
-            </div>
-
-            <div class="arimakinen-content-chart JockeyR-2">
-              <h5>2着の騎手</h5>
-              <div class="arimakinen-margint35"></div>
-              <canvas id="arimaChartJockey2" height="500"></canvas>
-            </div>
-
-            <div class="arimakinen-content-chart JockeyR-3">
-              <h5>3着の騎手</h5>
-              <div class="arimakinen-margint35"></div>
-              <canvas id="arimaChartJockey3" height="500"></canvas>
-            </div>
+        <!--1着馬は何番人気？ -->
+        <div class="arimakinen-content arimakinen-marginb90">
+          <div class="arimakinen-content-change">
+            <button class="arimakinen-content-change-btn btnCyakujyun">2着の人気は?</button>
           </div>
 
-          <div class="arimakinen-content">
-            <h5>出走回数</h5>
-            <div class="arimakinen-content-container">
-              <img src="/images/arimakinen-uma-numberofraces.png" alt="" />
-            </div>
+          <div class="arimakinen-content-chart-size350 cyakujyun-1">
+            <h5>1着は何番人気？</h5>
+            <canvas id="arimaChartCyakujyun1"></canvas>
+          </div>
+
+          <!--2着馬は何番人気？ -->
+          <div class="arimakinen-content-chart-size350 cyakujyun-2">
+            <h5>2着は何番人気？</h5>
+            <canvas id="arimaChartCyakujyun2"></canvas>
+          </div>
+
+          <!--3着馬は何番人気？ -->
+          <div class="arimakinen-content-chart-size350 cyakujyun-3">
+            <h5>3着は何番人気？</h5>
+            <canvas id="arimaChartCyakujyun3"></canvas>
           </div>
         </div>
+
         <!-- credit -->
         <div class="arimakinen-marginb100 arimakinen-pcdisp-none"></div>
       </main>
@@ -135,7 +126,7 @@
     <!-- arimakinen終了 -->
 
     <script src="/src/script/arimakinen-header.js"></script>
-    <script src="/src/script/arimakinen-chart-jockey.js"></script>
-    <script src="/src/script/arimakinen-switching-jockey.js"></script>
+    <script src="/src/script/arimakinen-chart-uma.js"></script>
+    <script src="/src/script/arimakinen-switching-uma.js"></script>
   </body>
 </html>

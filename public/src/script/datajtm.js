@@ -1,3 +1,66 @@
+// ページが完全にロードされたらinitAccordion関数を呼び出す
+document.addEventListener("DOMContentLoaded", initAccordion);
+
+// initAccordion関数の定義
+function initAccordion() {
+  // CSVファイルのパス
+  var csvFilePath = "./src/data/arimakinen-date.csv";
+
+  // PapaParseを使用してCSVファイルを読み込む
+  Papa.parse(csvFilePath, {
+    download: true,
+    header: true,
+    complete: function (results) {
+      var data = results.data; // 読み込まれたデータ
+      createAccordions(data); // アコーディオンを生成する関数を呼び出し
+    },
+  });
+
+  // アコーディオンを動的に生成する関数
+  function createAccordions(data) {
+    var container = document.getElementById("arimakinen-alldata");
+
+    // CSVデータの各行に対してループ処理
+    data.forEach(function (item) {
+      // コメントとしてアコーディオンの回数を追加
+      var comment = document.createComment(
+        ` <第${item.number.replace("第", "").replace("回", "")}回> `
+      );
+      container.appendChild(comment);
+
+      // 新しいアコーディオン要素を作成
+      var accordion = document.createElement("div");
+      accordion.className = "arimakinen-accordion";
+      accordion.innerHTML = `
+      <div class="arimakinen-accordion-toggle" id="${item.number
+        .replace("第", "")
+        .replace("回", "")}">
+          <div class="arimakinen-accordion-icon"></div>
+          <div class="arimakinen-times">
+              第<span class="arimakinen-times-number">${item.number
+                .replace("第", "")
+                .replace("回", "")}</span>回
+          </div>
+          <div class="arimakinen-times-date">
+              ${item.year}<span class="arimakinen-times-date-non"> ${item.date}</span>
+          </div>
+      </div>
+      <div class="arimakinen-table">
+          <div class="arimakinen-table-bar"></div>
+          <div class="arimakinen-table-scrollcontainer">
+              <div class="arimakinen-accordion-content">
+                  <table id="arimakinen-${item.year.replace("年", "")}"></table>
+              </div>
+          </div>
+      </div>
+  `;
+
+      // コンテナにアコーディオン要素を追加
+      container.appendChild(accordion);
+    });
+  }
+}
+
 // /**
 //  * CSVファイルをロードして指定されたHTML要素にテーブルとして表示する関数です。
 //  * @param {string} csvFilePath - ロードするCSVファイルのパス
@@ -116,3 +179,33 @@ function init() {
 }
 // ページが完全にロードされたらinit関数を呼び出す
 document.addEventListener("DOMContentLoaded", init);
+
+$(document).ready(function () {
+  // 既存のアコーディオンの動作設定
+  $(".arimakinen-accordion-icon, .arimakinen-times").click(function (event) {
+    // このアコーディオンのコンテンツをトグル表示
+    $(this).closest(".arimakinen-accordion").find(".arimakinen-accordion-content").slideToggle(200);
+
+    // クリックされたアコーディオンのアイコンのクラスを切り替える
+    $(this)
+      .closest(".arimakinen-accordion")
+      .find(".arimakinen-accordion-icon")
+      .toggleClass("active");
+
+    // イベントの伝播を防ぐ
+    event.stopPropagation();
+  });
+
+  // 最初のアコーディオン要素を開く
+  $(".arimakinen-accordion:first .arimakinen-accordion-content").show();
+  $(".arimakinen-accordion:first .arimakinen-accordion-icon").addClass("active");
+});
+
+// クリックイベントを設定する要素を選択
+const hamburger = document.querySelector(".hamburger");
+
+// クリックイベントを設定
+hamburger.addEventListener("click", function () {
+  // クリックされた要素（.hamburger）に .is-active クラスを追加したり削除したりする
+  hamburger.classList.toggle("is-active");
+});
