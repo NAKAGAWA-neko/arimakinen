@@ -61,7 +61,7 @@
             </li>
           </ul>
         </div>
-        <h3>騎手・種牡馬（父馬）ランキング</h3>
+        <h3>騎手と種牡馬（父馬）ランキング</h3>
         <h4>
           1956年に「中山グランプリ」を当時の理事長の有馬頼寧氏が提案し行った。しかし翌年急逝、同氏の功績を称え第2回からは「有馬記念」と改称。当時はファン投票による出走馬の選定方法も前例のないものだった。
         </h4>
@@ -94,10 +94,49 @@
             </div>
           </div>
 
+          <!-- 出走回数 -->
           <div class="arimakinen-content">
-            <h5>出走回数</h5>
+            <h5>騎手の出走回数</h5>
             <div class="arimakinen-content-container">
-              <img src="/images/arimakinen-uma-numberofraces.png" alt="" />
+              <img src="/images/arimakinen-jockey-wins.png" alt="" />
+            </div>
+          </div>
+
+          <!-- 1着の種牡馬 -->
+          <div class="arimakinen-group-pcflex">
+            <div class="arimakinen-content">
+              <!-- <div class="arimakinen-content-change">
+                <button class="arimakinen-content-change-newlinebtn btnJockey">
+                  2着の種牡馬は?
+                </button>
+              </div> -->
+
+              <div class="arimakinen-content-chart JockeyR-1">
+                <h5>1着馬の種牡馬</h5>
+                <!-- <div class="arimakinen-margint35"></div> -->
+                <canvas id="arimaChartStallion1"></canvas>
+              </div>
+
+              <!-- <div class="arimakinen-content-chart JockeyR-2">
+                <h5>2着馬の騎手</h5>
+                <div class="arimakinen-margint35"></div>
+                <canvas id="arimaChartJockey2"></canvas>
+              </div>
+
+              <div class="arimakinen-content-chart JockeyR-3">
+                <h5>3着馬の騎手</h5>
+                <div class="arimakinen-margint35"></div>
+                <canvas id="arimaChartJockey3"></canvas>
+              </div> -->
+            </div>
+          </div>
+
+          <!-- 種牡馬トータル -->
+          <div class="arimakinen-content">
+            <div class="arimakinen-content-chart JockeyR-1">
+              <h5>出走馬の種牡馬</h5>
+
+              <canvas id="arimaChartStallionTotal1"></canvas>
             </div>
           </div>
         </div>
