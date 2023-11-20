@@ -362,17 +362,17 @@ var arimaChartStallionTotal1Config = {
   type: "bar",
   data: {
     labels: [
-      "サンデーサイレンス(USA)",
+      "サンデーサイレンス",
       "ディープインパクト",
       "キングカメハメハ",
       "ステイゴールド",
       "ハーツクライ",
-      "ノーザンテースト(CAN)",
+      "ノーザンテ丨スト",
       "ダンスインザダーク",
-      "ブライアンズタイム(USA)",
-      "トニービン(IRE)",
-      "リアルシヤダイ(USA)",
-    ],
+      "ブライアンズタイム",
+      "トニービン",
+      "リアルシヤダイ",
+    ].map((v) => v.replace("ー", "丨").split("")),
     datasets: [
       {
         label: "人気馬の頭数",
@@ -410,10 +410,9 @@ var arimaChartStallionTotal1Config = {
           weight: "bold", // テキストを太字に設定
         },
         callbacks: {
-          // title: function (tooltipItems) {
-          //   // X軸のラベルに「番人気」を追加してタイトルとして設定
-          //   return tooltipItems[0].label + "kg";
-          // },
+          title: function () {
+            return "";
+          },
           label: function (context) {
             // データの値に「頭」を追加してラベルとして設定
             return context.raw + "頭";
@@ -429,8 +428,6 @@ var arimaChartStallionTotal1Config = {
         },
         stacked: true,
         ticks: {
-          maxRotation: 90,
-          minRotation: 90,
           color: "#1e2428",
           font: {
             size: 14,
