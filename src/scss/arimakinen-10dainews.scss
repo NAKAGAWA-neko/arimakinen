@@ -6,6 +6,10 @@
 .arimakinen-content {
   &-10dainews {
     margin: -20px 0 0 0;
+    width: 100%;
+    @media screen and (min-width: 600px) and (max-width: 660px) {
+      width: 295px;
+    }
 
     &-title {
       margin: -10px 0 0 0;
@@ -35,10 +39,11 @@
       );
     }
 
+    // これがメインのdiv
     &-main {
       background-color: ari.$c-green-1;
       border-radius: 0 0 10px 10px;
-      padding-bottom: 10px;
+      padding: 0;
     }
 
     &-head {
@@ -59,7 +64,7 @@
         cursor: pointer;
         position: absolute;
         right: 16px;
-        top: 18px;
+        top: 16px;
       }
     }
     &-news {
@@ -71,8 +76,8 @@
         font-size: 26px;
         font-weight: bolder;
         color: white;
-
-        padding: 10px 0 0 16px;
+        line-height: 1.2;
+        padding: 13px 0 0 13px;
       }
       &-table {
         width: 100%; // 親要素のパディングやボーダーを考慮した値に調整
@@ -149,14 +154,15 @@
       background-color: white;
       border-radius: 5px;
       padding: 10px;
-      margin: 10px;
+      margin: 0 auto;
+      max-width: calc(100% - 20px);
 
       &-title {
         font-size: 20px;
         font-weight: bold;
         color: ari.$c-gold-1;
         text-align: center;
-        line-height: 21px;
+        line-height: 1.1;
         margin-bottom: 10px;
 
         span {
@@ -242,7 +248,8 @@
     &-others {
       display: flex;
       justify-content: space-between;
-      margin: 0 10px;
+      margin: 10px;
+      padding: 0 0 10px 0;
 
       &-kanji,
       &-buzzword {
@@ -276,5 +283,11 @@
         padding: 6px;
       }
     }
+  }
+}
+.arima-kaigyo-600-660 {
+  display: none;
+  @media screen and (min-width: 600px) and (max-width: 660px) {
+    display: inline;
   }
 }
