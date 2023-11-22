@@ -415,7 +415,7 @@ var arimaChartStallion2Config = {
 
           afterBody: function (context) {
             if (context[0].label === "サンデーサイレンス,(USA)") {
-              return "マーベラスサンデー(1996)\nマーベラスサンデー(1997)\nスペシャルウィーク(1999)\nリンカーン(2003)\nディープインパクト(2005)";
+              return "マーベラスサンデー(1996、(1997)\nスペシャルウィーク(1999)\nリンカーン(2003)\nディープインパクト(2005)";
             } else if (context[0].label === "スペシャルウィーク") {
               return "ブエナビスタ(2009)\nブエナビスタ(2010)";
             } else if (context[0].label === "モガミ,(FR)") {
