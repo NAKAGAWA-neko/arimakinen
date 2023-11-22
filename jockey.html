@@ -71,8 +71,16 @@
       </header>
       <!-- mainコンテンツ -->
       <main class="arimakinen-main">
-        <!--騎手の着順 -->
         <div class="arimakinen-group-pcflex">
+          <!-- 出走回数 -->
+          <div class="arimakinen-content">
+            <h5>騎手の出走回数</h5>
+            <div class="arimakinen-content-container">
+              <img class="arimakinen-margint10" src="/images/arimakinen-jockey-wins.png" alt="" />
+            </div>
+          </div>
+
+          <!--騎手の着順 -->
           <div class="arimakinen-content">
             <div class="arimakinen-content-change">
               <button class="arimakinen-content-change-newlinebtn btnJockey">2着の騎手は?</button>
@@ -96,16 +104,19 @@
               <canvas id="arimaChartJockey3" height="500"></canvas>
             </div>
           </div>
-          <div class="arimakinen-marginb120"></div>
+        </div>
 
-          <!-- 出走回数 -->
-          <div class="arimakinen-content">
-            <h5>騎手の出走回数</h5>
-            <div class="arimakinen-content-container">
-              <img class="arimakinen-margint10" src="/images/arimakinen-jockey-wins.png" alt="" />
-            </div>
+        <div class="arimakinen-marginb120 arimakinen-pcdisp-inline-none"></div>
+
+        <!-- 種牡馬トータル -->
+        <div class="arimakinen-content">
+          <div class="arimakinen-content-chart">
+            <h5>出走馬の種牡馬</h5>
+            <canvas id="arimaChartStallionTotal1"></canvas>
           </div>
         </div>
+
+        <div class="arimakinen-marginb100"></div>
 
         <!-- 種牡馬の着順 -->
         <div class="arimakinen-content">
@@ -133,16 +144,6 @@
         </div>
 
         <div class="arimakinen-marginb120"></div>
-        <!-- 種牡馬トータル -->
-        <div class="arimakinen-content">
-          <div class="arimakinen-content-chart">
-            <h5>出走馬の種牡馬</h5>
-
-            <canvas id="arimaChartStallionTotal1"></canvas>
-          </div>
-        </div>
-
-        <div class="arimakinen-marginb100"></div>
 
         <!-- credit -->
         <div class="arimakinen-marginb100 arimakinen-pcdisp-none"></div>
