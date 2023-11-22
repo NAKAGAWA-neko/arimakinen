@@ -357,6 +357,207 @@ var arimaChartStallion1Config = {
   },
 };
 
+var arimaChartStallion2Config = {
+  type: "bar",
+  data: {
+    labels: [
+      ["サンデーサイレンス", "(USA)"],
+      ["スペシャルウィーク"],
+      ["モガミ", "(FR)"],
+      ["Pleasant Tap", "(USA)"],
+      ["キングカメハメハ"],
+    ],
+    datasets: [
+      {
+        label: "",
+        data: [5, 2, 2, 2, 2],
+        backgroundColor: [
+          "rgba(171,151,58, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+        ],
+
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    indexAxis: "y",
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        bodyFont: {
+          weight: "bold", // テキストを太字に設定
+        },
+        callbacks: {
+          title: function () {
+            return "";
+          },
+          label: function () {
+            // データの値に「頭」を追加してラベルとして設定
+            return "";
+          },
+
+          afterBody: function (context) {
+            if (context[0].label === "サンデーサイレンス,(USA)") {
+              return "マーベラスサンデー(1996)\nマーベラスサンデー(1997)\nスペシャルウィーク(1999)\nリンカーン(2003)\nディープインパクト(2005)";
+            } else if (context[0].label === "スペシャルウィーク") {
+              return "ブエナビスタ(2009)\nブエナビスタ(2010)";
+            } else if (context[0].label === "モガミ,(FR)") {
+              return "ユーワジェームス(1987)\nレガシーワールド(1992)";
+            } else if (context[0].label === "Pleasant Tap,(USA)") {
+              return "タップダンスシチー(2002、2004)";
+            } else if (context[0].label === "キングカメハメハ") {
+              return "トゥザワールド(2014)\nレイデオロ(2018)";
+            } else {
+              return "";
+            }
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          stepSize: 1, // X軸の目盛りを整数のみにする
+        },
+      },
+      y: {
+        grid: {
+          display: false, // 横軸のグリッド（縦線たち）を非表示
+        },
+        ticks: {
+          color: "#1e2428",
+          font: {
+            size: 14, // フォントサイズを14に設定
+            weight: "bold", // フォントを太字に設定
+          },
+        },
+      },
+    },
+    responsive: true,
+    maintainAspectRatio: false,
+  },
+};
+
+var arimaChartStallion3Config = {
+  type: "bar",
+  data: {
+    labels: [
+      ["ナイスダンサー", "(CAN)"],
+      "キングカメハメハ",
+      "ディープインパクト",
+      "ハーツクライ",
+      "ステイゴールド",
+      ["トニービン", "(IRE)"],
+    ],
+    datasets: [
+      {
+        label: "",
+        data: [9, 3, 2, 2, 2, 2, 2],
+        backgroundColor: [
+          "rgba(171,151,58, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+        ],
+
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    indexAxis: "y",
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        bodyFont: {
+          weight: "bold", // テキストを太字に設定
+        },
+        callbacks: {
+          title: function () {
+            return "";
+          },
+          label: function () {
+            // データの値に「頭」を追加してラベルとして設定
+            return "";
+          },
+
+          afterBody: function (context) {
+            if (context[0].label === "サンデーサイレンス,(USA)") {
+              return "ステイゴールド(1998)\nトゥザヴィクトリー(2001)\nコイントス(2002)\nゼンノロブロイ(2003)\nリンカーン(2005)\nダイワメジャー(2006、2007)\nエアシェイディ(2008、2009)";
+            } else if (context[0].label === "ナイスダンサー,(CAN)") {
+              return "ナイスネイチャ(1991、1992、1993)";
+            } else if (context[0].label === "キングカメハメハ") {
+              return "トゥザグローリー(2011)\nルーラーシップ(2012)";
+            } else if (context[0].label === "ディープインパクト") {
+              return "ワールドプレミア(2019)\nフィエールマン(2020)";
+            } else if (context[0].label === "ハーツクライ") {
+              return "シュヴァルグラン(2017、2018)";
+            } else if (context[0].label === "ステイゴールド") {
+              return "ゴールドシップ(2013、2014)";
+            } else if (context[0].label === "トニービン,(IRE)") {
+              return "サクラチトセオー(1995)\nエアグルーヴ(1997)";
+            } else {
+              return "";
+            }
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          stepSize: 1, // X軸の目盛りを整数のみにする
+        },
+      },
+      y: {
+        grid: {
+          display: false, // 横軸のグリッド（縦線たち）を非表示
+        },
+        ticks: {
+          color: "#1e2428",
+          font: {
+            size: 14, // フォントサイズを14に設定
+            weight: "bold", // フォントを太字に設定
+          },
+        },
+      },
+    },
+    responsive: true,
+    maintainAspectRatio: false,
+  },
+};
+
 // 種牡馬出走トータル
 var arimaChartStallionTotal1Config = {
   type: "bar",
@@ -454,6 +655,8 @@ let arimaChartJockey1 = null;
 let arimaChartJockey2 = null;
 let arimaChartJockey3 = null;
 let arimaChartStallion1 = null;
+let arimaChartStallion2 = null;
+let arimaChartStallion3 = null;
 let arimaChartStallionTotal1 = null;
 
 // チャートを生成するための関数
@@ -477,7 +680,11 @@ function initializeChart(config, canvasId) {
 arimaChartJockey1 = initializeChart(arimaChartJockey1Config, "arimaChartJockey1");
 arimaChartJockey2 = initializeChart(arimaChartJockey2Config, "arimaChartJockey2");
 arimaChartJockey3 = initializeChart(arimaChartJockey3Config, "arimaChartJockey3");
+
 arimaChartStallion1 = initializeChart(arimaChartStallion1Config, "arimaChartStallion1");
+arimaChartStallion2 = initializeChart(arimaChartStallion2Config, "arimaChartStallion2");
+arimaChartStallion3 = initializeChart(arimaChartStallion3Config, "arimaChartStallion3");
+
 arimaChartStallionTotal1 = initializeChart(
   arimaChartStallionTotal1Config,
   "arimaChartStallionTotal1"
@@ -500,6 +707,16 @@ window.addEventListener("resize", function () {
     arimaChartStallion1.destroy();
     arimaChartStallion1 = initializeChart(arimaChartStallion1Config, "arimaChartStallion1");
   }
+
+  if (arimaChartStallion2) {
+    arimaChartStallion2.destroy();
+    arimaChartStallion2 = initializeChart(arimaChartStallion2Config, "arimaChartStallion2");
+  }
+  if (arimaChartStallion3) {
+    arimaChartStallion3.destroy();
+    arimaChartStallion3 = initializeChart(arimaChartStallion3Config, "arimaChartStallion3");
+  }
+
   if (arimaChartStallionTotal1) {
     arimaChartStallionTotal1.destroy();
     arimaChartStallionTotal1 = initializeChart(

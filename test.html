@@ -6,8 +6,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="/src/style/arimakinen-uma.css" />
+
+    <link rel="stylesheet" href="/src/style/arimakinen-10dainews.css" />
 
     <!-- googlefont -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -64,40 +64,23 @@
             </li>
           </ul>
         </div>
-        <h3>馬券ランキング</h3>
+        <h3>読者が選ぶ10大ニュースと有馬記念</h3>
         <h4>
-          1956年に「中山グランプリ」を当時の理事長の有馬頼寧氏が提案し行った。しかし翌年急逝、同氏の功績を称え第2回からは「有馬記念」と改称。当時はファン投票による出走馬の選定方法も前例のないものだった。
+          1年を締めくくる大レース「有馬記念」。このレースはその年の世相に関連づけた「世相馬券」を予想して楽しむレースでもある。読売新聞の「読者が選ぶ10大ニュース」と一緒に過去の結果を紹介。年末の世相馬券のヒントに。
         </h4>
       </header>
+
       <!-- mainコンテンツ -->
       <main class="arimakinen-main">
-        <!--1着馬は何番人気？ -->
-        <div class="arimakinen-content arimakinen-marginb90">
-          <div class="arimakinen-content-change">
-            <button class="arimakinen-content-change-btn btnCyakujyun">2着の人気は?</button>
-          </div>
-
-          <div class="arimakinen-content-chart-size350 cyakujyun-1">
-            <h5>1着は何番人気？</h5>
-            <canvas id="arimaChartCyakujyun1"></canvas>
-          </div>
-
-          <!--2着馬は何番人気？ -->
-          <div class="arimakinen-content-chart-size350 cyakujyun-2">
-            <h5>2着は何番人気？</h5>
-            <canvas id="arimaChartCyakujyun2"></canvas>
-          </div>
-
-          <!--3着馬は何番人気？ -->
-          <div class="arimakinen-content-chart-size350 cyakujyun-3">
-            <h5>3着は何番人気？</h5>
-            <canvas id="arimaChartCyakujyun3"></canvas>
-          </div>
+        <!-- 10大ニュース -->
+        <div class="arimakinen-group-pcflex">
+          <!-- 各コンテンツのjs -->
+          <div id="accordion-container"></div>
         </div>
-
         <!-- credit -->
         <div class="arimakinen-marginb100 arimakinen-pcdisp-none"></div>
       </main>
+
       <!-- footer -->
       <footer>
         <p class="arimakinen-footer-credit">
@@ -128,11 +111,11 @@
           </ul>
         </div>
       </footer>
+      <!-- arimakinen終了 -->
     </div>
-    <!-- arimakinen終了 -->
 
     <script src="/src/script/arimakinen-header.js"></script>
-    <script src="/src/script/arimakinen-chart-baken.js"></script>
-    <script src="/src/script/arimakinen-switching-uma.js"></script>
+    <script src="/src/script/arimakinen-switching-10dainews.js"></script>
+    <script src="/src/script/arimakinen-data-10dainews.js"></script>
   </body>
 </html>

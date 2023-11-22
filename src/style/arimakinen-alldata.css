@@ -139,14 +139,31 @@ body {
 .arimakinen-marginb100 {
   margin: 0 0 100px 0;
 }
+.arimakinen-marginb120 {
+  margin: 0 0 120px 0;
+}
 .arimakinen-margint35 {
   margin: 35px 0 0 0;
+}
+.arimakinen-margint10 {
+  margin: 10px 0 0 0;
+}
+.arimakinen-margint50pc {
+  margin: 50px 0 0 0;
 }
 .arimakinen-pcdisp-none {
   display: block;
 }
 @media (min-width: 599px) {
   .arimakinen-pcdisp-none {
+    display: none;
+  }
+}
+.arimakinen-pcdisp-inline-none {
+  display: block;
+}
+@media (min-width: 599px) {
+  .arimakinen-pcdisp-inline-none {
     display: none;
   }
 }

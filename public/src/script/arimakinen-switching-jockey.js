@@ -1,40 +1,29 @@
-function setupJockey() {
-  let contentLHRChangeJockey1 = document.querySelector(".JockeyR-1");
-  let contentLHRChangeJockey2 = document.querySelector(".JockeyR-2");
-  let contentLHRChangeJockey3 = document.querySelector(".JockeyR-3");
-  let changeLHRButtonJockey = document.querySelector(".btnJockey");
+function setupContentSwitcher(prefix, contentCount, buttonTexts) {
+  // コンテンツ要素のセレクターを作成
+  let selectors = [];
+  for (let i = 1; i <= contentCount; i++) {
+    selectors.push(`.arimakinen-content-chart.${prefix}-${i}`);
+  }
+  let contents = Array.from(document.querySelectorAll(selectors.join(", ")));
 
-  if (
-    contentLHRChangeJockey1 &&
-    contentLHRChangeJockey2 &&
-    contentLHRChangeJockey3 &&
-    changeLHRButtonJockey
-  ) {
-    contentLHRChangeJockey1.style.display = "block";
-    contentLHRChangeJockey2.style.display = "none";
-    contentLHRChangeJockey3.style.display = "none";
+  let button = document.querySelector(`.btn${prefix}`);
+  let currentIndex = 0;
 
-    changeLHRButtonJockey.addEventListener("click", function () {
-      if (contentLHRChangeJockey1.style.display === "block") {
-        contentLHRChangeJockey1.style.display = "none";
-        contentLHRChangeJockey2.style.display = "block";
-        contentLHRChangeJockey3.style.display = "none";
-        changeLHRButtonJockey.textContent = "3着の騎手は？";
-      } else if (contentLHRChangeJockey2.style.display === "block") {
-        contentLHRChangeJockey1.style.display = "none";
-        contentLHRChangeJockey2.style.display = "none";
-        contentLHRChangeJockey3.style.display = "block";
-        changeLHRButtonJockey.textContent = "1着の騎手は？";
-      } else {
-        contentLHRChangeJockey1.style.display = "block";
-        contentLHRChangeJockey2.style.display = "none";
-        contentLHRChangeJockey3.style.display = "none";
-        changeLHRButtonJockey.textContent = "2着の騎手は？";
-      }
-    });
+  updateDisplay();
+
+  button.addEventListener("click", function () {
+    currentIndex = (currentIndex + 1) % contents.length;
+    updateDisplay();
+  });
+
+  function updateDisplay() {
+    contents.forEach((content) => (content.style.display = "none"));
+    contents[currentIndex].style.display = "block";
+    button.textContent = buttonTexts[currentIndex % buttonTexts.length];
   }
 }
 
 window.onload = function () {
-  setupJockey();
+  setupContentSwitcher("Jockey", 3, ["2着の騎手は？", "3着の騎手は？", "1着の騎手は？"]);
+  setupContentSwitcher("Stallion", 3, ["2着の種牡馬は？", "3着の種牡馬は？", "1着の種牡馬は？"]);
 };

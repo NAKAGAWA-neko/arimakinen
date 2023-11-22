@@ -1,16 +1,20 @@
 // ページが読み込まれた後にURLのハッシュ部分をチェックし、該当する要素が存在すればその要素までスムーズにスクロール
 
 document.addEventListener("DOMContentLoaded", function () {
-  // ページの読み込みが完了したらスクロール処理を実行
   var hash = window.location.hash;
-  if (hash) {
+  var isFirstLoad = !sessionStorage.getItem("hasLoaded");
+
+  if (hash && isFirstLoad) {
     setTimeout(function () {
       var targetElement = document.querySelector(hash);
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: "smooth" });
       }
-    }, 300); // 500ミリ秒遅延させて対象要素が読み込まれるのを待つ
+    }, 300);
   }
+
+  // ページが読み込まれたことをセッションストレージに記録
+  sessionStorage.setItem("hasLoaded", true);
 });
 
 // ページが完全にロードされたらinitAccordion関数を呼び出す
