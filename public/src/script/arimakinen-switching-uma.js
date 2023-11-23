@@ -60,6 +60,6 @@ function setupTaijyuZougen() {
 
 window.onload = function () {
   setupBataijyu();
-  setupNinki();
+
   setupTaijyuZougen();
 };
