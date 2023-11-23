@@ -21,38 +21,6 @@ function setupBataijyu() {
   }
 }
 
-function setupCyakujyun() {
-  let contentLHRChange1 = document.querySelector(".cyakujyun-1");
-  let contentLHRChange2 = document.querySelector(".cyakujyun-2");
-  let contentLHRChange3 = document.querySelector(".cyakujyun-3");
-  let changeLHRButtonCyakujyun = document.querySelector(".btnCyakujyun");
-
-  if (contentLHRChange1 && contentLHRChange2 && contentLHRChange3 && changeLHRButtonCyakujyun) {
-    contentLHRChange1.style.display = "block";
-    contentLHRChange2.style.display = "none";
-    contentLHRChange3.style.display = "none";
-
-    changeLHRButtonCyakujyun.addEventListener("click", function () {
-      if (contentLHRChange1.style.display === "block") {
-        contentLHRChange1.style.display = "none";
-        contentLHRChange2.style.display = "block";
-        contentLHRChange3.style.display = "none";
-        changeLHRButtonCyakujyun.textContent = "3着の人気は？";
-      } else if (contentLHRChange2.style.display === "block") {
-        contentLHRChange1.style.display = "none";
-        contentLHRChange2.style.display = "none";
-        contentLHRChange3.style.display = "block";
-        changeLHRButtonCyakujyun.textContent = "1着の人気は？";
-      } else {
-        contentLHRChange1.style.display = "block";
-        contentLHRChange2.style.display = "none";
-        contentLHRChange3.style.display = "none";
-        changeLHRButtonCyakujyun.textContent = "2着の人気は？";
-      }
-    });
-  }
-}
-
 function setupTaijyuZougen() {
   let contentLHRChangeTaijyuZougen1 = document.querySelector(".TaijyuZougen-1");
   let contentLHRChangeTaijyuZougen2 = document.querySelector(".TaijyuZougen-2");
@@ -92,6 +60,6 @@ function setupTaijyuZougen() {
 
 window.onload = function () {
   setupBataijyu();
-  setupCyakujyun();
+  setupNinki();
   setupTaijyuZougen();
 };
