@@ -13,6 +13,7 @@ body {
   margin: 0 16px;
   line-height: 1.5;
   font-size: 100%;
+  overflow: hidden;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -179,6 +180,7 @@ body {
   width: 100%;
   max-width: 724px;
   margin: 20px auto 40px auto;
+  overflow: hidden;
 }
 .arimakinen-header-wrapper {
   display: flex;
@@ -515,7 +517,7 @@ body {
   border-bottom: 1px dashed #d3d2c4;
 }
 .arimakinen-content-10dainews-arimadata-table-scrollcontainer td {
-  padding: 5px 5px;
+  padding: 5px 3px;
 }
 .arimakinen-content-10dainews-arimadata-table-scrollcontainer .column-1,
 .arimakinen-content-10dainews-arimadata-table-scrollcontainer .column-2,
