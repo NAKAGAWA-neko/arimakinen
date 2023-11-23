@@ -4,7 +4,7 @@
 @use "footer";
 
 .arimakinen-content-racetime {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -112,12 +112,12 @@
     border-radius: 0 20px 0 0;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 2px 0;
     color: white;
 
     &-rank {
       font-family: "Kanit", sans-serif;
-      font-size: 40px;
+      font-size: 35px;
       font-weight: bolder;
       margin: 0 auto;
       padding: 0 8px 0 12px;
@@ -127,7 +127,7 @@
       white-space: nowrap;
       line-height: 0.8;
 
-      @media (min-width: 600px) {
+      @media (min-width: 465px) {
         letter-spacing: 0.12em;
       }
 
@@ -138,29 +138,55 @@
     }
     &-nametime {
       align-items: center;
-      font-size: 24px;
       font-weight: bolder;
       border-left: 2px solid white;
       margin: 4px 0 0;
-      padding: 0 0 0 16px;
+      padding: 0 0 0 8px;
       width: 100%;
+
+      @media (min-width: 465px) {
+        padding: 0 0 0 16px;
+      }
 
       &-name,
       &-time {
-        line-height: 1;
-        margin: 5px 0;
+        line-height: 0.8;
+        margin: 2px 0;
+        @media (min-width: 465px) {
+          line-height: 1;
+        }
       }
+
       span {
         font-size: 14px;
         align-items: center;
       }
+      &-name {
+        font-size: 20px;
+        margin-bottom: 8px;
+        @media (min-width: 465px) {
+          margin-bottom: 0;
+        }
+      }
+
+      &-time {
+        font-size: 22px;
+      }
     }
     &-date {
+      font-weight: bold;
       text-align: right;
       margin: 2px 6px 0 auto;
       padding-right: 6px;
       line-height: 1.2;
       width: 39%;
+      white-space: normal;
+
+      @media (min-width: 450px) and (max-width: 545px) {
+        width: 25%;
+
+        // white-space: nowrap;
+      }
     }
   }
   .bkggold {

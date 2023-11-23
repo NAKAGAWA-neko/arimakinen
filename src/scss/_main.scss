@@ -175,9 +175,16 @@ body {
     }
   }
 
-  &-pcdisp-inline-none {
+  &-pcdisp-none460 {
     display: block;
-    @media (min-width: 599px) {
+    @media (min-width: 460px) {
+      display: none;
+    }
+  }
+
+  &-pcdisp-none500 {
+    display: block;
+    @media (min-width: 500px) {
       display: none;
     }
   }

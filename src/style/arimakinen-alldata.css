@@ -160,11 +160,19 @@ body {
     display: none;
   }
 }
-.arimakinen-pcdisp-inline-none {
+.arimakinen-pcdisp-none460 {
   display: block;
 }
-@media (min-width: 599px) {
-  .arimakinen-pcdisp-inline-none {
+@media (min-width: 460px) {
+  .arimakinen-pcdisp-none460 {
+    display: none;
+  }
+}
+.arimakinen-pcdisp-none500 {
+  display: block;
+}
+@media (min-width: 500px) {
+  .arimakinen-pcdisp-none500 {
     display: none;
   }
 }
