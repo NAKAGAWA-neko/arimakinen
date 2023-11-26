@@ -654,69 +654,42 @@ let arimaChartStallion2 = null;
 let arimaChartStallion3 = null;
 let arimaChartStallionTotal1 = null;
 
-// チャートを生成するための関数
+// チャートの設定
+const chartConfigs = {
+  arimaChartJockey1: arimaChartJockey1Config,
+  arimaChartJockey2: arimaChartJockey2Config,
+  arimaChartJockey3: arimaChartJockey3Config,
+
+  arimaChartStallion1: arimaChartStallion1Config,
+  arimaChartStallion2: arimaChartStallion2Config,
+  arimaChartStallion3: arimaChartStallion3Config,
+
+  arimaChartStallionTotal1: arimaChartStallionTotal1Config,
+};
+
+// チャートインスタンスを格納するオブジェクト
+const charts = {};
+
+// チャートを生成する関数
 function generateChart(config, canvasId) {
   const canvas = document.getElementById(canvasId);
   if (!canvas) {
     throw new Error("Cannot find a canvas element with id ".concat(canvasId));
   }
-  const chart = new Chart(canvas, config);
-  return chart;
+  return new Chart(canvas, config);
 }
 
-// 初期チャートの生成
-function initializeChart(config, canvasId) {
-  const canvasElement = document.getElementById(canvasId);
-  if (canvasElement) {
-    return generateChart(config, canvasId);
-  }
-  return null;
-}
-arimaChartJockey1 = initializeChart(arimaChartJockey1Config, "arimaChartJockey1");
-arimaChartJockey2 = initializeChart(arimaChartJockey2Config, "arimaChartJockey2");
-arimaChartJockey3 = initializeChart(arimaChartJockey3Config, "arimaChartJockey3");
+// チャートの初期化
+Object.keys(chartConfigs).forEach((key) => {
+  charts[key] = generateChart(chartConfigs[key], key);
+});
 
-arimaChartStallion1 = initializeChart(arimaChartStallion1Config, "arimaChartStallion1");
-arimaChartStallion2 = initializeChart(arimaChartStallion2Config, "arimaChartStallion2");
-arimaChartStallion3 = initializeChart(arimaChartStallion3Config, "arimaChartStallion3");
-
-arimaChartStallionTotal1 = initializeChart(
-  arimaChartStallionTotal1Config,
-  "arimaChartStallionTotal1"
-);
 // ウィンドウサイズの変更時にチャートを再描画
 window.addEventListener("resize", function () {
-  if (arimaChartJockey1) {
-    arimaChartJockey1.destroy();
-    arimaChartJockey1 = initializeChart(arimaChartJockey1Config, "arimaChartJockey1");
-  }
-  if (arimaChartJockey2) {
-    arimaChartJockey2.destroy();
-    arimaChartJockey2 = initializeChart(arimaChartJockey2Config, "arimaChartJockey2");
-  }
-  if (arimaChartJockey1) {
-    arimaChartJockey3.destroy();
-    arimaChartJockey3 = initializeChart(arimaChartJockey3Config, "arimaChartJockey3");
-  }
-  if (arimaChartStallion1) {
-    arimaChartStallion1.destroy();
-    arimaChartStallion1 = initializeChart(arimaChartStallion1Config, "arimaChartStallion1");
-  }
-
-  if (arimaChartStallion2) {
-    arimaChartStallion2.destroy();
-    arimaChartStallion2 = initializeChart(arimaChartStallion2Config, "arimaChartStallion2");
-  }
-  if (arimaChartStallion3) {
-    arimaChartStallion3.destroy();
-    arimaChartStallion3 = initializeChart(arimaChartStallion3Config, "arimaChartStallion3");
-  }
-
-  if (arimaChartStallionTotal1) {
-    arimaChartStallionTotal1.destroy();
-    arimaChartStallionTotal1 = initializeChart(
-      arimaChartStallionTotal1Config,
-      "arimaChartStallionTotal1"
-    );
-  }
+  Object.keys(charts).forEach((key) => {
+    if (charts[key]) {
+      charts[key].destroy();
+      charts[key] = generateChart(chartConfigs[key], key);
+    }
+  });
 });
