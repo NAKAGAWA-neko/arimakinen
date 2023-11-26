@@ -21,6 +21,7 @@ body {
   -webkit-text-size-adjust: 100%;
   vertical-align: baseline;
   background: transparent;
+  position: relative;
 }
 @media screen and (min-width: 599px) {
   .arimakinen {
@@ -44,28 +45,6 @@ body {
   background-repeat: no-repeat;
   vertical-align: middle;
   margin: 0 7px 7px 5px;
-}
-.arimakinen-linkmenu {
-  position: relative;
-  margin: 20px 0 20px 0;
-}
-.arimakinen-linkmenu ul {
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-}
-@media screen and (min-width: 599px) {
-  .arimakinen-linkmenu ul {
-    margin: 0 150px;
-  }
-}
-.arimakinen-linkmenu ul li {
-  width: 55px;
-}
-.arimakinen-linkmenu ul li img {
-  width: 100%;
 }
 @media screen and (min-width: 599px) {
   .arimakinen-group-pcflex {
@@ -120,19 +99,64 @@ body {
   right: 0;
 }
 .arimakinen-content-chart {
-  height: 500px;
   margin: 0 0 50px 0;
 }
-.arimakinen-content-chart-size380 {
+.arimakinen-content-chart .chart500 {
+  height: 500px;
+}
+.arimakinen-content-chart .chart380 {
   height: 380px;
 }
-.arimakinen-content-chart-size350 {
+.arimakinen-content-chart .chart380pc510 {
+  height: 380px;
+}
+@media (min-width: 599px) {
+  .arimakinen-content-chart .chart380pc510 {
+    height: 510px;
+  }
+}
+.arimakinen-content-chart .chart350 {
   height: 350px;
 }
 @media (min-width: 599px) {
-  .arimakinen-content-chart-size350 {
+  .arimakinen-content-chart .chart350 {
     height: 400px;
   }
+}
+.arimakinen-content-boxchange {
+  position: relative;
+}
+.arimakinen-content-boxchange ul {
+  margin: 0 auto 10px auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.arimakinen-content-boxchange li {
+  z-index: 999;
+  border: none;
+  background-color: rgb(151, 126, 15);
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 4px 10px;
+  cursor: pointer;
+  width: auto;
+  flex-basis: calc(33.33% - 5px);
+  text-align: center;
+  margin-bottom: 6px;
+}
+.arimakinen-marginb20 {
+  margin: 0 0 20px 0;
+}
+.arimakinen-marginb50 {
+  margin: 0 0 50px 0;
+}
+.arimakinen-marginb60 {
+  margin: 0 0 60px 0;
 }
 .arimakinen-marginb90 {
   margin: 0 0 90px 0;
@@ -208,6 +232,7 @@ body {
   cursor: pointer;
   padding: 22px 30px;
   width: 168px;
+  z-index: 200;
 }
 @media (max-width: 599px) {
   .arimakinen-header-wrapper .hamburger {
@@ -262,6 +287,32 @@ body {
 }
 .arimakinen-header-wrapper .hamburger.is-active span:nth-child(2) {
   opacity: 0;
+}
+.arimakinen-header-wrapper .hamburger-menu {
+  display: none; /* メニューはデフォルトでは非表示 */
+  background-color: #1e2428; /* 背景色を設定 */
+  position: absolute; /* 絶対位置指定 */
+  top: 10px; /* 上端からの距離 */
+  left: 0; /* 左端からの距離 */
+  width: auto; /* メニューの幅 */
+  height: 100vh; /* 画面の高さに合わせる */
+  z-index: 100; /* 他の要素の上に表示 */
+}
+.arimakinen-header-wrapper .hamburger-menu ul {
+  list-style: none;
+  padding: 0 16px;
+  margin: 100px 0 0 0;
+}
+.arimakinen-header-wrapper .hamburger-menu li {
+  font-size: 16px;
+  font-weight: bolder;
+  padding: 0 0 20px 0;
+}
+.arimakinen-header-wrapper .hamburger-menu li a {
+  color: white;
+}
+.arimakinen-header-wrapper .hamburger.is-active + .hamburger-menu {
+  display: block; /* ハンバーガーメニューがアクティブなときに表示 */
 }
 .arimakinen-header-wrapper h1 img {
   width: 300px;
@@ -320,11 +371,13 @@ body {
   transform: translate(-50%, -50%);
 }
 .arimakinen-header-green h2 img {
+  margin: 7px 0 0 0;
   height: 32px;
+  width: auto;
 }
 @media (max-width: 599px) {
   .arimakinen-header-green h2 img {
-    width: 320px;
+    width: 300px;
     height: auto;
   }
 }
@@ -343,6 +396,29 @@ body {
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 0;
+}
+
+.arimakinen-linkmenu {
+  position: relative;
+  margin: 20px 0 20px 0;
+}
+.arimakinen-linkmenu ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 599px) {
+  .arimakinen-linkmenu ul {
+    margin: 0 150px;
+  }
+}
+.arimakinen-linkmenu ul li {
+  width: 55px;
+}
+.arimakinen-linkmenu ul li img {
+  width: 100%;
 }
 
 .arimakinen-footer-credit {

@@ -25,6 +25,8 @@ body {
   vertical-align: baseline;
   background: transparent;
 
+  position: relative;
+
   @media screen and (min-width: 599px) {
     margin: 0 auto;
   }
@@ -48,28 +50,6 @@ body {
       background-repeat: no-repeat;
       vertical-align: middle;
       margin: 0 7px 7px 5px;
-    }
-  }
-
-  // ヘッダーとフッターメニュー
-  &-linkmenu {
-    position: relative;
-    margin: 20px 0 20px 0;
-    ul {
-      margin: 0 auto;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      @media screen and (min-width: 599px) {
-        margin: 0 150px;
-      }
-      li {
-        width: 55px;
-        img {
-          width: 100%;
-        }
-      }
     }
   }
 
@@ -129,19 +109,68 @@ body {
 
     // チャート
     &-chart {
-      height: 500px;
       margin: 0 0 50px 0;
-    }
-    &-chart-size380 {
-      height: 380px;
-    }
 
-    &-chart-size350 {
-      height: 350px;
-      @media (min-width: 599px) {
-        height: 400px;
+      .chart500 {
+        height: 500px;
+      }
+
+      .chart380 {
+        height: 380px;
+      }
+      .chart380pc510 {
+        height: 380px;
+        @media (min-width: 599px) {
+          height: 510px;
+        }
+      }
+      .chart350 {
+        height: 350px;
+        @media (min-width: 599px) {
+          height: 400px;
+        }
       }
     }
+
+    // 高配当のところのチェンジボタン
+    &-boxchange {
+      position: relative;
+      ul {
+        margin: 0 auto 10px auto;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      li {
+        z-index: 999; // ここに追加
+        border: none;
+        background-color: ari.$c-gold-2;
+        font-size: 16px;
+        color: white;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 4px 10px;
+        cursor: pointer;
+        width: auto;
+        flex-basis: calc(33.33% - 5px);
+        text-align: center;
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+  &-marginb20 {
+    margin: 0 0 20px 0;
+  }
+
+  &-marginb50 {
+    margin: 0 0 50px 0;
+  }
+
+  &-marginb60 {
+    margin: 0 0 60px 0;
   }
 
   &-marginb90 {

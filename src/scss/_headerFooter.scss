@@ -30,6 +30,7 @@
       cursor: pointer;
       padding: 22px 30px;
       width: 168px;
+      z-index: 200;
 
       @media (max-width: 599px) {
         padding: 15px 20px;
@@ -93,6 +94,35 @@
       }
     }
 
+    .hamburger-menu {
+      display: none; /* メニューはデフォルトでは非表示 */
+      background-color: ari.$c-main-black; /* 背景色を設定 */
+      position: absolute; /* 絶対位置指定 */
+      top: 10px; /* 上端からの距離 */
+      left: 0; /* 左端からの距離 */
+      width: auto; /* メニューの幅 */
+      height: 100vh; /* 画面の高さに合わせる */
+      z-index: 100; /* 他の要素の上に表示 */
+
+      ul {
+        list-style: none;
+        padding: 0 16px;
+        margin: 100px 0 0 0;
+      }
+      li {
+        font-size: 16px;
+        font-weight: bolder;
+        padding: 0 0 20px 0;
+        a {
+          color: white;
+        }
+      }
+    }
+
+    .hamburger.is-active + .hamburger-menu {
+      display: block; /* ハンバーガーメニューがアクティブなときに表示 */
+    }
+
     h1 img {
       width: 300px;
 
@@ -151,10 +181,12 @@
       transform: translate(-50%, -50%);
 
       img {
+        margin: 7px 0 0 0;
         height: 32px;
+        width: auto;
 
         @media (max-width: 599px) {
-          width: 320px;
+          width: 300px;
           height: auto;
         }
       }
@@ -179,5 +211,39 @@
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 0;
+  }
+}
+
+// フッター共通メニュー
+
+.arimakinen-linkmenu {
+  position: relative;
+  margin: 20px 0 20px 0;
+  ul {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (min-width: 599px) {
+      margin: 0 150px;
+    }
+    li {
+      width: 55px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// フッター
+.arimakinen-footer {
+  &-credit {
+    font-size: 14px;
+    text-align: left;
+    margin: 5px 0 30px 0;
+    line-height: 1.5;
+    font-style: italic;
   }
 }

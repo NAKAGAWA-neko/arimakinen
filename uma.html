@@ -60,7 +60,7 @@
               <a href="baken.html"><img src="/images/arimakinen-h-menu-baken.png" alt="" /></a>
             </li>
             <li>
-              <a href="baken.html"><img src="/images/arimakinen-h-menu-baken.png" alt="" /></a>
+              <a href="baken.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
             </li>
           </ul>
         </div>
@@ -237,31 +237,37 @@
               <button class="arimakinen-content-change-newlinebtn btnTaijyuZougen">2着馬は?</button>
             </div>
 
-            <div class="arimakinen-content-chart-size380 TaijyuZougen-1">
+            <div class="arimakinen-content-chart TaijyuZougen-1">
               <h5>1着馬の馬体重増減</h5>
-
-              <canvas id="arimaChartBataiJu1"></canvas>
+              <div class="chart380">
+                <canvas id="arimaChartBataiJu1"></canvas>
+              </div>
             </div>
 
-            <div class="arimakinen-content-chart-size380 TaijyuZougen-2">
+            <div class="arimakinen-content-chart TaijyuZougen-2">
               <h5>2着馬の馬体重増減</h5>
-
-              <canvas id="arimaChartBataiJu2"></canvas>
+              <div class="chart380">
+                <canvas id="arimaChartBataiJu2"></canvas>
+              </div>
             </div>
 
-            <div class="arimakinen-content-chart-size380 TaijyuZougen-3">
+            <div class="arimakinen-content-chart TaijyuZougen-3">
               <h5>3着馬の馬体重増減</h5>
-
-              <canvas id="arimaChartBataiJu3"></canvas>
+              <div class="chart380">
+                <canvas id="arimaChartBataiJu3"></canvas>
+              </div>
             </div>
           </div>
         </div>
         <div class="arimakinen-marginb100 arimakinen-pcdisp-none"></div>
+      </main>
+
+      <!-- footer -->
+      <footer class="arimakinen-footer">
+        <!-- 注釈・クレジット-->
         <p class="arimakinen-footer-credit">
           ※JRAのデータから。データは第67回まで。一部のデータがない年（回）もある。馬の年齢は2001年度に数え年から満年齢に変更。
         </p>
-      </main>
-      <footer>
         <div class="arimakinen-linkmenu">
           <ul>
             <li>
@@ -282,13 +288,16 @@
               <a href="baken.html"><img src="/images/arimakinen-h-menu-baken.png" alt="" /></a>
             </li>
             <li>
-              <a href="baken.html"><img src="/images/arimakinen-h-menu-baken.png" alt="" /></a>
+              <a href="baken.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
             </li>
           </ul>
         </div>
       </footer>
+
+      <!-- arimakinen終了 -->
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/src/script/arimakinen-header.js"></script>
     <script src="/src/script/arimakinen-chart-uma.js"></script>
     <script src="/src/script/arimakinen-switching-uma.js"></script>

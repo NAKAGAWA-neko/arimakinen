@@ -29,5 +29,5 @@ function setupContentSwitcher(prefix, contentCount, buttonTexts) {
 window.onload = function () {
   setupContentSwitcher("Jockey", 3, ["2着の騎手は？", "3着の騎手は？", "1着の騎手は？"]);
   setupContentSwitcher("Stallion", 3, ["2着の種牡馬は？", "3着の種牡馬は？", "1着の種牡馬は？"]);
-  setupContentSwitcher("Ninki", 3, ["2着の種牡馬は？", "3着の種牡馬は？", "1着の種牡馬は？"]);
+  setupContentSwitcher("Ninki", 3, ["2着の人気は？", "3着の人気は？", "1着の人気は？"]);
 };

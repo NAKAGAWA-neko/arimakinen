@@ -60,7 +60,7 @@
               <a href="baken.html"><img src="/images/arimakinen-h-menu-baken.png" alt="" /></a>
             </li>
             <li>
-              <a href="baken.html"><img src="/images/arimakinen-h-menu-baken.png" alt="" /></a>
+              <a href="baken.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
             </li>
           </ul>
         </div>
@@ -89,19 +89,25 @@
             <div class="arimakinen-content-chart Jockey-1">
               <h5>1着の騎手</h5>
               <div class="arimakinen-margint35"></div>
-              <canvas id="arimaChartJockey1"></canvas>
+              <div class="chart500">
+                <canvas id="arimaChartJockey1"></canvas>
+              </div>
             </div>
 
             <div class="arimakinen-content-chart Jockey-2">
               <h5>2着の騎手</h5>
               <div class="arimakinen-margint35"></div>
-              <canvas id="arimaChartJockey2" height="500"></canvas>
+              <div class="chart500">
+                <canvas id="arimaChartJockey2"></canvas>
+              </div>
             </div>
 
             <div class="arimakinen-content-chart Jockey-3">
               <h5>3着の騎手</h5>
               <div class="arimakinen-margint35"></div>
-              <canvas id="arimaChartJockey3" height="500"></canvas>
+              <div class="chart500">
+                <canvas id="arimaChartJockey3"></canvas>
+              </div>
             </div>
           </div>
         </div>
@@ -112,7 +118,9 @@
         <div class="arimakinen-content">
           <div class="arimakinen-content-chart">
             <h5>出走馬の種牡馬</h5>
-            <canvas id="arimaChartStallionTotal1"></canvas>
+            <div class="chart500">
+              <canvas id="arimaChartStallionTotal1"></canvas>
+            </div>
           </div>
         </div>
 
@@ -126,30 +134,36 @@
 
           <div class="arimakinen-content-chart Stallion-1">
             <h5>1着馬の種牡馬</h5>
-            <div class="arimakinen-margint35"></div>
-            <canvas id="arimaChartStallion1"></canvas>
+            <div class="chart500">
+              <div class="arimakinen-margint35"></div>
+              <canvas id="arimaChartStallion1"></canvas>
+            </div>
           </div>
 
           <div class="arimakinen-content-chart Stallion-2">
             <h5>2着馬の種牡馬</h5>
-            <div class="arimakinen-margint35"></div>
-            <canvas id="arimaChartStallion2"></canvas>
+            <div class="chart500">
+              <div class="arimakinen-margint35"></div>
+              <canvas id="arimaChartStallion2"></canvas>
+            </div>
           </div>
 
           <div class="arimakinen-content-chart Stallion-3">
             <h5>3着馬の種牡馬</h5>
-            <div class="arimakinen-margint35"></div>
-            <canvas id="arimaChartStallion3"></canvas>
+            <div class="chart500">
+              <div class="arimakinen-margint35"></div>
+              <canvas id="arimaChartStallion3"></canvas>
+            </div>
           </div>
         </div>
 
         <div class="arimakinen-marginb120"></div>
 
-        <!-- credit -->
         <div class="arimakinen-marginb100 arimakinen-pcdisp-none"></div>
       </main>
       <!-- footer -->
-      <footer>
+      <footer class="arimakinen-footer">
+        <!-- 注釈・クレジット-->
         <p class="arimakinen-footer-credit">
           ※JRAのデータから。データは第67回まで。一部のデータがない年（回）もある。馬の年齢は2001年度に数え年から満年齢に変更。
         </p>
@@ -173,14 +187,16 @@
               <a href="baken.html"><img src="/images/arimakinen-h-menu-baken.png" alt="" /></a>
             </li>
             <li>
-              <a href="baken.html"><img src="/images/arimakinen-h-menu-baken.png" alt="" /></a>
+              <a href="baken.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
             </li>
           </ul>
         </div>
       </footer>
-    </div>
-    <!-- arimakinen終了 -->
 
+      <!-- arimakinen終了 -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/src/script/arimakinen-header.js"></script>
     <script src="/src/script/arimakinen-chart-jockey.js"></script>
     <script src="/src/script/arimakinen-switching-jockey.js"></script>

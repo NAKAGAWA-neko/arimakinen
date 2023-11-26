@@ -1,50 +1,3 @@
-// 各年のデータをオブジェクトで構造化
-const yearlyData = {
-  1995: {
-    title: "1995年のニュース",
-    links: [
-      { url: "https://example.com/1995/news1", text: "ニュース1" },
-      { url: "https://example.com/1995/news2", text: "ニュース2" },
-      // ... その他のリンク ...
-    ],
-  },
-  // ... 各年のデータを追加 ...
-  2022: {
-    title: "2022年のニュース",
-    links: [
-      {
-        url: "https://www.yomiuri.co.jp/feature/top10news/20221223-OYT8T50087/",
-        text: "ニュース1",
-      },
-      { url: "https://another-link.com/2022/news2", text: "ニュース2" },
-      // ... その他のリンク ...
-    ],
-  },
-};
-
-// 各年のデータに基づいてHTMLコンテンツを生成する関数
-function createAccordions() {
-  const container = document.getElementById("accordion-container");
-
-  for (const year in yearlyData) {
-    const yearData = yearlyData[year];
-    const accordion = document.createElement("div");
-    accordion.className = "accordion";
-    accordion.innerHTML = `
-      <div class="accordion-title">${yearData.title}</div>
-      <div class="accordion-content">
-        ${yearData.links
-          .map((link) => `<a href="${link.url}" target="_blank">${link.text}</a>`)
-          .join("<br>")}
-      </div>
-    `;
-    container.appendChild(accordion);
-  }
-}
-
-// 関数を呼び出してコンテンツを生成
-createAccordions();
-
 // ページが完全にロードされたらinitAccordion関数を呼び出す
 document.addEventListener("DOMContentLoaded", initAccordion);
 
@@ -142,6 +95,50 @@ $(document).ready(function () {
     event.stopPropagation();
   });
 });
+
+// /**
+//  * CSVファイルをロードして指定されたHTML要素にテーブルとして表示する関数です。
+//  * @param {string} csvFilePath - ロードするCSVファイルのパス
+//  * @param {string} containerId - テーブルを挿入するHTML要素のID
+//  */
+
+function loadAndDisplayDataCSV(csvFilePath, containerId) {
+  fetch(csvFilePath)
+    .then((response) => response.text())
+    .then((csvString) => {
+      const data = Papa.parse(csvString, { header: true, skipEmptyLines: true }).data;
+      let tableHTML = "<thead><tr>";
+
+      for (let header in data[0]) {
+        tableHTML += `<th>${header}</th>`;
+      }
+      tableHTML += "</tr></thead><tbody>";
+
+      for (let i = 0; i < data.length; i++) {
+        let rowHTML = "<tr>";
+        let columnIndex = 0;
+        for (let cell in data[i]) {
+          let classes = [];
+          if (columnIndex === 3) classes.push("horsename");
+          if (columnIndex === 1) classes.push("waku");
+          if (columnIndex === 0) classes.push("rank");
+          if ([0, 1, 2, 4, 5, 8, 9, 10, 11, 12].includes(columnIndex)) classes.push("center-text");
+          let classString = classes.length > 0 ? ` class="${classes.join(" ")}"` : "";
+          rowHTML += `<td${classString}>${data[i][cell]}</td>`;
+          columnIndex++;
+        }
+        rowHTML += "</tr>";
+        tableHTML += rowHTML;
+      }
+
+      tableHTML += "</tbody>";
+      document.getElementById(containerId).innerHTML = tableHTML;
+    })
+    .catch((error) => {
+      console.error("Error loading or parsing CSV: ", error);
+      document.getElementById(containerId).innerHTML = "<p>Error loading data.</p>";
+    });
+}
 
 window.loadAndDisplayDataCSV = loadAndDisplayDataCSV;
 

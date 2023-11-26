@@ -432,11 +432,6 @@ var arimaChartStallion2Config = {
       },
     },
     scales: {
-      x: {
-        ticks: {
-          stepSize: 1, // X軸の目盛りを整数のみにする
-        },
-      },
       y: {
         grid: {
           display: false, // 横軸のグリッド（縦線たち）を非表示
