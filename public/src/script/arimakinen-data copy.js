@@ -151,22 +151,11 @@ function loadAndDisplayDataCSV(csvFilePath, containerId) {
       }
 
       tableHTML += "</tbody>";
-
-      // nullチェックを追加
-      const containerElement = document.getElementById(containerId);
-      if (containerElement) {
-        containerElement.innerHTML = tableHTML;
-      } else {
-        console.error(`Element with ID '${containerId}' not found.`);
-      }
+      document.getElementById(containerId).innerHTML = tableHTML;
     })
-
     .catch((error) => {
       console.error("Error loading or parsing CSV: ", error);
-      const containerElement = document.getElementById(containerId);
-      if (containerElement) {
-        containerElement.innerHTML = "<p>Error loading data.</p>";
-      }
+      document.getElementById(containerId).innerHTML = "<p>Error loading data.</p>";
     });
 }
 
