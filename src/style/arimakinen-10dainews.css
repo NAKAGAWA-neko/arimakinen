@@ -382,15 +382,15 @@ body {
   }
 }
 .arimakinen-header h3 {
-  margin: 0 0 4px 0;
+  margin: 6px 0 4px 0;
   color: #1e2428;
   text-align: left;
   font-size: 30px;
   font-weight: bolder;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 .arimakinen-header h4 {
-  margin: 0 0 20px 0;
+  margin: 6px 0 20px 0;
   color: #1e2428;
   text-align: justify;
   font-size: 16px;
@@ -670,4 +670,30 @@ body {
   .arima-kaigyo-600-660 {
     display: inline;
   }
+}
+
+#o-2017-1,
+#o-2012-1,
+#o-2005-1 {
+  color: #008847;
+  font-weight: bolder;
+}
+
+#kaigai-2009 .data-cell-3-2,
+#kaigai-2006 .data-cell-1-2,
+#kaigai-2001 .data-cell-1-2,
+#kokunai-2000 .data-cell-1-2 {
+  color: rgb(250, 250, 0);
+  font-weight: bolder;
+}
+
+#arimakinen-10dai-2017 .column-4.cell-1,
+#arimakinen-10dai-2012 .column-4.cell-1,
+#arimakinen-10dai-2009 .column-4.cell-1,
+#arimakinen-10dai-2006 .column-4.cell-1,
+#arimakinen-10dai-2005 .column-4.cell-1,
+#arimakinen-10dai-2001 .column-4.cell-1,
+#arimakinen-10dai-2000 .column-4.cell-1 {
+  color: rgb(151, 126, 15);
+  font-weight: bolder;
 }/*# sourceMappingURL=arimakinen-10dainews.css.map */
