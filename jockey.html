@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="/src/style/arimakinen-uma.css" />
+    <link rel="stylesheet" href="/src/style/arimakinen-jockeybaken.css" />
 
     <!-- googlefont -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,9 +56,7 @@
                 ><img src="/images/arimakinen-h-menu-jockey-stallion.png" alt=""
               /></a>
             </li>
-            <li>
-              <a href="baken.html"><img src="/images/arimakinen-h-menu-baken.png" alt="" /></a>
-            </li>
+
             <li>
               <a href="baken.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
             </li>
@@ -112,54 +110,71 @@
           </div>
         </div>
 
-        <div class="arimakinen-marginb120 arimakinen-pcdisp-none"></div>
+        <div class="arimakinen-margint-30pc"></div>
 
-        <!-- 種牡馬トータル -->
-        <div class="arimakinen-content">
-          <div class="arimakinen-content-chart">
-            <h5>出走馬の種牡馬</h5>
-            <div class="chart500">
-              <canvas id="arimaChartStallionTotal1"></canvas>
-            </div>
-          </div>
-        </div>
-
-        <div class="arimakinen-marginb100"></div>
-
-        <!-- 種牡馬の着順 -->
+        <!--1着馬は何番人気？ -->
         <div class="arimakinen-content">
           <div class="arimakinen-content-change">
-            <button class="arimakinen-content-change-newlinebtn btnStallion">2着の種牡馬は?</button>
+            <button class="arimakinen-content-change-newlinebtn btnNinki">2着馬の人気は?</button>
           </div>
 
-          <div class="arimakinen-content-chart Stallion-1">
-            <h5>1着馬の種牡馬</h5>
-            <div class="chart500">
-              <div class="arimakinen-margint35"></div>
-              <canvas id="arimaChartStallion1"></canvas>
+          <div class="arimakinen-content-chart Ninki-1">
+            <h5>1着馬の人気</h5>
+            <div class="chart380">
+              <canvas id="arimaChartCyakujyun1"></canvas>
             </div>
           </div>
 
-          <div class="arimakinen-content-chart Stallion-2">
-            <h5>2着馬の種牡馬</h5>
-            <div class="chart500">
-              <div class="arimakinen-margint35"></div>
-              <canvas id="arimaChartStallion2"></canvas>
+          <!--2着馬は何番人気？ -->
+          <div class="arimakinen-content-chart Ninki-2">
+            <h5>2着馬の人気</h5>
+            <div class="chart380">
+              <canvas id="arimaChartCyakujyun2"></canvas>
             </div>
           </div>
 
-          <div class="arimakinen-content-chart Stallion-3">
-            <h5>3着馬の種牡馬</h5>
-            <div class="chart500">
-              <div class="arimakinen-margint35"></div>
-              <canvas id="arimaChartStallion3"></canvas>
+          <!--3着馬は何番人気？ -->
+          <div class="arimakinen-content-chart Ninki-3">
+            <h5>3着馬の人気</h5>
+            <div class="chart380">
+              <canvas id="arimaChartCyakujyun3"></canvas>
             </div>
           </div>
         </div>
 
-        <div class="arimakinen-marginb120"></div>
+        <div class="arimakinen-group-pcflex">
+          <!-- 枠順別 -->
+          <div class="arimakinen-content">
+            <div class="arimakinen-content-chart">
+              <h5>枠順別</h5>
+              <div class="chart380pc510">
+                <canvas id="arimaChartWaku"></canvas>
+              </div>
+            </div>
 
-        <div class="arimakinen-marginb100 arimakinen-pcdisp-none"></div>
+            <div class="arimakinen-marginb60"></div>
+          </div>
+
+          <!-- 高配当 -->
+          <div class="arimakinen-content">
+            <h5>高配当</h5>
+            <div class="arimakinen-content-boxchange">
+              <ul>
+                <li onclick="changeBakenImage('/images/arimakinen-baken-1.png')">単勝</li>
+                <li onclick="changeBakenImage('/images/arimakinen-baken-2.png')">枠連</li>
+                <li onclick="changeBakenImage('/images/arimakinen-baken-3.png')">馬連</li>
+                <li onclick="changeBakenImage('/images/arimakinen-baken-4.png')">馬単</li>
+                <li onclick="changeBakenImage('/images/arimakinen-baken-5.png')">三連複</li>
+                <li onclick="changeBakenImage('/images/arimakinen-baken-6.png')">三連単</li>
+              </ul>
+            </div>
+            <div class="arimakinen-content-container">
+              <img id="bakenImage" src="/images/arimakinen-baken-1.png" alt="Default Image" />
+            </div>
+          </div>
+        </div>
+
+        <div class="arimakinen-marginb120 arimakinen-pcdisp-none"></div>
       </main>
       <!-- footer -->
       <footer class="arimakinen-footer">
@@ -183,9 +198,7 @@
                 ><img src="/images/arimakinen-h-menu-jockey-stallion.png" alt=""
               /></a>
             </li>
-            <li>
-              <a href="baken.html"><img src="/images/arimakinen-h-menu-baken.png" alt="" /></a>
-            </li>
+
             <li>
               <a href="baken.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
             </li>
@@ -197,8 +210,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/src/script/arimakinen-header.js"></script>
-    <script src="/src/script/arimakinen-chart-jockey.js"></script>
-    <script src="/src/script/arimakinen-switching.js"></script>
+    <script src="/src/script/arimakinen-header.js" defer></script>
+    <script src="/src/script/arimakinen-chart-jockeybaken.js" defer></script>
+    <script src="/src/script/arimakinen-switching.js" defer></script>
   </body>
 </html>

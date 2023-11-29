@@ -56,9 +56,7 @@
                 ><img src="/images/arimakinen-h-menu-jockey-stallion.png" alt=""
               /></a>
             </li>
-            <li>
-              <a href="baken.html"><img src="/images/arimakinen-h-menu-baken.png" alt="" /></a>
-            </li>
+
             <li>
               <a href="baken.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
             </li>
@@ -75,7 +73,7 @@
         <!-- 優勝タイム -->
         <div class="arimakinen-content">
           <h5>優勝タイム</h5>
-
+          <div class="arimakinen-margint-20"></div>
           <!-- 1位 -->
           <div class="arimakinen-content-racetime">
             <div class="arimakinen-content-racetime-gifanime racerank-1st">
@@ -94,7 +92,9 @@
                 </div>
               </div>
               <div class="arimakinen-content-racetime-text-date">
-                第49回<span class="arimakinen-pcdisp-none500"></span>(2004年)
+                <a href="data.html#data-49">
+                  第49回<span class="arimakinen-pcdisp-none500"></span>(2004年)</a
+                >
               </div>
             </div>
           </div>
@@ -115,7 +115,9 @@
                 <div class="arimakinen-content-racetime-text-nametime-time">02:30.0</div>
               </div>
               <div class="arimakinen-content-racetime-text-date">
-                第54回<span class="arimakinen-pcdisp-none500"></span>(2009年)
+                <a href="data.html#data-54">
+                  第54回<span class="arimakinen-pcdisp-none500"></span>(2009年)</a
+                >
               </div>
             </div>
           </div>
@@ -140,7 +142,9 @@
                 </div>
               </div>
               <div class="arimakinen-content-racetime-text-date">
-                第48回<span class="arimakinen-pcdisp-none500"></span>(2003年)
+                <a href="data.html#data-48">
+                  第48回<span class="arimakinen-pcdisp-none500"></span>(2003年)</a
+                >
               </div>
             </div>
           </div>
@@ -161,7 +165,9 @@
                 <div class="arimakinen-content-racetime-text-nametime-time">02:30.5</div>
               </div>
               <div class="arimakinen-content-racetime-text-date">
-                第64回<span class="arimakinen-pcdisp-none500"></span>(2019年)
+                <a href="data.html#data-64">
+                  第64回<span class="arimakinen-pcdisp-none500"></span>(2019年)</a
+                >
               </div>
             </div>
           </div>
@@ -184,7 +190,9 @@
                 </div>
               </div>
               <div class="arimakinen-content-racetime-text-date">
-                第36回<span class="arimakinen-pcdisp-none500"></span>(1991年)
+                <a href="data.html#data-36">
+                  第36回<span class="arimakinen-pcdisp-none500"></span>(1991年)</a
+                >
               </div>
             </div>
           </div>
@@ -193,7 +201,7 @@
         <!-- 出走回数 -->
         <div class="arimakinen-group-pcflex">
           <div class="arimakinen-content">
-            <h5>出走した回数</h5>
+            <h5>出走した馬の回数</h5>
             <div class="arimakinen-content-container">
               <img src="/images/arimakinen-uma-numberofraces.png" alt="" />
             </div>
@@ -259,6 +267,54 @@
             </div>
           </div>
         </div>
+
+        <!-- 種牡馬トータル -->
+        <div class="arimakinen-content">
+          <div class="arimakinen-content-chart">
+            <h5>出走馬の種牡馬</h5>
+            <div class="chart500">
+              <canvas id="arimaChartStallionTotal1"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="arimakinen-marginb100"></div>
+
+        <!-- 種牡馬の着順 -->
+        <div class="arimakinen-content">
+          <div class="arimakinen-content-change">
+            <button class="arimakinen-content-change-newlinebtn btnStallion">
+              2着馬の種牡馬は?
+            </button>
+          </div>
+
+          <div class="arimakinen-content-chart Stallion-1">
+            <h5>1着馬の種牡馬</h5>
+            <div class="chart500">
+              <div class="arimakinen-margint35"></div>
+              <canvas id="arimaChartStallion1"></canvas>
+            </div>
+          </div>
+
+          <div class="arimakinen-content-chart Stallion-2">
+            <h5>2着馬の種牡馬</h5>
+            <div class="chart500">
+              <div class="arimakinen-margint35"></div>
+              <canvas id="arimaChartStallion2"></canvas>
+            </div>
+          </div>
+
+          <div class="arimakinen-content-chart Stallion-3">
+            <h5>3着馬の種牡馬</h5>
+            <div class="chart500">
+              <div class="arimakinen-margint35"></div>
+              <canvas id="arimaChartStallion3"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="arimakinen-marginb120"></div>
+
         <div class="arimakinen-marginb100 arimakinen-pcdisp-none"></div>
       </main>
 
@@ -284,9 +340,7 @@
                 ><img src="/images/arimakinen-h-menu-jockey-stallion.png" alt=""
               /></a>
             </li>
-            <li>
-              <a href="baken.html"><img src="/images/arimakinen-h-menu-baken.png" alt="" /></a>
-            </li>
+
             <li>
               <a href="baken.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
             </li>
@@ -298,8 +352,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/src/script/arimakinen-header.js"></script>
-    <script src="/src/script/arimakinen-chart-uma.js"></script>
-    <script src="/src/script/arimakinen-switching.js"></script>
+    <script src="/src/script/arimakinen-header.js" defer></script>
+    <script src="/src/script/arimakinen-chart-uma.js" defer></script>
+    <script src="/src/script/arimakinen-switching.js" defer></script>
   </body>
 </html>
