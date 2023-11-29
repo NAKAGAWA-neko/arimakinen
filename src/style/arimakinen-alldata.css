@@ -440,6 +440,57 @@ body {
   font-style: italic;
 }
 
+/* Camera icon base styling */
+.camera {
+  width: 100px;
+  height: 60px;
+  background: black;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer; /* Hand cursor to indicate it's clickable */
+}
+
+/* Parts of the camera icon */
+.camera .lens {
+  width: 30px;
+  height: 30px;
+  background: white; /* Changed to white as per your request */
+  border-radius: 50%;
+  position: absolute;
+  top: 15px; /* Position adjusted for centering */
+  left: 35px; /* Position adjusted for centering */
+}
+
+.camera .notch {
+  width: 50px;
+  height: 10px;
+  background: black;
+  border-radius: 5px 5px 0 0;
+  position: absolute;
+  top: 0;
+  left: 25px; /* Position adjusted to extend the notch a bit */
+}
+
+/* Styles to apply when icon is toggled to 'X' */
+.camera.x .lens {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.camera.x .notch {
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 30px; /* Shorten the notch to make a balanced 'X' shape */
+  top: 30px; /* Adjust vertical position to form 'X' */
+  left: 50%; /* Center horizontally */
+}
+
+/* Ensures parts of the camera icon align properly in 'X' state */
+.camera.x .lens,
+.camera.x .notch {
+  top: 50%;
+  left: 50%;
+  background: white; /* Change the background to white for visibility */
+}
+
 #arimakinen-alldata {
   margin: -20px 0 0 0;
 }

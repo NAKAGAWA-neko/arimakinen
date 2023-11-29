@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .camera {
+      margin: 20px 0 0;
+      width: 100px;
+      height: 60px;
+      background: black;
+      border-radius: 10px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .camera .lens {
+      width: 30px;
+      height: 30px;
+      background: white; /* レンズの色を白に変更 */
+      border-radius: 50%;
+      /* box-shadow: inset 0 0 5px #000; レンズの立体感を調整 */
+    }
+
+    .camera .notch {
+      width: 60px; /* ハンプの幅を広げる */
+      height: 15px; /* ハンプの高さを増やす */
+      background: black;
+      border-radius: 10px 10px 0 0;
+      position: absolute;
+      top: -10px; /* ハンプを上に少し出す */
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+  <body>
+    <div class="camera">
+      <div class="notch"></div>
+      <div class="lens"></div>
+    </div>
+  </body>
+</html>
