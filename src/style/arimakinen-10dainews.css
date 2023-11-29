@@ -173,8 +173,19 @@ body {
 .arimakinen-margint10 {
   margin: 10px 0 0 0;
 }
-.arimakinen-margint50pc {
+.arimakinen-margint50 {
   margin: 50px 0 0 0;
+}
+.arimakinen-margint-20 {
+  margin: -20px 0 0 0;
+}
+.arimakinen-margint-30pc {
+  margin: 0;
+}
+@media (min-width: 599px) {
+  .arimakinen-margint-30pc {
+    margin: -30px 0 0 0;
+  }
 }
 .arimakinen-pcdisp-none {
   display: block;

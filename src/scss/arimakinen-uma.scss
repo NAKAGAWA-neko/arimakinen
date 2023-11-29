@@ -3,7 +3,7 @@
 @use "headerFooter";
 
 .arimakinen-content-racetime {
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -185,6 +185,14 @@
         width: 25%;
 
         // white-space: nowrap;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+          color: yellow;
+        }
       }
     }
   }
