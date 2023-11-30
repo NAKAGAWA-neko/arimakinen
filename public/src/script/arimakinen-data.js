@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   var hash = window.location.hash;
-  var isFirstLoad = !sessionStorage.getItem("hasLoaded");
+  var isFirstLoad = !sessionStorage.getItem("reloaded");
 
   if (hash && isFirstLoad) {
     setTimeout(function () {
@@ -13,8 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 300);
   }
 
-  // ページが読み込まれたことをセッションストレージに記録
-  sessionStorage.setItem("hasLoaded", true);
+  sessionStorage.setItem("reloaded", true);
 });
 
 // ページが完全にロードされたらinitAccordion関数を呼び出す
@@ -98,7 +97,7 @@ function initAccordion() {
   }
 }
 
-// アコーディオン表示非表示
+// アコーディオン表示非表示 jQuery
 $(document).ready(function () {
   $(document).on("click", ".arimakinen-accordion-icon, .arimakinen-times", function (event) {
     // このアコーディオンのコンテンツをトグル表示

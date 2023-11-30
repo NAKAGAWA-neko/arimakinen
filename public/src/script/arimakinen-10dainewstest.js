@@ -121,9 +121,6 @@ function initAccordion() {
 </div>
 </div>
 </div>
-
-    
- 
   `;
 
       // コンテナにHTML要素を追加
