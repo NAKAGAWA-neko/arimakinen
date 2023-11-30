@@ -25,31 +25,40 @@
       <!-- header -->
       <header class="arimakinen-header">
         <div class="arimakinen-header-wrapper">
-          <div id="camera-icon" class="camera">
-            <div class="notch"></div>
-            <div class="lens"></div>
-          </div>
-          <div class="hamburger-menu">
-            <ul class="hamburger-menu-ul">
-              <li>
-                <a href="index.html">読者が選ぶ<br />10大ニュースと<br />有馬記念</a>
-              </li>
-              <li>
-                <a href="data.html">過去の全成績</a>
-              </li>
-              <li>
-                <a href="uma.html">出走馬ランキング</a>
-              </li>
-              <li><a href="jockey.html">騎手・種牡馬ランキング</a></li>
-              <li><a href="baken.html">馬券ランキング</a></li>
-              <li>
-                <a href="quiz.html">よみありクイズ</a>
-              </li>
-            </ul>
-          </div>
+          <!-- スライド写真 -->
+          <div class="arimakinen-header-camera">
+            <div class="arimakinen-header-camera-icon">
+              <img id="cameraIcon" src="/images/camera.svg" alt="写真へ" />
+              <img id="closeIcon" src="/images/close-icon-white.svg" alt="閉じる" />
+            </div>
 
+            <div id="menuContent" class="arimakinen-header-camera-content">
+              <div id="photoSlide" class="arimakinen-header-camera-content-photos">
+                <!-- スライド画像1 -->
+                <div class="arimakinen-header-camera-content-photos-slide">
+                  <img class="slide-image" src="/images/arima-1.jpg" alt="イクイノックス" />
+                  <p class="slide-text">
+                    第67回（2022年）有馬記念を制したルメール騎乗のイクイノックス（牡・3歳）。世界ランキング1位に君臨し、翌年2023年11月のジャパンカップ優勝後に引退した
+                  </p>
+                </div>
+
+                <!-- スライド画像2 -->
+                <div class="arimakinen-header-camera-content-photos-slide">
+                  <img class="slide-image" src="/images/arima-2.jpg" alt="イクイノックス" />
+                  <p class="slide-text">
+                    第67回（2022年）有馬記念を制したルメール騎乗のイクイノックス（牡・3歳）。世界ランキング1位に君臨し、翌年2023年11月のジャパンカップ優勝後に引退した
+                  </p>
+                </div>
+                <!-- 右矢印 -->
+                <img class="arrow arrow-right" src="/images/arrow-right2.svg" alt="次へ" />
+              </div>
+            </div>
+          </div>
+          <!-- // -->
           <h1>
-            <a href=""><img src="/images/arima-header-title.png" alt="第68回有馬記念" /></a>
+            <a href="index.html"
+              ><img src="/images/arima-header-title.png" alt="第68回有馬記念"
+            /></a>
           </h1>
           <img
             class="arimakinen-header-wrapper-illust"
@@ -80,7 +89,7 @@
             </li>
 
             <li>
-              <a href="baken.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
+              <a href="quiz.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
             </li>
           </ul>
         </div>
@@ -94,6 +103,7 @@
         <div id="arimakinen-alldata"></div>
       </main>
 
+      <div class="arimakinen-marginb50"></div>
       <footer class="arimakinen-footer">
         <!-- 注釈・クレジット-->
         <p class="arimakinen-footer-credit">
@@ -117,14 +127,14 @@
             </li>
 
             <li>
-              <a href="baken.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
+              <a href="quiz.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
             </li>
           </ul>
         </div>
       </footer>
     </div>
 
-    <script src="/src/script/arimakinen-header2.js" defer></script>
+    <script src="/src/script/arimakinen-header.js" defer></script>
     <script src="/src/script/arimakinen-data.js" defer></script>
   </body>
 </html>

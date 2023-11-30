@@ -75,7 +75,7 @@ body {
 .arimakinen-content-change-btn, .arimakinen-content-change-newlinebtn {
   z-index: 999;
   border: none;
-  background-color: rgb(151, 126, 15);
+  background-color: #977e0f;
   font-size: 16px;
   color: white;
   font-weight: 600;
@@ -137,7 +137,7 @@ body {
 .arimakinen-content-boxchange li {
   z-index: 999;
   border: none;
-  background-color: rgb(151, 126, 15);
+  background-color: #977e0f;
   font-size: 16px;
   color: white;
   font-weight: 600;
@@ -224,6 +224,11 @@ body {
   max-width: 724px;
   margin: 20px auto 40px auto;
   overflow: hidden;
+}
+@media (max-width: 400px) {
+  .arimakinen-header {
+    margin: 10px auto 40px auto;
+  }
 }
 .arimakinen-header-wrapper {
   display: flex;
@@ -327,10 +332,21 @@ body {
 }
 .arimakinen-header-wrapper h1 img {
   width: 300px;
+  margin: 0;
+}
+.arimakinen-header-wrapper h1 img:hover {
+  opacity: 0.8;
 }
 @media (max-width: 599px) {
   .arimakinen-header-wrapper h1 img {
     width: 200px;
+    margin: 0;
+  }
+}
+@media (max-width: 400px) {
+  .arimakinen-header-wrapper h1 img {
+    width: 170px;
+    margin: 10px 0 0 0;
   }
 }
 .arimakinen-header-wrapper-illust {
@@ -428,6 +444,35 @@ body {
 .arimakinen-linkmenu ul li {
   width: 55px;
 }
+.arimakinen-linkmenu ul li:hover {
+  animation: shake 0.4s ease;
+}
+@keyframes shake {
+  0% {
+    transform: rotate(0);
+  }
+  15% {
+    transform: rotate(12deg);
+  }
+  31% {
+    transform: rotate(-10deg);
+  }
+  49% {
+    transform: rotate(8deg);
+  }
+  63% {
+    transform: rotate(-6deg);
+  }
+  81% {
+    transform: rotate(4deg);
+  }
+  95% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 .arimakinen-linkmenu ul li img {
   width: 100%;
 }
@@ -440,55 +485,140 @@ body {
   font-style: italic;
 }
 
-/* Camera icon base styling */
-.camera {
-  width: 100px;
-  height: 60px;
-  background: black;
-  border-radius: 10px;
+.arimakinen-header-camera .arimakinen-header-camera-icon {
+  display: inline-block;
+  padding: 16px 0;
+  width: 168px;
+  height: 80px;
+  z-index: 500;
+  text-align: center;
+  cursor: pointer;
   position: relative;
-  cursor: pointer; /* Hand cursor to indicate it's clickable */
 }
-
-/* Parts of the camera icon */
-.camera .lens {
-  width: 30px;
-  height: 30px;
-  background: white; /* Changed to white as per your request */
-  border-radius: 50%;
+@media (max-width: 599px) {
+  .arimakinen-header-camera .arimakinen-header-camera-icon {
+    padding: 8px 10px;
+    width: 80px;
+  }
+}
+@media (max-width: 400px) {
+  .arimakinen-header-camera .arimakinen-header-camera-icon {
+    padding: 10px 3px 0 0;
+    width: 65px;
+  }
+}
+.arimakinen-header-camera .arimakinen-header-camera-icon #cameraIcon,
+.arimakinen-header-camera .arimakinen-header-camera-icon #closeIcon {
   position: absolute;
-  top: 15px; /* Position adjusted for centering */
-  left: 35px; /* Position adjusted for centering */
-}
-
-.camera .notch {
-  width: 50px;
-  height: 10px;
-  background: black;
-  border-radius: 5px 5px 0 0;
-  position: absolute;
-  top: 0;
-  left: 25px; /* Position adjusted to extend the notch a bit */
-}
-
-/* Styles to apply when icon is toggled to 'X' */
-.camera.x .lens {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.camera.x .notch {
-  transform: translate(-50%, -50%) rotate(-45deg);
-  width: 30px; /* Shorten the notch to make a balanced 'X' shape */
-  top: 30px; /* Adjust vertical position to form 'X' */
-  left: 50%; /* Center horizontally */
-}
-
-/* Ensures parts of the camera icon align properly in 'X' state */
-.camera.x .lens,
-.camera.x .notch {
   top: 50%;
   left: 50%;
-  background: white; /* Change the background to white for visibility */
+  transform: translate(-50%, -50%);
+  z-index: 501;
+}
+@media (max-width: 599px) {
+  .arimakinen-header-camera .arimakinen-header-camera-icon #cameraIcon,
+  .arimakinen-header-camera .arimakinen-header-camera-icon #closeIcon {
+    top: 30%;
+  }
+}
+@media (max-width: 400px) {
+  .arimakinen-header-camera .arimakinen-header-camera-icon #cameraIcon,
+  .arimakinen-header-camera .arimakinen-header-camera-icon #closeIcon {
+    top: 38%;
+  }
+}
+.arimakinen-header-camera .arimakinen-header-camera-icon #cameraIcon {
+  width: 60px;
+  height: 60px;
+}
+.arimakinen-header-camera .arimakinen-header-camera-icon #cameraIcon:hover {
+  opacity: 0.5;
+}
+@media (max-width: 599px) {
+  .arimakinen-header-camera .arimakinen-header-camera-icon #cameraIcon {
+    width: 46px;
+    height: 46px;
+  }
+}
+@media (max-width: 400px) {
+  .arimakinen-header-camera .arimakinen-header-camera-icon #cameraIcon {
+    width: 40px;
+    height: 40px;
+  }
+}
+.arimakinen-header-camera .arimakinen-header-camera-icon #closeIcon {
+  display: none;
+  width: 50px;
+  height: 50px;
+}
+.arimakinen-header-camera .arimakinen-header-camera-icon #closeIcon:hover {
+  opacity: 0.8;
+}
+@media (max-width: 599px) {
+  .arimakinen-header-camera .arimakinen-header-camera-icon #closeIcon {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 400px) {
+  .arimakinen-header-camera .arimakinen-header-camera-icon #closeIcon {
+    width: 40px;
+    height: 40px;
+  }
+}
+.arimakinen-header-camera-content {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 400;
+}
+.arimakinen-header-camera-content-photos {
+  padding: 100px 10px;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+.arimakinen-header-camera-content-photos-slide {
+  display: none; /* 初期状態では非表示 */
+  text-align: center;
+}
+.arimakinen-header-camera-content-photos-slide .slide-image {
+  display: block;
+  width: calc(100% - 20px);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.arimakinen-header-camera-content-photos-slide p {
+  font-size: 16px;
+  text-align: justify;
+  margin: 10px;
+  color: white;
+  line-height: 1.5;
+}
+.arimakinen-header-camera-content-photos .arrow {
+  position: absolute;
+  top: 75px; /* 要素の中央に配置 */
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 80px;
+  height: auto;
+  margin: 0 10px;
+}
+.arimakinen-header-camera-content-photos .arrow:hover {
+  opacity: 0.8;
+}
+.arimakinen-header-camera-content-photos .arrow-left {
+  left: 10px; /* 左側に配置 */
+}
+.arimakinen-header-camera-content-photos .arrow-right {
+  right: 10px; /* 右側に配置 */
 }
 
 .arimakinen-content-racetime {
