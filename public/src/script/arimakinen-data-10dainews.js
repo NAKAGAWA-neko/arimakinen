@@ -121,7 +121,7 @@ function init() {
     .then((text) => {
       Papa.parse(text, {
         complete: function (results) {
-          for (let year = 2022; year >= 2001; year--) {
+          for (let year = 2022; year >= 1995; year--) {
             for (let col = 1; col <= 2; col++) {
               let row = 2022 - year;
               let elementId = `o-${year}-${col}`;

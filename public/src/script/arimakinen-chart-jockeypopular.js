@@ -519,8 +519,8 @@ var arimaChartCyakujyun3Config = {
   },
 };
 
-// 枠
-var arimaChartWakuConfig = {
+// 枠1
+var arimaChartWaku1Config = {
   type: "bar",
   data: {
     labels: ["1", "2", "3", "4", "5", "6", "7", "8"],
@@ -577,6 +577,294 @@ var arimaChartWakuConfig = {
           display: false,
         },
       },
+
+      y: {
+        stacked: true,
+        max: 14,
+      },
+    },
+
+    responsive: true,
+    maintainAspectRatio: false,
+  },
+};
+
+// 枠2
+var arimaChartWaku2Config = {
+  type: "bar",
+  data: {
+    labels: ["1", "2", "3", "4", "5", "6", "7", "8"],
+    datasets: [
+      {
+        label: "人気馬の頭数",
+        data: [12, 10, 12, 7, 7, 6, 8, 5],
+        backgroundColor: [
+          "rgba(171,151,58, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(171,151,58, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+        ],
+        hoverOffset: 1,
+      },
+    ],
+  },
+  options: {
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        bodyFont: {
+          weight: "bold", // テキストを太字に設定
+        },
+        callbacks: {
+          title: function (tooltipItems) {
+            // X軸のラベルに「番人気」を追加してタイトルとして設定
+            return tooltipItems[0].label + "枠";
+          },
+          label: function (context) {
+            // データの値に「頭」を追加してラベルとして設定
+            return context.raw + "回";
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        grid: {
+          display: false,
+        },
+      },
+      y: {
+        stacked: true,
+        max: 14,
+      },
+    },
+
+    responsive: true,
+    maintainAspectRatio: false,
+  },
+};
+
+// 馬1
+var arimaChartUmaban1Config = {
+  type: "bar",
+  data: {
+    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"],
+    datasets: [
+      {
+        label: "人気馬の頭数",
+        data: [4, 4, 10, 6, 2, 7, 5, 4, 6, 7, 4, 1, 3, 2, 2, 0],
+        backgroundColor: [
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(171,151,58, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+        ],
+        hoverOffset: 1,
+      },
+    ],
+  },
+  options: {
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        bodyFont: {
+          weight: "bold", // テキストを太字に設定
+        },
+        callbacks: {
+          title: function (tooltipItems) {
+            // X軸のラベルに「番人気」を追加してタイトルとして設定
+            return tooltipItems[0].label + "枠";
+          },
+          label: function (context) {
+            // データの値に「頭」を追加してラベルとして設定
+            return context.raw + "回";
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        grid: {
+          display: false,
+        },
+      },
+
+      y: {
+        stacked: true,
+        max: 10,
+      },
+    },
+
+    responsive: true,
+    maintainAspectRatio: false,
+  },
+};
+
+// 馬2
+var arimaChartUmaban2Config = {
+  type: "bar",
+  data: {
+    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"],
+    datasets: [
+      {
+        label: "人気馬の頭数",
+        data: [10, 7, 6, 5, 4, 6, 3, 5, 3, 2, 4, 5, 4, 2, 1, 0],
+        backgroundColor: [
+          "rgba(171,151,58, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+        ],
+        hoverOffset: 1,
+      },
+    ],
+  },
+  options: {
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        bodyFont: {
+          weight: "bold", // テキストを太字に設定
+        },
+        callbacks: {
+          title: function (tooltipItems) {
+            // X軸のラベルに「番人気」を追加してタイトルとして設定
+            return tooltipItems[0].label + "枠";
+          },
+          label: function (context) {
+            // データの値に「頭」を追加してラベルとして設定
+            return context.raw + "回";
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        grid: {
+          display: false,
+        },
+      },
+
+      y: {
+        stacked: true,
+        max: 10,
+      },
+    },
+
+    responsive: true,
+    maintainAspectRatio: false,
+  },
+};
+
+// 馬3
+var arimaChartUmaban3Config = {
+  type: "bar",
+  data: {
+    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"],
+    datasets: [
+      {
+        label: "人気馬の頭数",
+        data: [6, 7, 4, 6, 6, 10, 5, 1, 3, 3, 5, 4, 3, 3, 1, 0],
+        backgroundColor: [
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(171,151,58, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+        ],
+        hoverOffset: 1,
+      },
+    ],
+  },
+  options: {
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        bodyFont: {
+          weight: "bold", // テキストを太字に設定
+        },
+        callbacks: {
+          title: function (tooltipItems) {
+            // X軸のラベルに「番人気」を追加してタイトルとして設定
+            return tooltipItems[0].label + "枠";
+          },
+          label: function (context) {
+            // データの値に「頭」を追加してラベルとして設定
+            return context.raw + "回";
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        grid: {
+          display: false,
+        },
+      },
+
+      y: {
+        stacked: true,
+        max: 10,
+      },
     },
 
     responsive: true,
@@ -591,7 +879,13 @@ let arimaChartJockey3 = null;
 let arimaChartCyakujyun1 = null;
 let arimaChartCyakujyun2 = null;
 let arimaChartCyakujyun3 = null;
-let arimaChartWaku = null;
+
+let arimaChartWaku1 = null;
+let arimaChartWaku2 = null;
+
+let arimaChartUmaban1 = null;
+let arimaChartUmaban2 = null;
+let arimaChartUmaban3 = null;
 
 // チャートの設定
 const chartConfigs = {
@@ -602,7 +896,13 @@ const chartConfigs = {
   arimaChartCyakujyun1: arimaChartCyakujyun1Config,
   arimaChartCyakujyun2: arimaChartCyakujyun2Config,
   arimaChartCyakujyun3: arimaChartCyakujyun3Config,
-  arimaChartWaku: arimaChartWakuConfig,
+
+  arimaChartWaku1: arimaChartWaku1Config,
+  arimaChartWaku2: arimaChartWaku2Config,
+
+  arimaChartUmaban1: arimaChartUmaban1Config,
+  arimaChartUmaban2: arimaChartUmaban2Config,
+  arimaChartUmaban3: arimaChartUmaban3Config,
 };
 
 // チャートインスタンスを格納するオブジェクト

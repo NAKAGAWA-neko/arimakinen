@@ -621,6 +621,401 @@ body {
   right: 10px; /* 右側に配置 */
 }
 
+.arimakinen-content-10dainews {
+  margin: -20px 0 0 0;
+  width: 100%;
+}
+@media screen and (min-width: 600px) and (max-width: 660px) {
+  .arimakinen-content-10dainews {
+    width: 295px;
+  }
+}
+.arimakinen-content-10dainews-title {
+  margin: -10px 0 0 0;
+  font-family: "Kanit", sans-serif;
+  font-weight: 800;
+  color: #ab973a;
+  font-size: 50px;
+  text-align: center;
+}
+.arimakinen-content-10dainews-title span {
+  font-size: 14px;
+}
+.arimakinen-content-10dainews-bar {
+  margin: -10px 0 0 0;
+  width: 100%;
+  height: 8px;
+  box-sizing: border-box;
+  background: repeating-linear-gradient(-45deg, #008847, #008847 2px, white 3px, white 6px);
+}
+.arimakinen-content-10dainews-main {
+  background-color: #008847;
+  border-radius: 0 0 10px 10px;
+  padding: 0;
+}
+.arimakinen-content-10dainews-head {
+  position: relative;
+  margin: 0 0;
+  background-color: #008847;
+}
+.arimakinen-content-10dainews-head-btn {
+  z-index: 999;
+  border: none;
+  background-color: white;
+  font-size: 16px;
+  color: #1e2428;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 2px 10px;
+  text-align: right;
+  cursor: pointer;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+.arimakinen-content-10dainews-news {
+  display: block;
+  background-color: #008847;
+  border-radius: 0 0 10px 10px;
+}
+.arimakinen-content-10dainews-news-title {
+  font-size: 26px;
+  font-weight: bolder;
+  color: white;
+  line-height: 1.2;
+  padding: 13px 0 0 13px;
+}
+.arimakinen-content-10dainews-news-table {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.arimakinen-content-10dainews-news-table-scrollcontainer {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.arimakinen-content-10dainews-news-table-scrollcontainer table {
+  width: 95%;
+  margin: 10px auto 0;
+  border-collapse: collapse;
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+}
+.arimakinen-content-10dainews-news-table-scrollcontainer th {
+  display: none;
+}
+.arimakinen-content-10dainews-news-table-scrollcontainer tr {
+  border-bottom: 1px solid #caeca6;
+}
+.arimakinen-content-10dainews-news-table-scrollcontainer tr:last-child {
+  border-bottom: none;
+}
+.arimakinen-content-10dainews-news-table-scrollcontainer td {
+  padding: 5px 2px;
+}
+.arimakinen-content-10dainews-news-table-scrollcontainer .arimakinen-accordion-content {
+  display: none;
+  padding: 16px 0;
+  border-top: none;
+}
+.arimakinen-content-10dainews-news-table-link {
+  color: white;
+  font-size: 16px;
+  text-align: right;
+  padding: 0 16px 8px 0;
+}
+.arimakinen-content-10dainews-news-table-link a {
+  color: white;
+}
+.arimakinen-content-10dainews-news-table-circle-number {
+  display: inline-block;
+  width: 24px; /* 丸の大きさを調整 */
+  height: 24px;
+  line-height: 23px; /* テキストを垂直中央に配置 */
+  text-align: center;
+  border-radius: 50%; /* 丸形状 */
+  background-color: #82bf40; /* 背景色 */
+  color: white; /* テキスト色 */
+  font-family: "Kanit", sans-serif;
+  margin-left: 3px;
+}
+.arimakinen-content-10dainews-arimadata {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: calc(100% - 20px);
+}
+.arimakinen-content-10dainews-arimadata-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ab973a;
+  text-align: center;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.arimakinen-content-10dainews-arimadata-title span {
+  font-size: 14px;
+  color: #1e2428;
+  font-weight: normal;
+}
+.arimakinen-content-10dainews-arimadata-table {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer table {
+  border-collapse: collapse;
+  font-size: 14px;
+  width: 100%;
+  margin: 0 auto;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer th,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer td {
+  white-space: nowrap;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer th {
+  font-weight: 500;
+  font-size: 11px;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer th,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer table {
+  border-bottom: 2px solid #d3d2c4;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer td {
+  border-bottom: 1px dashed #d3d2c4;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer td {
+  padding: 5px 3px;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .column-1,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .column-2,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .column-3,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .column-5 {
+  text-align: center;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .column-1 {
+  font-family: "Kanit", sans-serif;
+  color: #ab973a;
+  font-weight: bold;
+  font-size: 16px;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .column-4 {
+  font-weight: bold;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .column-2 {
+  background-color: rgb(249, 242, 227);
+}
+.arimakinen-content-10dainews-arimadata-table-link {
+  color: #1e2428;
+  font-size: 14px;
+  text-align: right;
+  padding: 10px 0 0 0;
+}
+.arimakinen-content-10dainews-arimadata-table-link a {
+  color: #1e2428;
+}
+.arimakinen-content-10dainews-others {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 0 0 10px 0;
+}
+.arimakinen-content-10dainews-others-kanji, .arimakinen-content-10dainews-others-buzzword {
+  background-color: #fffde1;
+  border-radius: 5px;
+}
+.arimakinen-content-10dainews-others-kanji {
+  width: 30%;
+  margin-right: 10px;
+}
+.arimakinen-content-10dainews-others-buzzword {
+  width: 70%;
+}
+.arimakinen-content-10dainews-others .others-title {
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+  color: #977e0f;
+  padding: 6px 0;
+  margin: 0 6px;
+  border-bottom: 1px solid #977e0f;
+}
+.arimakinen-content-10dainews-others .others-answer {
+  font-size: 18px;
+  text-align: center;
+  font-weight: bolder;
+  padding: 6px;
+}
+
+.arima-kaigyo-600-660 {
+  display: none;
+}
+@media screen and (min-width: 600px) and (max-width: 660px) {
+  .arima-kaigyo-600-660 {
+    display: inline;
+  }
+}
+
+#o-2017-1,
+#o-2012-1,
+#o-2005-1 {
+  color: #008847;
+  font-weight: bolder;
+}
+
+#kaigai-2009 .data-cell-3-2,
+#kaigai-2006 .data-cell-1-2,
+#kaigai-2001 .data-cell-1-2,
+#kokunai-2000 .data-cell-1-2 {
+  color: rgb(250, 250, 0);
+  font-weight: bolder;
+}
+
+#arimakinen-10dai-2017 .column-4.cell-1,
+#arimakinen-10dai-2012 .column-4.cell-1,
+#arimakinen-10dai-2009 .column-4.cell-1,
+#arimakinen-10dai-2006 .column-4.cell-1,
+#arimakinen-10dai-2005 .column-4.cell-1,
+#arimakinen-10dai-2001 .column-4.cell-1,
+#arimakinen-10dai-2001 .column-4.cell-2,
+#arimakinen-10dai-2000 .column-4.cell-1 {
+  color: #977e0f;
+  font-weight: bolder;
+}
+
+#arimakinen-alldata {
+  margin: -20px 0 0 0;
+}
+
+.arimakinen {
+  /* アコーディオンのスタイル */
+}
+.arimakinen-accordion {
+  margin-bottom: 10px;
+  margin-right: -16px;
+}
+@media screen and (min-width: 599px) {
+  .arimakinen-accordion {
+    margin-right: 0;
+  }
+}
+.arimakinen-accordion-toggle {
+  padding: 0 10px;
+  position: relative;
+  display: flex;
+  align-items: baseline;
+}
+.arimakinen-accordion-icon {
+  /* 三角形の矢印を作るためのコード */
+  position: relative;
+  cursor: pointer;
+}
+.arimakinen-accordion-icon:before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-top: -6px;
+  margin-right: 5px;
+  border-style: solid;
+  border-width: 15px 12px 0 12px;
+  border-color: #ab973a transparent transparent transparent;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+.arimakinen-accordion-icon.active:before {
+  /* アクティブな状態のとき（下向き矢印） */
+  transform: rotate(180deg);
+}
+.arimakinen-accordion-content {
+  display: none;
+  padding: 16px 0;
+  border-top: none;
+  transition: max-height 0.2s ease-out;
+}
+.arimakinen-times {
+  color: #ab973a;
+  font-size: 20px;
+  font-weight: bolder;
+  cursor: pointer;
+  width: 100px;
+}
+.arimakinen-times-number {
+  font-size: 39px;
+  font-family: "Kanit", sans-serif;
+  padding: 0 5px;
+  vertical-align: -4%;
+}
+.arimakinen-date {
+  font-size: 16px;
+  color: #5f5f55;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.arimakinen-table {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.arimakinen-table-bar {
+  position: absolute;
+  overflow-x: auto;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  box-sizing: border-box;
+  background: repeating-linear-gradient(-45deg, #ab973a, #ab973a 3px, white 3px, white 6px);
+}
+.arimakinen-table-scrollcontainer {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.arimakinen-table-scrollcontainer .horsename {
+  font-weight: bold;
+}
+.arimakinen-table-scrollcontainer .center-text {
+  text-align: center;
+}
+.arimakinen-table-scrollcontainer th,
+.arimakinen-table-scrollcontainer td {
+  white-space: nowrap;
+}
+.arimakinen-table-scrollcontainer th {
+  font-weight: 500;
+  font-size: 12px;
+}
+.arimakinen-table-scrollcontainer th,
+.arimakinen-table-scrollcontainer table {
+  border-bottom: 2px solid #d3d2c4;
+}
+.arimakinen-table-scrollcontainer td {
+  border-bottom: 1px dashed #d3d2c4;
+}
+.arimakinen-table-scrollcontainer table {
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.arimakinen-table-scrollcontainer td {
+  padding: 5px 5px;
+}
+.arimakinen-table-scrollcontainer .waku {
+  background-color: rgb(249, 242, 227);
+}
+.arimakinen-table-scrollcontainer .rank {
+  font-family: "Kanit", sans-serif;
+  color: #ab973a;
+}
+
 .arimakinen-content-racetime {
   margin: 0 0 10px 0;
   position: relative;
@@ -812,4 +1207,9 @@ body {
 }
 .arimakinen-content-racetime .bkggreen {
   background-color: #008847;
-}/*# sourceMappingURL=arimakinen-uma.css.map */
+}
+
+.Jockey-2,
+.Jockey-3 {
+  display: none;
+}/*# sourceMappingURL=arimakinen-style.css.map */

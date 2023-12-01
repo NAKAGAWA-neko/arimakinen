@@ -2,6 +2,7 @@
 @use "main";
 @use "headerFooter";
 
+// index(10dainews)
 .arimakinen-content {
   &-10dainews {
     margin: -20px 0 0 0;
@@ -291,7 +292,7 @@
   }
 }
 
-// 世相
+// 世相の色変え
 #o-2017-1,
 #o-2012-1,
 #o-2005-1 {
@@ -317,4 +318,359 @@
 #arimakinen-10dai-2000 .column-4.cell-1 {
   color: ari.$c-gold-2;
   font-weight: bolder;
+}
+
+// alldata
+#arimakinen-alldata {
+  margin: -20px 0 0 0;
+}
+.arimakinen {
+  /* アコーディオンのスタイル */
+  &-accordion {
+    margin-bottom: 10px;
+    margin-right: -16px;
+    @media screen and (min-width: 599px) {
+      margin-right: 0;
+    }
+
+    &-toggle {
+      padding: 0 10px;
+      position: relative;
+      display: flex;
+      align-items: baseline;
+    }
+
+    &-icon {
+      /* 三角形の矢印を作るためのコード */
+      position: relative;
+      cursor: pointer;
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-top: -6px;
+        margin-right: 5px;
+        border-style: solid;
+        border-width: 15px 12px 0 12px; // 三角形の大きさを増やす
+        border-color: ari.$c-gold-1 transparent transparent transparent;
+        vertical-align: middle;
+        transition: transform 0.3s ease; // アニメーションの追加
+      }
+
+      &.active:before {
+        /* アクティブな状態のとき（下向き矢印） */
+        transform: rotate(180deg); // 180度回転
+      }
+    }
+    &-content {
+      display: none;
+      padding: 16px 0;
+      border-top: none;
+      transition: max-height 0.2s ease-out;
+    }
+  }
+
+  &-times {
+    color: ari.$c-gold-1;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+    width: 100px;
+
+    &-number {
+      font-size: 39px;
+      font-family: "Kanit", sans-serif;
+      padding: 0 5px;
+      vertical-align: -4%;
+    }
+  }
+  &-date {
+    font-size: 16px;
+    color: ari.$c-l-back-1;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+
+  &-table {
+    width: 100%; // 親要素のパディングやボーダーを考慮した値に調整
+    position: relative;
+    box-sizing: border-box; // パディングとボーダーを幅に含める
+
+    &-bar {
+      position: absolute;
+      overflow-x: auto;
+
+      top: -5px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      box-sizing: border-box; // パディングとボーダーを高さに含める
+      background: repeating-linear-gradient(
+        -45deg,
+        ari.$c-gold-1,
+        ari.$c-gold-1 3px,
+        white 3px,
+        white 6px
+      );
+    }
+
+    &-scrollcontainer {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; // iOSデバイスのスムーズなスクロールのための設定
+
+      .horsename {
+        font-weight: bold;
+      }
+
+      .center-text {
+        text-align: center;
+      }
+
+      th,
+      td {
+        white-space: nowrap;
+      }
+
+      th {
+        font-weight: 500;
+        font-size: 12px;
+      }
+
+      th,
+      table {
+        border-bottom: 2px solid ari.$c-l-gray-1;
+      }
+
+      td {
+        border-bottom: 1px dashed ari.$c-l-gray-1;
+      }
+
+      table {
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+
+      td {
+        padding: 5px 5px;
+      }
+      .waku {
+        background-color: ari.$c-waku-back;
+      }
+      .rank {
+        font-family: "Kanit", sans-serif;
+        color: ari.$c-gold-1;
+      }
+    }
+  }
+}
+
+// uma
+.arimakinen-content-racetime {
+  margin: 0 0 10px 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &-gifanime {
+    margin: 0 0 -10px 0;
+    // width: 100%;
+    box-sizing: border-box;
+    img {
+      width: 64px;
+    }
+  }
+  .racerank-1st {
+    animation: race1st 2s ease-in 1s forwards;
+    @keyframes race1st {
+      from {
+        transform: translateX(0%);
+      }
+      to {
+        transform: translateX(80%);
+      }
+    }
+    @media (min-width: 600px) {
+      @keyframes race1st {
+        from {
+          transform: translateX(0%);
+        }
+        to {
+          transform: translateX(90%);
+        }
+      }
+    }
+  }
+
+  .racerank-2ed {
+    animation: race2ed 2s ease-in 1s forwards;
+    @keyframes race2ed {
+      from {
+        transform: translateX(0%);
+      }
+      to {
+        transform: translateX(42%);
+      }
+    }
+    @media (min-width: 600px) {
+      @keyframes race2ed {
+        from {
+          transform: translateX(0%);
+        }
+        to {
+          transform: translateX(47%);
+        }
+      }
+    }
+  }
+
+  .racerank-3rd {
+    animation: race3rd 2s ease-in 1s forwards;
+    @keyframes race3rd {
+      from {
+        transform: translateX(0%);
+      }
+      to {
+        transform: translateX(23%);
+      }
+    }
+    @media (min-width: 600px) {
+      @keyframes race3rd {
+        from {
+          transform: translateX(0%);
+        }
+        to {
+          transform: translateX(26%);
+        }
+      }
+    }
+  }
+
+  .racerank-5th {
+    animation: race5th 2s ease-in 1s forwards;
+    @keyframes race5th {
+      from {
+        transform: translateX(0%);
+      }
+      to {
+        transform: translateX(19%);
+      }
+    }
+    @media (min-width: 600px) {
+      @keyframes race5th {
+        from {
+          transform: translateX(0%);
+        }
+        to {
+          transform: translateX(21.5%);
+        }
+      }
+    }
+  }
+
+  &-text {
+    display: flex;
+    flex-wrap: nowrap;
+    // gap: 10px;
+    border-radius: 0 20px 0 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 0;
+    color: white;
+
+    &-rank {
+      font-family: "Kanit", sans-serif;
+      font-size: 35px;
+      font-weight: bolder;
+      margin: 0 auto;
+      padding: 0 8px 0 12px;
+      letter-spacing: 0;
+      text-align: center;
+      align-items: center;
+      white-space: nowrap;
+      line-height: 0.8;
+
+      @media (min-width: 465px) {
+        letter-spacing: 0.12em;
+      }
+
+      span {
+        font-size: 14px;
+        align-items: center;
+      }
+    }
+    &-nametime {
+      align-items: center;
+      font-weight: bolder;
+      border-left: 2px solid white;
+      margin: 4px 0 0;
+      padding: 0 0 0 8px;
+      width: 100%;
+
+      @media (min-width: 465px) {
+        padding: 0 0 0 16px;
+      }
+
+      &-name,
+      &-time {
+        line-height: 0.8;
+        margin: 2px 0;
+        @media (min-width: 465px) {
+          line-height: 1;
+        }
+      }
+
+      span {
+        font-size: 14px;
+        align-items: center;
+      }
+      &-name {
+        font-size: 20px;
+        margin-bottom: 8px;
+        @media (min-width: 465px) {
+          margin-bottom: 0;
+        }
+      }
+
+      &-time {
+        font-size: 22px;
+      }
+    }
+    &-date {
+      font-weight: bold;
+      text-align: right;
+      margin: 2px 6px 0 auto;
+      padding-right: 6px;
+      line-height: 1.2;
+      width: 39%;
+      white-space: normal;
+
+      @media (min-width: 450px) and (max-width: 545px) {
+        width: 25%;
+
+        // white-space: nowrap;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+          color: yellow;
+        }
+      }
+    }
+  }
+  .bkggold {
+    background-color: ari.$c-gold-1;
+  }
+  .bkggreen {
+    background-color: ari.$c-green-1;
+  }
+}
+
+// jockeypopular
+.Jockey-2,
+.Jockey-3 {
+  display: none;
 }
