@@ -99,9 +99,9 @@ function initAccordion() {
     }
   }
   // HTML要素の生成が完了したことを確認してからinitを呼び出す
-  setTimeout(function () {
-    init();
-  }, 0);
+  // setTimeout(function () {
+  //   init();
+  // }, 0);
 
   console.log("Accordion elements created.");
 }
