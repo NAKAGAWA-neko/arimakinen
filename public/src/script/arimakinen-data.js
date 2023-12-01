@@ -97,6 +97,10 @@ function initAccordion() {
       }
     }
   }
+  // 最後にinit関数を呼び出す
+  init();
+
+  console.log("Accordion elements created.");
 }
 
 // アコーディオン表示非表示 jQuery
@@ -159,6 +163,10 @@ function loadAndDisplayDataCSV(csvFilePath, containerId) {
         containerElement.innerHTML = tableHTML;
       } else {
         console.error(`Element with ID '${containerId}' not found.`);
+        console.error(
+          `Element with ID '${containerId}' not found. Current DOM:`,
+          document.body.innerHTML
+        );
       }
     })
 
@@ -176,10 +184,13 @@ window.loadAndDisplayDataCSV = loadAndDisplayDataCSV;
 // CSVファイルをページロード時に自動的に読み込むための関数
 function init() {
   for (let year = 2022; year >= 1956; year--) {
-    let csvFilePath = `/src/data/arimakinen-${year}.csv`;
     let containerId = `arimakinen-${year}`;
+    console.log(`Checking for element with ID: ${containerId}`);
+
+    let csvFilePath = `/src/data/arimakinen-${year}.csv`;
     loadAndDisplayDataCSV(csvFilePath, containerId);
   }
 }
+
 // ページが完全にロードされたらinit関数を呼び出す
 document.addEventListener("DOMContentLoaded", init);
