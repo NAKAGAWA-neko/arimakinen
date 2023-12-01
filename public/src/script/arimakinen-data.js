@@ -1,20 +1,22 @@
 // ページが読み込まれた後にURLのハッシュ部分をチェックし、該当する要素が存在すればその要素までスムーズにスクロール
 
-document.addEventListener("DOMContentLoaded", function () {
+window.onload = function () {
   var hash = window.location.hash;
-  var isFirstLoad = !sessionStorage.getItem("reloaded");
+  console.log("Hash:", hash);
 
-  if (hash && isFirstLoad) {
-    setTimeout(function () {
-      var targetElement = document.querySelector(hash);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 300);
+  // セッションストレージの値をチェックせずに、ハッシュがある場合はスクロールする
+  if (hash) {
+    var targetElement = document.querySelector(hash);
+    console.log("Target element:", targetElement);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
+  // ページが読み込まれた後で「reloaded」をtrueに設定
   sessionStorage.setItem("reloaded", true);
-});
+};
 
 // ページが完全にロードされたらinitAccordion関数を呼び出す
 document.addEventListener("DOMContentLoaded", initAccordion);
