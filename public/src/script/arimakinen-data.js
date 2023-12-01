@@ -101,7 +101,7 @@ function initAccordion() {
   init();
 
   // console.log("Accordion elements created.");
-  // console.log(document.getElementById("arimakinen-alldata").innerHTML);
+  console.log(document.getElementById("arimakinen-alldata").innerHTML);
 }
 
 // アコーディオン表示非表示 jQuery
