@@ -100,7 +100,8 @@ function initAccordion() {
   // 最後にinit関数を呼び出す
   init();
 
-  console.log("Accordion elements created.");
+  // console.log("Accordion elements created.");
+  console.log(document.getElementById("arimakinen-alldata").innerHTML);
 }
 
 // アコーディオン表示非表示 jQuery
