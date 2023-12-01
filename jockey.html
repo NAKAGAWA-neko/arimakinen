@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="/src/style/arimakinen-jockeybaken.css" />
+    <link rel="stylesheet" href="/src/style/arimakinen-style.css" />
 
     <!-- googlefont -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -82,7 +82,7 @@
             </li>
             <li>
               <a href="jockey.html"
-                ><img src="/images/arimakinen-h-menu-jockey-stallion.png" alt=""
+                ><img src="/images/arimakinen-h-menu-jockey-popular.png" alt=""
               /></a>
             </li>
 
@@ -144,11 +144,11 @@
         <!--1着馬は何番人気？ -->
         <div class="arimakinen-content">
           <div class="arimakinen-content-change">
-            <button class="arimakinen-content-change-newlinebtn btnNinki">2着馬の人気は?</button>
+            <button class="arimakinen-content-change-newlinebtn btnNinki">2着の人気は?</button>
           </div>
 
           <div class="arimakinen-content-chart Ninki-1">
-            <h5>1着馬の人気</h5>
+            <h5>1着の人気</h5>
             <div class="chart380">
               <canvas id="arimaChartCyakujyun1"></canvas>
             </div>
@@ -156,7 +156,7 @@
 
           <!--2着馬は何番人気？ -->
           <div class="arimakinen-content-chart Ninki-2">
-            <h5>2着馬の人気</h5>
+            <h5>2着の人気</h5>
             <div class="chart380">
               <canvas id="arimaChartCyakujyun2"></canvas>
             </div>
@@ -164,7 +164,7 @@
 
           <!--3着馬は何番人気？ -->
           <div class="arimakinen-content-chart Ninki-3">
-            <h5>3着馬の人気</h5>
+            <h5>3着の人気</h5>
             <div class="chart380">
               <canvas id="arimaChartCyakujyun3"></canvas>
             </div>
@@ -172,33 +172,78 @@
         </div>
 
         <div class="arimakinen-group-pcflex">
-          <!-- 枠順別 -->
+          <!-- 枠番 -->
           <div class="arimakinen-content">
-            <div class="arimakinen-content-chart">
-              <h5>枠順別</h5>
-              <div class="chart380pc510">
-                <canvas id="arimaChartWaku"></canvas>
+            <div class="arimakinen-content-change">
+              <button class="arimakinen-content-change-newlinebtn btnWaku">2着は?</button>
+            </div>
+
+            <!-- 1着 -->
+            <div class="arimakinen-content-chart Waku-1">
+              <h5>1着の枠番</h5>
+              <div class="chart380">
+                <canvas id="arimaChartWaku1"></canvas>
+              </div>
+            </div>
+            <!-- 2着 -->
+            <div class="arimakinen-content-chart Waku-2">
+              <h5>2着の枠番</h5>
+              <div class="chart380">
+                <canvas id="arimaChartWaku2"></canvas>
               </div>
             </div>
 
             <div class="arimakinen-marginb60"></div>
           </div>
 
+          <!-- 馬番 -->
+          <div class="arimakinen-content">
+            <div class="arimakinen-content-change">
+              <button class="arimakinen-content-change-newlinebtn btnUmaban">2着は?</button>
+            </div>
+
+            <!-- 1着 -->
+            <div class="arimakinen-content-chart Umaban-1">
+              <h5>1着の馬番</h5>
+              <div class="chart380">
+                <canvas id="arimaChartUmaban1"></canvas>
+              </div>
+            </div>
+
+            <!-- 2着 -->
+            <div class="arimakinen-content-chart Umaban-2">
+              <h5>2着の馬番</h5>
+              <div class="chart380">
+                <canvas id="arimaChartUmaban2"></canvas>
+              </div>
+            </div>
+
+            <!-- 3着 -->
+            <div class="arimakinen-content-chart Umaban-3">
+              <h5>3着の馬番</h5>
+              <div class="chart380">
+                <canvas id="arimaChartUmaban3"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="arimakinen-group-pcflex">
           <!-- 高配当 -->
           <div class="arimakinen-content">
             <h5>高配当</h5>
             <div class="arimakinen-content-boxchange">
               <ul>
-                <li onclick="changeBakenImage('/images/arimakinen-baken-1.png')">単勝</li>
-                <li onclick="changeBakenImage('/images/arimakinen-baken-2.png')">枠連</li>
-                <li onclick="changeBakenImage('/images/arimakinen-baken-3.png')">馬連</li>
-                <li onclick="changeBakenImage('/images/arimakinen-baken-4.png')">馬単</li>
-                <li onclick="changeBakenImage('/images/arimakinen-baken-5.png')">三連複</li>
-                <li onclick="changeBakenImage('/images/arimakinen-baken-6.png')">三連単</li>
+                <li onclick="changePopularImage('/images/arimakinen-baken-1.png')">単勝</li>
+                <li onclick="changePopularImage('/images/arimakinen-baken-2.png')">枠連</li>
+                <li onclick="changePopularImage('/images/arimakinen-baken-3.png')">馬連</li>
+                <li onclick="changePopularImage('/images/arimakinen-baken-4.png')">馬単</li>
+                <li onclick="changePopularImage('/images/arimakinen-baken-5.png')">三連複</li>
+                <li onclick="changePopularImage('/images/arimakinen-baken-6.png')">三連単</li>
               </ul>
             </div>
             <div class="arimakinen-content-container">
-              <img id="bakenImage" src="/images/arimakinen-baken-1.png" alt="Default Image" />
+              <img id="popularImage" src="/images/arimakinen-baken-1.png" alt="Default Image" />
             </div>
           </div>
         </div>
@@ -224,7 +269,7 @@
             </li>
             <li>
               <a href="jockey.html"
-                ><img src="/images/arimakinen-h-menu-jockey-stallion.png" alt=""
+                ><img src="/images/arimakinen-h-menu-jockey-popular.png" alt=""
               /></a>
             </li>
 
@@ -240,7 +285,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/src/script/arimakinen-header.js" defer></script>
-    <script src="/src/script/arimakinen-chart-jockeybaken.js" defer></script>
+    <script src="/src/script/arimakinen-chart-jockeypopular.js" defer></script>
     <script src="/src/script/arimakinen-switching.js" defer></script>
   </body>
 </html>
