@@ -33,6 +33,7 @@ function initAccordion() {
     complete: function (results) {
       var data = results.data; // 読み込まれたデータ
       createAccordions(data); // 生成する関数を呼び出し
+      init(); // createAccordionsが完了した後にinitを呼び出す
     },
   });
 
@@ -102,8 +103,7 @@ function initAccordion() {
     init();
   }, 0);
 
-  // console.log("Accordion elements created.");
-  console.log(document.getElementById("arimakinen-alldata").innerHTML);
+  console.log("Accordion elements created.");
 }
 
 // アコーディオン表示非表示 jQuery
