@@ -4,140 +4,1410 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="/src/style/arimakinen-uma.css" />
-
-    <!-- googlefont -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- googlefont -->
+    <link rel="stylesheet" href="/src/style/arimakinen-style.css" />
 
     <title>第68回有馬記念 : 読者が選ぶ10大ニュースと有馬記念 : 夕刊 WEEKLY KEIBA 特別企画</title>
   </head>
   <body>
-    <div class="arimakinen">
-      <!-- header -->
-      <header class="arimakinen-header">
-        <div class="arimakinen-header-wrapper">
-          <!-- スライド写真 -->
-          <div class="arimakinen-header-camera">
-            <div class="arimakinen-header-camera-icon">
-              <img id="cameraIcon" src="/images/camera.svg" alt="写真へ" />
-              <img id="closeIcon" src="/images/close-icon-white.svg" alt="閉じる" />
+    <style>
+      .p-header-category-current-title {
+        text-indent: -9999px;
+        line-height: 0;
+        display: block;
+        padding: 0;
+        margin-bottom: 0;
+      }
+
+      .p-header-category-current-title::after {
+        content: "";
+        background-image: url(/media/2020/10/uspresident2020-title-pc.png);
+        background-size: 1057px 198px;
+        background-repeat: no-repeat;
+        display: block;
+        width: 1056px;
+        height: 198px;
+      }
+
+      .p-category-time-series-sec {
+        margin-top: 60px;
+      }
+
+      /* global-menu */
+      .global_menu {
+        width: 1056px;
+        margin-bottom: 30px;
+        background: #163b8c;
+      }
+
+      .global-menu_list {
+        font-family: "Oswald", sans-serif;
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+      }
+
+      .global-menu_item {
+        width: calc(100% / 7);
+        font-size: 22px;
+        line-height: 1;
+        color: #ffffff;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      .global-menu_item:not(:last-child):after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: -10px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 25px;
+        height: 1px;
+        background-color: #ffffff;
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+
+      .global-menu_item span {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: normal;
+        line-height: 1;
+        margin-top: 10px;
+      }
+
+      .global-menu_item a {
+        display: block;
+        color: #ffffff;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .global-menu_item a:hover {
+        cursor: pointer;
+        opacity: 0.5;
+      }
+
+      .uspresident2020-d-none {
+        font-size: 22px !important;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        display: none;
+      }
+
+      label {
+        display: block;
+        cursor: pointer;
+      }
+
+      /* h1タイトル */
+      .p-header-category h1.p-header-category-content-title {
+        background-color: unset;
+        text-indent: -9999px;
+        line-height: 0;
+        display: block;
+        padding: 0;
+      }
+
+      .p-header-category h1.p-header-category-content-title:after {
+        content: "";
+        background-color: #ffffff !important;
+        background-image: url(/media/2020/10/uspresident2020-title-pc.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        display: block;
+        width: 1056px;
+        height: 180px;
+      }
+
+      .layout-contents {
+        margin: 30px auto;
+      }
+
+      /* リストボックス */
+      .sports-arimakinen-quiz-list {
+        position: relative;
+        margin: 16px 0 36px;
+      }
+
+      .sports-arimakinen-quiz-list-ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 質問 */
+      .quiz-box {
+        -webkit-transition: opacity 1s, visibility 0.6s;
+        transition: opacity 1s, visibility 0.6s;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .quiz-box.is-change {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      /* 答え */
+      .answer {
+        -webkit-transition: opacity 1s, visibility 0.6s;
+        transition: opacity 1s, visibility 0.6s;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+      }
+
+      .answer img {
+        width: 630px;
+        margin: 0 auto 50px;
+      }
+
+      .answer.is-change {
+        -webkit-transition: opacity 1s, visibility 0.6s;
+        transition: opacity 1s, visibility 0.6s;
+        visibility: visible;
+        opacity: 1;
+        position: relative;
+        background: #f7f7f7;
+      }
+
+      /* 説明 */
+      .explain {
+        -webkit-transition: opacity 1s, visibility 0.6s;
+        transition: opacity 1s, visibility 0.6s;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+      }
+
+      .explain.is-change {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .explain.is-change img {
+        width: 50px;
+        margin: 0 auto;
+        display: block;
+        position: absolute;
+        top: -10px;
+        right: 0;
+        left: 0;
+        margin: auto;
+      }
+
+      /* セクション：クイズ */
+      .sports-arimakinen-quiz {
+        max-width: 630px;
+        margin: 60px auto;
+        /* 解説 */
+      }
+
+      .sports-arimakinen-quiz-title-pc img {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .sports-arimakinen-quiz-title-sp img {
+        display: none;
+      }
+
+      .sports-arimakinen-quiz-list {
+        border: none;
+        background-color: #f7f7f7;
+        list-style: none;
+        border-radius: 0 0 20px 20px;
+      }
+
+      .sports-arimakinen-quiz-list:before {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 20px;
+        background: #008847 url(/images/arima-star.png) repeat-x;
+        background-size: auto;
+        background-position: left 10px center;
+        margin-bottom: 47px;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .sports-arimakinen-quiz-list .quiz-box {
+        position: relative;
+        padding: 0 40px 40px;
+      }
+
+      .sports-arimakinen-quiz-list .quiz-box-title {
+        font-family: "Kanit", sans-serif;
+        position: absolute;
+        top: -20px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: 30px;
+        color: #f9fd00;
+        text-align: center;
+        line-height: 60px;
+        background: #008847;
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+      }
+
+      .sports-arimakinen-quiz-list .quiz-box-title.answer {
+        opacity: unset;
+        visibility: inherit;
+      }
+
+      .sports-arimakinen-quiz-list .quiz-box-question {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 30px;
+      }
+
+      .sports-arimakinen-quiz-list .quiz-box .choice {
+        position: relative;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.4;
+        color: #008847;
+        text-align: center;
+        padding: 12px 35px;
+        background: #ffffff;
+        border: 1px solid #008847;
+        border-radius: 30px;
+        margin-bottom: 10px;
+      }
+
+      .sports-arimakinen-quiz-list .quiz-box .choice:hover {
+        cursor: pointer;
+        background: #008847;
+        color: #ffffff;
+      }
+
+      .sports-arimakinen-quiz-list .quiz-box .choice:active {
+        background: #008847;
+        color: #ffffff;
+      }
+
+      .sports-arimakinen-quiz-list .quiz-box .choice span {
+        position: absolute;
+        left: 20px;
+      }
+
+      .sports-arimakinen-quiz .explain {
+        background: #f7f7f7;
+        padding: 1px 40px 40px;
+      }
+
+      .sports-arimakinen-quiz .explain-answer-wrap {
+        margin-top: 60px;
+        position: relative;
+      }
+
+      .sports-arimakinen-quiz .explain-answer-title {
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+        background: #008847;
+        border-radius: 20px;
+        margin-right: 20px;
+        padding: 6px 18px;
+      }
+
+      .sports-arimakinen-quiz .explain-answer-detail {
+        font-size: 24px;
+        font-weight: bold;
+        padding-left: 86px;
+      }
+
+      .sports-arimakinen-quiz .explain .cb {
+        clear: both;
+      }
+
+      .sports-arimakinen-quiz .explain-text {
+        position: relative;
+        margin-top: 55px;
+        font-size: 15px;
+        text-indent: 1em;
+        text-align: justify;
+      }
+
+      .sports-arimakinen-quiz .explain-text:before {
+        position: absolute;
+        top: -35px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: block;
+        content: "STUDY !";
+        font-size: 14px;
+        color: #008847;
+        text-align: center;
+        background-color: #f7f7f7;
+        width: 90px;
+        height: 20px;
+        z-index: 10;
+      }
+
+      .sports-arimakinen-quiz .explain-text:after {
+        position: absolute;
+        top: -25px;
+        left: 0;
+        display: block;
+        content: "";
+        font-size: 14px;
+        background: #008847;
+        width: 550px;
+        height: 1px;
+      }
+
+      /* セクション：snsシェア */
+      .sports-arimakinen-quiz-result-wrap {
+        background: #f7f7f7;
+        padding: 40px;
+        border-radius: 20px;
+      }
+
+      .sports-arimakinen-quiz-correct-answer {
+        font-size: 30px;
+        font-weight: bold;
+        color: #008847;
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      .sports-arimakinen-quiz-correct-answer span {
+        display: block;
+        font-size: 18px;
+      }
+
+      .sports-arimakinen-quiz-shere-text {
+        position: relative;
+        margin: 20px 0;
+        font-size: 18px;
+        font-weight: bold;
+        color: #003b9a;
+        text-align: center;
+      }
+
+      .sports-arimakinen-quiz-shere-text:before {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        display: block;
+        content: "";
+        width: 180px;
+        height: 1px;
+        background: #003b9a;
+      }
+
+      .sports-arimakinen-quiz-shere-text:after {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        display: block;
+        content: "";
+        width: 180px;
+        height: 1px;
+        background: #003b9a;
+      }
+
+      .sports-arimakinen-quiz-shere-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-indent: -9999px;
+      }
+
+      .sports-arimakinen-quiz-shere-list-item.uspresident2020-fa {
+        display: block;
+        content: "";
+        width: 55px;
+        height: 55px;
+        background: url(/media/2020/10/uspresident2020-fa.png) no-repeat;
+        background-size: contain;
+        margin-right: 20px;
+      }
+
+      .sports-arimakinen-quiz-shere-list-item.uspresident2020-fa a {
+        display: block;
+        height: 55px;
+        cursor: pointer;
+      }
+
+      .sports-arimakinen-quiz-shere-list-item.uspresident2020-tw {
+        display: block;
+        content: "";
+        width: 55px;
+        height: 55px;
+        background: url(/media/2020/10/uspresident2020-tw.png) no-repeat;
+        background-size: contain;
+      }
+
+      .sports-arimakinen-quiz-shere-list-item.uspresident2020-tw a {
+        display: block;
+        height: 55px;
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 599px) {
+        .p-header-category-wrapper {
+          width: calc(100% - 40px);
+        }
+        .p-header-category-current-title {
+          position: relative;
+          background-image: url(/media/2020/11/uspresident2020-title-sp-deco.png);
+          background-repeat: repeat-x;
+          width: 100%;
+          height: 130px;
+          margin: 8px 0 24px;
+          padding: 66px;
+          border-radius: 0;
+        }
+
+        .p-header-category-current-title::after {
+          left: 0;
+          background-image: url(/media/2020/10/uspresident2020-title-sp-text.jpg);
+          background-size: 217px 70px;
+          width: 217px;
+          height: 70px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          top: 5px;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+
+        /* global-menu */
+        .global_menu {
+          width: 100%;
+        }
+
+        .global-menu_list {
+          display: block;
+          overflow: hidden;
+        }
+
+        .global-menu_item {
+          width: calc(100% / 5);
+          height: 40px;
+          padding: 5px 7px;
+          float: left;
+        }
+
+        .global-menu_item:not(:last-child):after {
+          -webkit-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+        }
+
+        .global-menu_item:not(:last-child):after {
+          width: 12px;
+          right: -6px;
+        }
+
+        .global-menu_item a {
+          height: 40px;
+        }
+
+        .global-menu_item span {
+          font-size: 12px;
+          margin-top: 0;
+          line-height: 1.2;
+        }
+
+        .uspresident2020-d-none {
+          display: none !important;
+        }
+
+        /* global-menuここまで */
+
+        .layout-contents {
+          margin: 15px auto !important;
+        }
+
+        .p-header-category h1.p-header-category-content-title {
+          position: relative;
+          background-image: url(/media/2020/10/uspresident2020-title-sp-deco.jpg);
+          background-repeat: repeat-x;
+          width: 100%;
+          height: 130px;
+          margin: 8px 0 4px;
+          padding: 66px;
+          border-radius: 0;
+        }
+
+        .p-header-category h1.p-header-category-content-title:after {
+          background-image: url(/media/2020/10/uspresident2020-title-sp-text.jpg);
+          background-size: 217px 70px;
+          width: 217px;
+          height: 70px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          top: 5px;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+
+        .sports-arimakinen-quiz-title-pc img {
+          display: none;
+        }
+
+        .sports-arimakinen-quiz-title-sp img {
+          display: block;
+        }
+
+        .layout-contents {
+          margin: 150px auto;
+        }
+
+        .sports-arimakinen-quiz {
+          width: 100%;
+          padding: 0 16px;
+          margin: 26px auto;
+        }
+
+        .sports-arimakinen-quiz-list {
+          border-radius: 0 0 20px 20px;
+        }
+
+        .sports-arimakinen-quiz-list:before {
+          background-position: left 5px center;
+          margin-bottom: 40px;
+        }
+
+        .sports-arimakinen-quiz-list .quiz-box {
+          padding: 0 20px 40px;
+        }
+
+        .sports-arimakinen-quiz-list .quiz-box-question {
+          font-size: 16px;
+        }
+
+        .sports-arimakinen-quiz-list .quiz-box .choice {
+          font-size: 14px;
+        }
+
+        .sports-arimakinen-quiz-list .quiz-box .choice span {
+          left: 10px;
+        }
+
+        .sports-arimakinen-quiz-correcy-answer {
+          font-size: 26px;
+        }
+
+        .sports-arimakinen-quiz-shere-text:before,
+        .sports-arimakinen-quiz-shere-text:after {
+          width: 40px;
+        }
+
+        .sports-arimakinen-quiz-shere-list-item {
+          width: 45px !important;
+          height: 45px !important;
+        }
+
+        .sports-arimakinen-quiz .explain {
+          padding: 1px 20px 40px;
+          border-radius: 0 0 20px 20px;
+        }
+
+        .sports-arimakinen-quiz .explain-text:after {
+          width: 100%;
+        }
+
+        .sports-arimakinen-quiz-shere-list-item.uspresident2020-fa a {
+          height: 45px;
+        }
+
+        .sports-arimakinen-quiz-shere-list-item.uspresident2020-tw a {
+          height: 45px;
+        }
+
+        .sports-arimakinen-quiz-list .quiz-box .choice {
+          padding: 12px 21px;
+        }
+
+        .sports-arimakinen-quiz .explain-answer-detail {
+          font-size: 22px;
+        }
+
+        .answer {
+          border-radius: 0 0 20px 20px;
+        }
+
+        .sports-arimakinen-quiz-result-wrap {
+          border-radius: 20px;
+        }
+
+        .explain.is-change img {
+          top: 0;
+        }
+
+        .sports-arimakinen-quiz .explain-answer-wrap {
+          margin-top: 69px;
+        }
+      }
+
+      @media screen and (max-width: 320px) {
+        .global-menu_item {
+          padding: 5px 9px;
+        }
+
+        .global-menu_item span {
+          font-size: 12px;
+        }
+
+        .sports-arimakinen-quiz-title {
+          height: 94px;
+        }
+
+        .sports-arimakinen-quiz-list:before {
+          background-position: left center;
+        }
+
+        .sports-arimakinen-quiz-correct-answer {
+          font-size: 23px;
+        }
+
+        .sports-arimakinen-quiz-list .quiz-box-question {
+          font-size: 14px;
+        }
+
+        .sports-arimakinen-quiz-list .quiz-box .choice {
+          font-size: 12px;
+          padding: 12px 22px;
+        }
+
+        .sports-arimakinen-quiz-list .quiz-box .choice span {
+          left: 8px;
+        }
+
+        .sports-arimakinen-quiz {
+          margin: 49px auto;
+        }
+      }
+    </style>
+    <div class="layout-contents__main">
+      <div class="uni-sports-arimakinen-quiz"></div>
+      <div class="arimakinen">
+        <!-- header -->
+        <header class="arimakinen-header">
+          <div class="arimakinen-header-wrapper">
+            <!-- スライド写真 -->
+            <div class="arimakinen-header-camera">
+              <div class="arimakinen-header-camera-icon">
+                <img id="cameraIcon" src="/images/camera.svg" alt="写真へ" />
+                <img id="closeIcon" src="/images/close-icon-white.svg" alt="閉じる" />
+              </div>
+
+              <div id="menuContent" class="arimakinen-header-camera-content">
+                <div id="photoSlide" class="arimakinen-header-camera-content-photos">
+                  <!-- スライド画像1 -->
+                  <div class="arimakinen-header-camera-content-photos-slide">
+                    <img class="slide-image" src="/images/arima-1.jpg" alt="イクイノックス" />
+                    <p class="slide-text">
+                      第67回（2022年）有馬記念を制したルメール騎乗のイクイノックス（牡・3歳）。世界ランキング1位に君臨し、翌年2023年11月のジャパンカップ優勝後に引退した
+                    </p>
+                  </div>
+
+                  <!-- スライド画像2 -->
+                  <div class="arimakinen-header-camera-content-photos-slide">
+                    <img class="slide-image" src="/images/arima-2.jpg" alt="イクイノックス" />
+                    <p class="slide-text">
+                      第67回（2022年）有馬記念を制したルメール騎乗のイクイノックス（牡・3歳）。世界ランキング1位に君臨し、翌年2023年11月のジャパンカップ優勝後に引退した
+                    </p>
+                  </div>
+                  <!-- 右矢印 -->
+                  <img class="arrow arrow-right" src="/images/arrow-right2.svg" alt="次へ" />
+                </div>
+              </div>
             </div>
+            <h1>
+              <a href=""><img src="/images/arima-header-title.png" alt="第68回有馬記念" /></a>
+            </h1>
+            <img
+              class="arimakinen-header-wrapper-illust"
+              src="/images/arima-header-illust.png"
+              alt=""
+            />
+          </div>
+          <div class="arimakinen-header-shiba"></div>
+          <div class="arimakinen-header-green">
+            <h2><img src="/images/arima-header-h2.png" alt="夕刊WeeklyKeiba スペシャル特集" /></h2>
+          </div>
 
-            <div id="menuContent" class="arimakinen-header-camera-content">
-              <div id="photoSlide" class="arimakinen-header-camera-content-photos">
-                <!-- スライド画像1 -->
-                <div class="arimakinen-header-camera-content-photos-slide">
-                  <img class="slide-image" src="/images/arima-1.jpg" alt="イクイノックス" />
-                  <p class="slide-text">
-                    第67回（2022年）有馬記念を制したルメール騎乗のイクイノックス（牡・3歳）。世界ランキング1位に君臨し、翌年2023年11月のジャパンカップ優勝後に引退した
-                  </p>
-                </div>
+          <div class="arimakinen-linkmenu">
+            <ul>
+              <li>
+                <a href="index.html"><img src="/images/arimakinen-h-menu-10dai.png" alt="" /></a>
+              </li>
+              <li>
+                <a href="data.html"><img src="/images/arimakinen-h-menu-results.png" alt="" /></a>
+              </li>
+              <li>
+                <a href="uma.html"><img src="/images/arimakinen-h-menu-uma.png" alt="" /></a>
+              </li>
+              <li>
+                <a href="jockey.html"
+                  ><img src="/images/arimakinen-h-menu-jockey-popular.png" alt=""
+                /></a>
+              </li>
 
-                <!-- スライド画像2 -->
-                <div class="arimakinen-header-camera-content-photos-slide">
-                  <img class="slide-image" src="/images/arima-2.jpg" alt="イクイノックス" />
-                  <p class="slide-text">
-                    第67回（2022年）有馬記念を制したルメール騎乗のイクイノックス（牡・3歳）。世界ランキング1位に君臨し、翌年2023年11月のジャパンカップ優勝後に引退した
-                  </p>
-                </div>
-                <!-- 右矢印 -->
-                <img class="arrow arrow-right" src="/images/arrow-right2.svg" alt="次へ" />
+              <li>
+                <a href="quiz.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
+              </li>
+            </ul>
+          </div>
+          <h3>ありうまクイズ</h3>
+          <h4>
+            1956年に「中山グランプリ」を当時の理事長の有馬頼寧氏が提案し行った。しかし翌年急逝、同氏の功績を称え第2回からは「有馬記念」と改称。当時はファン投票による出走馬の選定方法も前例のないものだった。
+          </h4>
+        </header>
+
+        <!-- mainコンテンツ -->
+        <main class="arimakinen-main">
+          <div class="sports-arimakinen-quiz">
+            <form id="question">
+              <div>
+                <ul class="sports-arimakinen-quiz-list-ul">
+                  <!-- Q1 -->
+                  <li id="quiz01" class="sports-arimakinen-quiz-list">
+                    <h3 class="quiz-box-title">Q.1</h3>
+                    <!-- クイズ -->
+                    <div class="quiz-box">
+                      <p class="quiz-box-question">第67回（2022年）の優勝馬は？</p>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q01" value="1" onclick="receive(name,value)" />
+                          <span>1</span>クロノジェネシス</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q01" value="2" onclick="receive(name,value)" />
+                          <span>2</span>イクイノックス</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q01" value="3" onclick="receive(name,value)" />
+                          <span>3</span>エフフォーリア</label
+                        >
+                      </div>
+                    </div>
+                    <!-- ○×画像 -->
+                    <div id="answer01" class="answer"></div>
+                    <!-- 説明 -->
+                    <div id="explain01" class="explain">
+                      <div class="explain-answer-wrap">
+                        <p class="explain-answer-title">答え</p>
+                        <p class="explain-answer-detail">2. イクイノックス</p>
+                        <p class="cb"></p>
+                      </div>
+                      <p class="explain-text">
+                        １番人気のイクイノックスが最後の直線で抜け出し、天皇賞（秋）に続くＧ１　２勝目を挙げた。６戦目での優勝は過去最少で、手綱を取ったクリストフ・ルメールはこのレース３勝目。木村哲也調教師は初めて制した。２着は調教師転向に伴い、最後の有馬記念騎乗だった福永祐一のボルドグフーシュで、３歳馬が１、２着を独占した。３着はジェラルディーナ。ファン投票１位に推された２番人気のタイトルホルダーは逃げて失速し、９着に敗れた。
+                        <a href="">結果はこちらから</a>
+                      </p>
+                    </div>
+                  </li>
+
+                  <!-- Q2 -->
+                  <li id="quiz02" class="sports-arimakinen-quiz-list">
+                    <h3 class="quiz-box-title">Q.2</h3>
+                    <!-- クイズ -->
+                    <div class="quiz-box">
+                      <p class="quiz-box-question">
+                        第50回（2005年）のディープインパクトが負けたこのレース。優勝したのは？
+                      </p>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q02" value="1" onclick="receive(name,value)" />
+                          <span>1</span>ハーツクライ</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q02" value="2" onclick="receive(name,value)" />
+                          <span>2</span>ゼンノロブロイ</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q02" value="3" onclick="receive(name,value)" />
+                          <span>3</span>ヘヴンリーロマンス</label
+                        >
+                      </div>
+                    </div>
+                    <!-- ○×画像 -->
+                    <div id="answer02" class="answer"></div>
+                    <!-- 説明 -->
+                    <div id="explain02" class="explain">
+                      <div class="explain-answer-wrap">
+                        <p class="explain-answer-title">答え</p>
+                        <p class="explain-answer-detail">1. ハーツクライ</p>
+                        <p class="cb"></p>
+                      </div>
+                      <p class="explain-text">
+                        好位から抜け出した４番人気ハーツクライが、圧倒的１番人気のディープインパクトの猛追を振り切り、Ｇ１初制覇を果たした。ディープインパクトはデビュー８戦目で初黒星を喫し、史上初となる無敗での有馬記念優勝はならなかった。秋の天皇賞馬ヘヴンリーロマンスは６着、このレース限りで引退する昨年の覇者ゼンノロブロイは８着、Ｇ１
+                        ２勝のタップダンスシチーは１２着に終わった。 （2005年12月26日朝刊）
+                        <a href="">結果はこちらから</a>
+                      </p>
+                    </div>
+                  </li>
+
+                  <!-- Q3 -->
+                  <li id="quiz03" class="sports-arimakinen-quiz-list">
+                    <h3 class="quiz-box-title">Q.3</h3>
+                    <!-- クイズ -->
+                    <div class="quiz-box">
+                      <p class="quiz-box-question">
+                        第44回（1999年）のグラスワンダーvsスペシャルウィーク。勝敗はどちらに？
+                      </p>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q03" value="1" onclick="receive(name,value)" />
+                          <span>1</span>グラスワンダー</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q03" value="2" onclick="receive(name,value)" />
+                          <span>2</span>スペシャルウィーク</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q03" value="3" onclick="receive(name,value)" />
+                          <span>3</span>同着</label
+                        >
+                      </div>
+                    </div>
+                    <!-- ○×画像 -->
+                    <div id="answer03" class="answer"></div>
+                    <!-- 説明 -->
+                    <div id="explain03" class="explain">
+                      <div class="explain-answer-wrap">
+                        <p class="explain-answer-title">答え</p>
+                        <p class="explain-answer-detail">1.グラスワンダー</p>
+                        <p class="cb"></p>
+                      </div>
+                      <p class="explain-text">
+                        スペシャルウィーク・武豊は「頭差は勝った」と思い、グラスワンダー・的場は「かわされた」と無念の表情を浮かべた。ゴール後、百戦錬磨の名手２人がそろってカン違いしたほど、勝負はきわどかった。
+                        　尾形調教師、的場騎手とも、勝因に「底力」を挙げた。１０月の毎日王冠勝利後、左肩筋肉痛を起こして、目標のジャパンカップを回避。２か月半ぶりの実戦に、尾形調教師は「前日まで太い感じが残り、レース前は不安だった」という。的場も「これまでにないほど、こずん（筋肉痛）でいる」と感じ、馬場入り後、ゆっくりと走らせて体をほぐすことに専念したほど。完調から程遠い状態での勝利は、確かに「底力」以外の何物でもなかった。
+                        （1999年12月27日朝刊）
+                        <a href="">結果はこちらから</a>
+                      </p>
+                    </div>
+                  </li>
+
+                  <!-- Q4 -->
+                  <li id="quiz04" class="sports-arimakinen-quiz-list">
+                    <h3 class="quiz-box-title">Q.4</h3>
+                    <!-- クイズ -->
+                    <div class="quiz-box">
+                      <p class="quiz-box-question">
+                        第38回（1993年）の1年ぶりのレースで優勝するという奇跡の復活を成し遂げた馬は？
+                      </p>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q04" value="1" onclick="receive(name,value)" />
+                          <span>1</span>オグリキャップ</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q04" value="2" onclick="receive(name,value)" />
+                          <span>2</span>トウカイテイオー</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q04" value="3" onclick="receive(name,value)" />
+                          <span>3</span>ナリワン</label
+                        >
+                      </div>
+                    </div>
+                    <!-- ○×画像 -->
+                    <div id="answer04" class="answer"></div>
+                    <!-- 説明 -->
+                    <div id="explain04" class="explain">
+                      <div class="explain-answer-wrap">
+                        <p class="explain-answer-title">答え</p>
+                        <p class="explain-answer-detail">2. トウカイテイオー</p>
+                        <p class="cb"></p>
+                      </div>
+                      <p class="explain-text">
+                        トウカイテイオーが一年ぶりのレースで奇跡の復活を果たした。予想通りメジロパーマーが引っ張るレースは、１番人気のビワハヤヒデが直線で先頭に立ったが、終始好位置につけたテイオーが並びかけ、最後は地力の差を見せた。
+                        　テイオーは１１着に敗れた昨年の有馬記念以来三百六十四日ぶりの実戦で、Ｇ１級レースでは昭和十八年の天皇賞・クリヒカリ、同六十二年の菊花賞・サクラスターオーの二百三日ぶりを大幅に上回る長期休養明け勝利の新記録。父シンボリルドルフに続き、史上初の親子制覇も果たした。同レースの売り上げ７８８億８４１５万２０００円は中央競馬レコード。一日の売り上げも史上最高だった。
+                        （1993年12月27日朝刊）
+                        <a href="">結果はこちらから</a>
+                      </p>
+                    </div>
+                  </li>
+
+                  <!-- Q5 -->
+                  <li id="quiz05" class="sports-arimakinen-quiz-list">
+                    <h3 class="quiz-box-title">Q.5</h3>
+                    <!-- クイズ -->
+                    <div class="quiz-box">
+                      <p class="quiz-box-question">武豊騎手が有馬記念で初めて優勝した馬は？</p>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q05" value="1" onclick="receive(name,value)" />
+                          <span>1</span>オグリキャップ</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q05" value="2" onclick="receive(name,value)" />
+                          <span>2</span>ディープインパクト</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q05" value="3" onclick="receive(name,value)" />
+                          <span>3</span>メジロマックイーン</label
+                        >
+                      </div>
+                    </div>
+                    <!-- ○×画像 -->
+                    <div id="answer05" class="answer"></div>
+                    <!-- 説明 -->
+                    <div id="explain05" class="explain">
+                      <div class="explain-answer-wrap">
+                        <p class="explain-answer-title">答え</p>
+                        <p class="explain-answer-detail">3. オグリキャップ</p>
+                        <p class="cb"></p>
+                      </div>
+                      <p class="explain-text">
+                        　引退の花道を飾った名コンビ、オグリキャップ、武豊の快走－－今年の実力日本一を決める第３５回有馬記念は二十三日、千葉県中山競馬場に関西馬８頭を含むフルゲート・１６頭の一線級が参加して行われた。レースはオサイチジョージのリードで展開したが、外めの好位置につけた４番人気のオグリキャップが４角を回ってするすると抜け出し、必死に食い下がる、メジロライアン、ホワイトストーンを振り切って二年ぶり二度目の優勝、一着本賞金一億一千万円を獲得。ゴールデン・コンビが演じたドラマに十七万余の大観衆が酔いしれた２分３４秒２だった。
+                        　オグリキャップは北海道三石町・稲葉不奈男氏生産の牡６歳馬、父ダンシングキャップ、母ホワイトナルビー、地方競馬（岐阜・笠松）で１２戦１０勝後中央入りして２０戦１２勝。全勝利が重賞で、Ｇ１は２勝の有馬記念とマイルＣＳ、安田記念の４勝。総収得賞金八億八千九百七十万二千円（中央）は史上最高。日本競馬史上屈指の人気馬だった。瀬戸口勉調教師は２回目、武豊騎手は初優勝。地方競馬出身馬は有馬記念３連勝。
+                        （1990年12月24日朝刊）
+                        <a href="">結果はこちらから</a>
+                      </p>
+                    </div>
+                  </li>
+
+                  <!-- Q6 -->
+                  <li id="quiz06" class="sports-arimakinen-quiz-list">
+                    <h3 class="quiz-box-title">Q.6</h3>
+                    <!-- クイズ -->
+                    <div class="quiz-box">
+                      <p class="quiz-box-question">
+                        第39回（1994年）のナリタブライアンが優勝したこのレースの3着馬は？
+                      </p>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q06" value="1" onclick="receive(name,value)" />
+                          <span>1</span>ナイスネイチャ</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q06" value="2" onclick="receive(name,value)" />
+                          <span>2</span>サクラチトセオー</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q06" value="3" onclick="receive(name,value)" />
+                          <span>3</span>ライスシャワー</label
+                        >
+                      </div>
+                    </div>
+                    <!-- ○×画像 -->
+                    <div id="answer06" class="answer"></div>
+                    <!-- 説明 -->
+                    <div id="explain06" class="explain">
+                      <div class="explain-answer-wrap">
+                        <p class="explain-answer-title">答え</p>
+                        <p class="explain-answer-detail">3. ライスシャワー</p>
+                        <p class="cb"></p>
+                      </div>
+                      <p class="explain-text">
+                        三冠馬ナリタブライアンが快勝、圧倒的な１番人気にこたえた。
+                        　ツインターボが玉砕的な逃げを打ったレースは、三、四番手につけたブライアンが最終コーナーで力強く抜け出し、他馬を突き放してみせた。２着も四歳メスのヒシアマゾンが入り、九か月ぶり出走のライスシャワーが３着に食い込んだ。ブライアンは歴代四位となる６１・８％の支持を集めたが、１番人気馬の優勝は先輩三冠馬シンボリルドルフ以来、九年ぶり十一頭目。南井騎手は、今季Ｇ１戦５勝目で、年間Ｇ１勝利の新記録を作った。
+                        （1994年12月26日朝刊）
+                        <a href="">結果はこちらから</a>
+                      </p>
+                    </div>
+                  </li>
+
+                  <!-- Q7 -->
+                  <li id="quiz07" class="sports-arimakinen-quiz-list">
+                    <h3 class="quiz-box-title">Q.7</h3>
+                    <!-- クイズ -->
+                    <div class="quiz-box">
+                      <p class="quiz-box-question">
+                        第60回（2015年）のゴールドシップがラストランとなったこのレースの優勝馬は？
+                      </p>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q07" value="1" onclick="receive(name,value)" />
+                          <span>1</span>ゴールドシップ</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q07" value="2" onclick="receive(name,value)" />
+                          <span>2</span>ジェンティルドンナ</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q07" value="3" onclick="receive(name,value)" />
+                          <span>3</span>ゴールドアクター</label
+                        >
+                      </div>
+                    </div>
+                    <!-- ○×画像 -->
+                    <div id="answer07" class="answer"></div>
+                    <!-- 説明 -->
+                    <div id="explain07" class="explain">
+                      <div class="explain-answer-wrap">
+                        <p class="explain-answer-title">答え</p>
+                        <p class="explain-answer-detail">1. ゴールドアクター</p>
+                        <p class="cb"></p>
+                      </div>
+                      <p class="explain-text">
+                        ８番人気のゴールドアクターが直線で抜け出し、５番人気のサウンズオブアースの追い上げを首差でしのいで、Ｇ１初制覇を飾った。騎乗した吉田隼人と、中川公成（ただしげ）調教師はＧ１初勝利。引退レースとなった１番人気のゴールドシップは８着、２番人気のラブリーデイは５着に敗れ、３連単は１２万馬券の高配当となった。このレースの売り上げは、前年比７・２％増の約４１６億円。
+                        （2015年12月28日朝刊）
+                        <a href="">結果はこちらから</a>
+                      </p>
+                    </div>
+                  </li>
+
+                  <!-- Q8 -->
+                  <li id="quiz08" class="sports-arimakinen-quiz-list">
+                    <h3 class="quiz-box-title">Q.8</h3>
+                    <!-- クイズ -->
+                    <div class="quiz-box">
+                      <p class="quiz-box-question">
+                        第63回（20118年）の武豊騎乗と挑んだ障害G1 9勝のオジュウチョウサン。着順は？
+                      </p>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q08" value="1" onclick="receive(name,value)" />
+                          <span>1</span>5着</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q08" value="2" onclick="receive(name,value)" />
+                          <span>2</span>9着</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q08" value="3" onclick="receive(name,value)" />
+                          <span>3</span>16着</label
+                        >
+                      </div>
+                    </div>
+                    <!-- ○×画像 -->
+                    <div id="answer08" class="answer"></div>
+                    <!-- 説明 -->
+                    <div id="explain08" class="explain">
+                      <div class="explain-answer-wrap">
+                        <p class="explain-answer-title">答え</p>
+                        <p class="explain-answer-detail">2. 9着</p>
+                        <p class="cb"></p>
+                      </div>
+                      <p class="explain-text">
+                        ３番人気のブラストワンピースが直線で抜け出し、１番人気のレイデオロの追い上げを振り切った。ブラストワンピースと大竹正博調教師はＧ１初勝利、騎乗の池添謙一は有馬記念最多の４勝目。３着は９番人気のシュヴァルグラン。障害レースから転向したオジュウチョウサンは９着だった。
+                        　障害の王者から有馬記念への挑戦で注目と人気を集めたオジュウチョウサンは、スタートから一度はトップに立って見せ場を作った。結果は９着だったが、鞍上（あんじょう）の武豊騎手は「一生懸命走ってくれて、よく頑張ったと思う。４コーナー回ってからの頑張りには感動しました」とたたえていた。
+                        （2018年12月24日朝刊）
+                        <a href="">結果はこちらから</a>
+                      </p>
+                    </div>
+                  </li>
+
+                  <!-- Q9 -->
+                  <li id="quiz09" class="sports-arimakinen-quiz-list">
+                    <h3 class="quiz-box-title">Q.9</h3>
+                    <!-- クイズ -->
+                    <div class="quiz-box">
+                      <p class="quiz-box-question">
+                        第48回（2003年）のシンボリクリスエスが優勝したこのレースの読売新聞（朝刊・東京最終版）の見出しは？
+                      </p>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q09" value="1" onclick="receive(name,value)" />
+                          <span>1</span>クリスエス圧巻V2</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q09" value="2" onclick="receive(name,value)" />
+                          <span>2</span>クリスエスぶっちぎり9馬身差</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q09" value="3" onclick="receive(name,value)" />
+                          <span>3</span>クリスエス豪快に引退</label
+                        >
+                      </div>
+                    </div>
+                    <!-- ○×画像 -->
+                    <div id="answer09" class="answer"></div>
+                    <!-- 説明 -->
+                    <div id="explain09" class="explain">
+                      <div class="explain-answer-wrap">
+                        <p class="explain-answer-title">答え</p>
+                        <p class="explain-answer-detail">1. クリスエス圧巻Ｖ２</p>
+                        <p class="cb"></p>
+                      </div>
+                      <p class="explain-text">
+                        紙面イメージ （2003年12月29日朝刊）
+                        <a href="">結果はこちらから</a>
+                      </p>
+                    </div>
+                  </li>
+
+                  <!-- Q10 -->
+                  <li id="quiz10" class="sports-arimakinen-quiz-list">
+                    <h3 class="quiz-box-title">Q.10</h3>
+                    <!-- クイズ -->
+                    <div class="quiz-box">
+                      <p class="quiz-box-question">
+                        第1回（1956年、中山グランプリ）のメイヂヒカリが優勝したこのレースの読売新聞（朝刊・東京版）の見出しは？
+                      </p>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q10" value="1" onclick="receive(name,value)" />
+                          <span>1</span>メイヂヒカリ 中山グランプリ初代王者に</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q10" value="2" onclick="receive(name,value)" />
+                          <span>2</span>メイヂヒカリ グランプリを見事に勝利</label
+                        >
+                      </div>
+                      <div class="choice">
+                        <label
+                          ><input type="radio" name="q10" value="3" onclick="receive(name,value)" />
+                          <span>3</span>メイヂヒカリ 中山グランプリで楽勝</label
+                        >
+                      </div>
+                    </div>
+                    <!-- ○×画像 -->
+                    <div id="answer10" class="answer"></div>
+                    <!-- 説明 -->
+                    <div id="explain10" class="explain">
+                      <div class="explain-answer-wrap">
+                        <p class="explain-answer-title">答え</p>
+                        <p class="explain-answer-detail">3. メイヂヒカリ 中山グランプリで楽勝</p>
+                        <p class="cb"></p>
+                      </div>
+                      <p class="explain-text">
+                        紙面イメージ （1956年12月24日朝刊）
+                        <a href="">結果はこちらから</a>
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </form>
+
+            <!-- 結果 -->
+            <div class="sports-arimakinen-quiz-result-wrap">
+              <p class="sports-arimakinen-quiz-correct-answer">
+                ０問正解しました！<span>(10問中)</span>
+              </p>
+              <div class="sports-arimakinen-quiz-shere">
+                <p class="sports-arimakinen-quiz-shere-text">結果をシェアする</p>
+                <ul class="sports-arimakinen-quiz-shere-list">
+                  <li class="sports-arimakinen-quiz-shere-list-item uspresident2020-fa">
+                    <a id="facebook" target="_blank">Facebook</a>
+                  </li>
+                  <li class="sports-arimakinen-quiz-shere-list-item uspresident2020-tw">
+                    <a id="twitter" target="_blank">Twitter</a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-          <h1>
-            <a href=""><img src="/images/arima-header-title.png" alt="第68回有馬記念" /></a>
-          </h1>
-          <img
-            class="arimakinen-header-wrapper-illust"
-            src="/images/arima-header-illust.png"
-            alt=""
-          />
-        </div>
-        <div class="arimakinen-header-shiba"></div>
-        <div class="arimakinen-header-green">
-          <h2><img src="/images/arima-header-h2.png" alt="夕刊WeeklyKeiba スペシャル特集" /></h2>
-        </div>
+        </main>
 
-        <div class="arimakinen-linkmenu">
-          <ul>
-            <li>
-              <a href="index.html"><img src="/images/arimakinen-h-menu-10dai.png" alt="" /></a>
-            </li>
-            <li>
-              <a href="data.html"><img src="/images/arimakinen-h-menu-results.png" alt="" /></a>
-            </li>
-            <li>
-              <a href="uma.html"><img src="/images/arimakinen-h-menu-uma.png" alt="" /></a>
-            </li>
-            <li>
-              <a href="jockey.html"
-                ><img src="/images/arimakinen-h-menu-jockey-stallion.png" alt=""
-              /></a>
-            </li>
-
-            <li>
-              <a href="quiz.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
-            </li>
-          </ul>
-        </div>
-        <h3>ありうまクイズ</h3>
-        <h4>
-          1956年に「中山グランプリ」を当時の理事長の有馬頼寧氏が提案し行った。しかし翌年急逝、同氏の功績を称え第2回からは「有馬記念」と改称。当時はファン投票による出走馬の選定方法も前例のないものだった。
-        </h4>
-      </header>
-
-      <!-- mainコンテンツ -->
-      <main class="arimakinen-main">
-        <!-- クイズ -->
-        <div class="arimakinen-content"></div>
-      </main>
-
-      <!-- footer -->
-      <footer class="arimakinen-footer">
-        <!-- 注釈・クレジット-->
-        <p class="arimakinen-footer-credit">
+        <!-- footer -->
+        <footer class="arimakinen-footer">
+          <!-- 注釈・クレジット-->
+          <!-- <p class="arimakinen-footer-credit">
           ※JRAのデータから。データは第67回まで。一部のデータがない年（回）もある。馬の年齢は2001年度に数え年から満年齢に変更。
-        </p>
-        <div class="arimakinen-linkmenu">
-          <ul>
-            <li>
-              <a href="index.html"><img src="/images/arimakinen-h-menu-10dai.png" alt="" /></a>
-            </li>
-            <li>
-              <a href="data.html"><img src="/images/arimakinen-h-menu-results.png" alt="" /></a>
-            </li>
-            <li>
-              <a href="uma.html"><img src="/images/arimakinen-h-menu-uma.png" alt="" /></a>
-            </li>
-            <li>
-              <a href="jockey.html"
-                ><img src="/images/arimakinen-h-menu-jockey-stallion.png" alt=""
-              /></a>
-            </li>
+        </p> -->
+          <div class="arimakinen-linkmenu">
+            <ul>
+              <li>
+                <a href="index.html"><img src="/images/arimakinen-h-menu-10dai.png" alt="" /></a>
+              </li>
+              <li>
+                <a href="data.html"><img src="/images/arimakinen-h-menu-results.png" alt="" /></a>
+              </li>
+              <li>
+                <a href="uma.html"><img src="/images/arimakinen-h-menu-uma.png" alt="" /></a>
+              </li>
+              <li>
+                <a href="jockey.html"
+                  ><img src="/images/arimakinen-h-menu-jockey-popular.png" alt=""
+                /></a>
+              </li>
 
-            <li>
-              <a href="quiz.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
-            </li>
-          </ul>
-        </div>
-      </footer>
+              <li>
+                <a href="quiz.html"><img src="/images/arimakinen-h-menu-quiz.png" alt="" /></a>
+              </li>
+            </ul>
+          </div>
+        </footer>
 
-      <!-- arimakinen終了 -->
+        <!-- arimakinen終了 -->
+      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/src/script/arimakinen-header.js" defer></script>
-    <script src="/src/script/arimakinen-chart-uma.js" defer></script>
-    <script src="/src/script/arimakinen-switching.js" defer></script>
+    <script>
+      /** 正解数 */
+      var correctAnswer = 0;
+      /** 問題の正解No */
+      var questionCollect = {
+        "01": "2",
+        "02": "1",
+        "03": "2",
+        "04": "1",
+        "05": "3",
+        "06": "3",
+        "07": "1",
+        "08": "2",
+        "09": "1",
+        10: "1",
+      };
+      /** ボタン連打制御 */
+      var btnFlag = 0;
+
+      /** 問題をクリックした際に発火 **/
+
+      function receive(n, v) {
+        if (btnFlag == 0) {
+          btnFlag = 1;
+          var quizNo = n.replace(/[^0-9]/g, "");
+          var parentQuizNode = document.getElementById("quiz" + quizNo);
+          var check = v;
+          answer(parentQuizNode);
+          answerImg(check, quizNo);
+        }
+      }
+
+      /**
+       * @description 答え合わせ後のフェードイン/アウトの表示制御
+       * @param {String} q 回答した親タグ
+       */
+      function answer(q) {
+        q.children[1].classList.toggle("is-change");
+        setTimeout(function () {
+          q.children[1].style.display = "none";
+          q.children[2].style.display = "block";
+          q.children[2].classList.toggle("is-change");
+          q.children[3].style.display = "block";
+          btnFlag = 0;
+          setTimeout(function () {
+            q.children[2].classList.toggle("is-change");
+            q.children[2].style.position = "relative";
+            setTimeout(function () {
+              q.children[2].style.display = "none";
+              q.children[3].classList.toggle("is-change");
+              q.style.height = "auto";
+              q.children[3].style.position = "relative";
+            }, 700);
+          }, 700);
+        }, 700);
+      }
+      /**
+       * @description 答え合わせ※画像指定
+       * @param {Number} a - 選択した回答No
+       * @param {Number} n  - 問題No
+       */
+      function answerImg(a, n) {
+        var falseImg = "public/images/false-green.png";
+        var collectImg = "public/images/collect-green.png";
+        var falseSImg = "public/images/false-s-green.png";
+        var collectSImg = "public/images/collect-s-green.png";
+        var img = document.createElement("img");
+        var imgS = document.createElement("img");
+        if (questionCollect[n] === a) {
+          img.src = collectImg;
+          img.alt = "正解画像";
+          imgS.src = collectSImg;
+          imgS.alt = "正解画像";
+          correctAnswer += 1;
+          changeCollectAnswer();
+        } else {
+          img.src = falseImg;
+          img.alt = "不正解画像";
+          imgS.src = falseSImg;
+          imgS.alt = "不正解画像";
+        }
+
+        document.getElementById("answer" + n).appendChild(img);
+        document.getElementById("explain" + n).appendChild(imgS);
+      }
+      /** 結果蘭の○問正解しました！の表示変更 */
+      function changeCollectAnswer() {
+        setTimeout(function () {
+          var collect = document.getElementsByClassName("sports-arimakinen-quiz-correct-answer");
+          collect[0].innerText = correctAnswer + "問正解しました！";
+        }, 1000);
+      }
+      const twitter = document.getElementById("twitter");
+      /** twitterのシェアリンク作成 */
+      twitter.addEventListener("click", function () {
+        // const text = ['text', correctAnswer + '問正解しました！クイズでわかるアメリカ大統領選：読売新聞'];
+        var textT = correctAnswer;
+        var urlT = location.href;
+        var hashtagsT = ["大統領選2020", "読売新聞"].join(",");
+        var shareUrlT =
+          "https://twitter.com/share?" +
+          [
+            "text=" +
+              encodeURIComponent(textT) +
+              "%E5%95%8F%E6%AD%A3%E8%A7%A3%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%0D%0A%E3%82%AF%E3%82%A4%E3%82%BA%E3%81%A7%E3%82%8F%E3%81%8B%E3%82%8B%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E5%A4%A7%E7%B5%B1%E9%A0%98%E9%81%B8%EF%BC%9A%E8%AA%AD%E5%A3%B2%E6%96%B0%E8%81%9E",
+            "url=" + encodeURIComponent(urlT),
+            "hashtags=" + encodeURIComponent(hashtagsT),
+          ].join("&");
+        document.getElementById("twitter").href = shareUrlT;
+      });
+      const facebook = document.getElementById("facebook");
+      /** Facebookのシェアリンク作成 */
+      facebook.addEventListener("click", function () {
+        const urlF = location.href;
+        const shareUrlF =
+          "https://www.facebook.com/sharer/sharer.php?" +
+          ["u=" + encodeURIComponent(urlF)].join("&");
+
+        document.getElementById("facebook").href = shareUrlF;
+      });
+    </script>
   </body>
 </html>
