@@ -704,7 +704,7 @@ var arimaChartUmaban1Config = {
         callbacks: {
           title: function (tooltipItems) {
             // X軸のラベルに「番人気」を追加してタイトルとして設定
-            return tooltipItems[0].label + "枠";
+            return tooltipItems[0].label + "番";
           },
           label: function (context) {
             // データの値に「頭」を追加してラベルとして設定
@@ -775,7 +775,7 @@ var arimaChartUmaban2Config = {
         callbacks: {
           title: function (tooltipItems) {
             // X軸のラベルに「番人気」を追加してタイトルとして設定
-            return tooltipItems[0].label + "枠";
+            return tooltipItems[0].label + "番";
           },
           label: function (context) {
             // データの値に「頭」を追加してラベルとして設定
@@ -845,7 +845,7 @@ var arimaChartUmaban3Config = {
         callbacks: {
           title: function (tooltipItems) {
             // X軸のラベルに「番人気」を追加してタイトルとして設定
-            return tooltipItems[0].label + "枠";
+            return tooltipItems[0].label + "番";
           },
           label: function (context) {
             // データの値に「頭」を追加してラベルとして設定
@@ -872,6 +872,140 @@ var arimaChartUmaban3Config = {
   },
 };
 
+// 馬枠　枠連トップ
+var arimaChartUmaWaku1Config = {
+  type: "bar",
+  data: {
+    labels: ["1-5", "1-3", "3-5", "3-8", "1-4", "2-3", "2-8", "4-6", "4-7", "5-7", "7-8"],
+    datasets: [
+      {
+        label: "回数",
+        data: [5, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3],
+        backgroundColor: [
+          "rgba(171,151,58, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+        ],
+        hoverOffset: 1,
+      },
+    ],
+  },
+  options: {
+    indexAxis: "y",
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        bodyFont: {
+          weight: "bold", // テキストを太字に設定
+        },
+        callbacks: {
+          label: function (context) {
+            // データの値に「頭」を追加してラベルとして設定
+            return context.raw + "回";
+          },
+        },
+      },
+    },
+    scales: {
+      x: {},
+
+      y: {
+        grid: {
+          display: false,
+        },
+        stacked: true,
+        max: 5,
+      },
+    },
+
+    responsive: true,
+    maintainAspectRatio: false,
+  },
+};
+
+// 馬枠　馬連トップ
+var arimaChartUmaWaku2Config = {
+  type: "bar",
+  data: {
+    labels: ["1-4", "1-8", "2-10", "3-7", "4-6", "6-10"],
+    datasets: [
+      {
+        label: "人気馬の頭数",
+        data: [2, 2, 2, 2, 2, 2],
+        backgroundColor: [
+          "rgba(171,151,58, 0.7)",
+          "rgba(171,151,58, 0.7)",
+          "rgba(171,151,58, 0.7)",
+          "rgba(171,151,58, 0.7)",
+          "rgba(171,151,58, 0.7)",
+          "rgba(171,151,58, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+          "rgba(0,136,71, 0.7)",
+        ],
+        hoverOffset: 1,
+      },
+    ],
+  },
+  options: {
+    indexAxis: "y",
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        bodyFont: {
+          weight: "bold", // テキストを太字に設定
+        },
+        callbacks: {
+          label: function (context) {
+            // データの値に「頭」を追加してラベルとして設定
+            return context.raw + "回";
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          beginAtZero: true, // Y軸を0から始める
+          stepSize: 1, // Y軸の目盛りのステップサイズを1に設定
+        },
+
+        stacked: true,
+        max: 2, // 必要に応じて最大値を調整
+      },
+
+      y: {
+        grid: {
+          display: false,
+        },
+      },
+    },
+
+    responsive: true,
+    maintainAspectRatio: false,
+  },
+};
+
 let arimaChartJockey1 = null;
 let arimaChartJockey2 = null;
 let arimaChartJockey3 = null;
@@ -886,6 +1020,9 @@ let arimaChartWaku2 = null;
 let arimaChartUmaban1 = null;
 let arimaChartUmaban2 = null;
 let arimaChartUmaban3 = null;
+
+let arimaChartUmaWaku1 = null;
+let arimaChartUmaWaku2 = null;
 
 // チャートの設定
 const chartConfigs = {
@@ -903,6 +1040,9 @@ const chartConfigs = {
   arimaChartUmaban1: arimaChartUmaban1Config,
   arimaChartUmaban2: arimaChartUmaban2Config,
   arimaChartUmaban3: arimaChartUmaban3Config,
+
+  arimaChartUmaWaku1: arimaChartUmaWaku1Config,
+  arimaChartUmaWaku2: arimaChartUmaWaku2Config,
 };
 
 // チャートインスタンスを格納するオブジェクト

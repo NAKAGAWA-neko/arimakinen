@@ -84,6 +84,9 @@ body {
   cursor: pointer;
   position: absolute;
 }
+.arimakinen-content-change-btn:hover, .arimakinen-content-change-newlinebtn:hover {
+  opacity: 0.8;
+}
 .arimakinen-content-change-btn {
   top: 50px;
   right: 0;
@@ -98,21 +101,18 @@ body {
   top: 50px;
   right: 0;
 }
-.arimakinen-content-chart {
-  margin: 0 0 50px 0;
-}
 .arimakinen-content-chart .chart500 {
   height: 500px;
 }
 .arimakinen-content-chart .chart380 {
   height: 380px;
 }
-.arimakinen-content-chart .chart380pc510 {
+.arimakinen-content-chart .chart380pc485 {
   height: 380px;
 }
 @media (min-width: 599px) {
-  .arimakinen-content-chart .chart380pc510 {
-    height: 510px;
+  .arimakinen-content-chart .chart380pc485 {
+    height: 485px;
   }
 }
 .arimakinen-content-chart .chart350 {
@@ -149,14 +149,26 @@ body {
   text-align: center;
   margin-bottom: 6px;
 }
+.arimakinen-content-boxchange li:hover {
+  opacity: 0.8;
+}
 .arimakinen-marginb20 {
   margin: 0 0 20px 0;
+}
+.arimakinen-marginb30 {
+  margin: 0 0 30px 0;
+}
+.arimakinen-marginb40 {
+  margin: 0 0 40px 0;
 }
 .arimakinen-marginb50 {
   margin: 0 0 50px 0;
 }
 .arimakinen-marginb60 {
   margin: 0 0 60px 0;
+}
+.arimakinen-marginb70 {
+  margin: 0 0 70px 0;
 }
 .arimakinen-marginb90 {
   margin: 0 0 90px 0;
@@ -208,6 +220,14 @@ body {
 }
 @media (min-width: 500px) {
   .arimakinen-pcdisp-none500 {
+    display: none;
+  }
+}
+.arimakinen-mobdisp-none {
+  display: block;
+}
+@media (max-width: 599px) {
+  .arimakinen-mobdisp-none {
     display: none;
   }
 }
@@ -1210,6 +1230,17 @@ body {
 }
 
 .Jockey-2,
-.Jockey-3 {
+.Jockey-3,
+.Stallion-2,
+.Stallion-3,
+.Ninki-2,
+.Ninki-3,
+.TaijyuZougen-2,
+.TaijyuZougen-3,
+.Bataijyu-2,
+.Waku-2,
+.Umaban-2,
+.Umaban-3,
+.UmaWaku-2 {
   display: none;
 }/*# sourceMappingURL=arimakinen-style.css.map */

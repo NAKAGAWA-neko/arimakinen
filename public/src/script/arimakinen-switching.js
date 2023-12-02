@@ -10,6 +10,7 @@ window.onload = function () {
   setupContentSwitcher("Bataijyu", 2, ["小さいのは？", "大きいのは？"]);
   setupContentSwitcher("Waku", 2, ["2着は？", "1着は？"]);
   setupContentSwitcher("Umaban", 3, ["2着は？", "3着は？", "1着は？"]);
+  setupContentSwitcher("UmaWaku", 2, ["馬連は？", "枠連は？"]);
 
   // 10大の切替
   let arimaItems = document.querySelectorAll(".arimakinen-content-10dainews");
@@ -73,3 +74,9 @@ function setupContentSwitcher(prefix, contentCount, buttonTexts) {
 const changePopularImage = (imageFileName) => {
   document.getElementById("popularImage").src = imageFileName;
 };
+
+// function updateDisplay() {
+//   contents.forEach((content) => content.classList.add("hidden"));
+//   contents[currentIndex].classList.remove("hidden");
+//   button.textContent = buttonTexts[currentIndex % buttonTexts.length];
+// }

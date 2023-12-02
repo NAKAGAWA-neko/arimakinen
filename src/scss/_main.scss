@@ -92,6 +92,10 @@ body {
         padding: 4px 10px;
         cursor: pointer;
         position: absolute;
+
+        &:hover {
+          opacity: 0.8;
+        }
       }
       &-btn {
         top: 50px;
@@ -109,7 +113,7 @@ body {
 
     // チャート
     &-chart {
-      margin: 0 0 50px 0;
+      // margin: 0 0 20px 0;
 
       .chart500 {
         height: 500px;
@@ -118,10 +122,10 @@ body {
       .chart380 {
         height: 380px;
       }
-      .chart380pc510 {
+      .chart380pc485 {
         height: 380px;
         @media (min-width: 599px) {
-          height: 510px;
+          height: 485px;
         }
       }
       .chart350 {
@@ -157,6 +161,10 @@ body {
         flex-basis: calc(33.33% - 5px);
         text-align: center;
         margin-bottom: 6px;
+
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
   }
@@ -165,12 +173,24 @@ body {
     margin: 0 0 20px 0;
   }
 
+  &-marginb30 {
+    margin: 0 0 30px 0;
+  }
+
+  &-marginb40 {
+    margin: 0 0 40px 0;
+  }
+
   &-marginb50 {
     margin: 0 0 50px 0;
   }
 
   &-marginb60 {
     margin: 0 0 60px 0;
+  }
+
+  &-marginb70 {
+    margin: 0 0 70px 0;
   }
 
   &-marginb90 {
@@ -225,6 +245,13 @@ body {
   &-pcdisp-none500 {
     display: block;
     @media (min-width: 500px) {
+      display: none;
+    }
+  }
+
+  &-mobdisp-none {
+    display: block;
+    @media (max-width: 599px) {
       display: none;
     }
   }
