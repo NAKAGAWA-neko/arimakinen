@@ -120,6 +120,19 @@
             padding: 16px 0;
             border-top: none;
           }
+
+          .data-cell-1-1,
+          .data-cell-2-1,
+          .data-cell-3-1,
+          .data-cell-4-1,
+          .data-cell-5-1,
+          .data-cell-6-1,
+          .data-cell-7-1,
+          .data-cell-8-1,
+          .data-cell-9-1,
+          .data-cell-10-1 {
+            width: 40px;
+          }
         }
 
         &-link {
@@ -711,3 +724,115 @@
 .UmaWaku-2 {
   display: none;
 }
+
+// 2023部分
+
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer {
+  .arimacolumn-1,
+  .arimacolumn-2,
+  .arimacolumn-4,
+  .arimacolumn-5 {
+    text-align: center;
+  }
+  .arimacolumn-2,
+  .arimacolumnth-2,
+  .arimacolumn-3,
+  .arimacolumnth-3,
+  .arimacolumn-6,
+  .arimacolumnth-6,
+  .arimacolumn-7,
+  .arimacolumnth-7 {
+    padding-left: 10px;
+  }
+
+  .arimacolumn-1,
+  .arimacolumn-2,
+  .arimacolumn-3 {
+    font-weight: bold;
+  }
+
+  .arimacolumn-1 {
+    border-top: 2px solid white;
+  }
+
+  .arimacolumnth-1 {
+    border-bottom: 2px solid ari.$c-l-gray-1;
+  }
+  .arimacell-1,
+  .arimacell-2 {
+    background-color: #ebebeb;
+  }
+
+  .arimacell-3,
+  .arimacell-4 {
+    background-color: #000000;
+    color: white;
+  }
+
+  .arimacell-5,
+  .arimacell-6 {
+    background-color: #ff0b0b;
+    color: white;
+  }
+
+  .arimacell-7,
+  .arimacell-8 {
+    background-color: #0b69ff;
+    color: white;
+  }
+
+  .arimacell-9,
+  .arimacell-10 {
+    background-color: #ffff0b;
+  }
+
+  .arimacell-11,
+  .arimacell-12 {
+    background-color: #017a03;
+    color: white;
+  }
+
+  .arimacell-13,
+  .arimacell-14 {
+    background-color: #f8b009;
+  }
+
+  .arimacell-15,
+  .arimacell-16 {
+    background-color: #fe96d8;
+  }
+
+  .arimacolumn-2,
+  .arimacolumn-3,
+  .arimacolumn-4,
+  .arimacolumn-5,
+  .arimacolumn-6,
+  .arimacolumn-7 {
+    background-color: white;
+    color: #1e2428;
+  }
+}
+
+.arima-2023-res {
+  margin: -20px 0 0 0;
+  width: 100%;
+  @media screen and (min-width: 600px) and (max-width: 660px) {
+    width: 100%;
+  }
+}
+
+// #kokunai-2023,
+// #kaigai-2023 {
+//   .data-cell-1-1,
+//   .data-cell-2-1,
+//   .data-cell-3-1,
+//   .data-cell-4-1,
+//   .data-cell-5-1,
+//   .data-cell-6-1,
+//   .data-cell-7-1,
+//   .data-cell-8-1,
+//   .data-cell-9-1,
+//   .data-cell-10-1 {
+//     width: 40px;
+//   }
+// }

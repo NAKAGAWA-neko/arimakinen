@@ -744,6 +744,18 @@ body {
   padding: 16px 0;
   border-top: none;
 }
+.arimakinen-content-10dainews-news-table-scrollcontainer .data-cell-1-1,
+.arimakinen-content-10dainews-news-table-scrollcontainer .data-cell-2-1,
+.arimakinen-content-10dainews-news-table-scrollcontainer .data-cell-3-1,
+.arimakinen-content-10dainews-news-table-scrollcontainer .data-cell-4-1,
+.arimakinen-content-10dainews-news-table-scrollcontainer .data-cell-5-1,
+.arimakinen-content-10dainews-news-table-scrollcontainer .data-cell-6-1,
+.arimakinen-content-10dainews-news-table-scrollcontainer .data-cell-7-1,
+.arimakinen-content-10dainews-news-table-scrollcontainer .data-cell-8-1,
+.arimakinen-content-10dainews-news-table-scrollcontainer .data-cell-9-1,
+.arimakinen-content-10dainews-news-table-scrollcontainer .data-cell-10-1 {
+  width: 40px;
+}
 .arimakinen-content-10dainews-news-table-link {
   color: white;
   font-size: 16px;
@@ -1271,4 +1283,87 @@ body {
 .Umaban-3,
 .UmaWaku-2 {
   display: none;
+}
+
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-1,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-2,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-4,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-5 {
+  text-align: center;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-2,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumnth-2,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-3,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumnth-3,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-6,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumnth-6,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-7,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumnth-7 {
+  padding-left: 10px;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-1,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-2,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-3 {
+  font-weight: bold;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-1 {
+  border-top: 2px solid white;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumnth-1 {
+  border-bottom: 2px solid #d3d2c4;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-1,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-2 {
+  background-color: #ebebeb;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-3,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-4 {
+  background-color: #000000;
+  color: white;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-5,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-6 {
+  background-color: #ff0b0b;
+  color: white;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-7,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-8 {
+  background-color: #0b69ff;
+  color: white;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-9,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-10 {
+  background-color: #ffff0b;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-11,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-12 {
+  background-color: #017a03;
+  color: white;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-13,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-14 {
+  background-color: #f8b009;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-15,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacell-16 {
+  background-color: #fe96d8;
+}
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-2,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-3,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-4,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-5,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-6,
+.arimakinen-content-10dainews-arimadata-table-scrollcontainer .arimacolumn-7 {
+  background-color: white;
+  color: #1e2428;
+}
+
+.arima-2023-res {
+  margin: -20px 0 0 0;
+  width: 100%;
+}
+@media screen and (min-width: 600px) and (max-width: 660px) {
+  .arima-2023-res {
+    width: 100%;
+  }
 }/*# sourceMappingURL=arimakinen-style.css.map */
